@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ================= KINECT V2 ================= -->
+  <link name="kinect_v2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://underbot_description/meshes/kinect_v2.stl"/></geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.067 0.249 0.066"/></geometry>
+    </collision>
+    <xacro:box_inertia m="1.0" x="0.067" y="0.249" z="0.066"/>
+  </link>
+
+  <joint name="kinect_joint" type="fixed">
+    <parent link="body_column"/>
+    <child link="kinect_v2"/>
+    <origin xyz="0.10 0 0.40" rpy="0 0 0"/>
+  </joint>
+
+  <link name="kinect_optical_frame"/>
+  <joint name="kinect_optical_joint" type="fixed">
+    <parent link="kinect_v2"/>
+    <child link="kinect_optical_frame"/>
+    <origin xyz="0.0335 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- ================= LIDAR ================= -->
+  <link name="lidar_mount">
+    <visual>
+      <origin xyz="0 0 0.009" rpy="0 0 0"/>
+      <geometry><mesh filename="package://underbot_description/meshes/lidar_mount.stl"/></geometry>
+      <material name="blue"><color rgba="0.1 0.5 1.0 1.0"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.009" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.035" length="0.018"/></geometry>
+    </collision>
+    <xacro:cylinder_inertia m="0.17" r="0.035" h="0.018"/>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="body_column"/>
+    <child link="lidar_mount"/>
+    <origin xyz="0 0 0.45" rpy="0 0 0"/>
+  </joint>
+
+</robot>

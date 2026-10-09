@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="underbot_arm" params="prefix reflect">
+    <!-- prefix: 'l_' or 'r_', reflect: 1 (left) or -1 (right) -->
+
+    <!-- ================= ARM BASE ================= -->
+    <link name="${prefix}arm_base">
+      <visual>
+        <origin xyz="0 ${reflect * 0.02} 0" rpy="0 0 0"/>
+        <geometry><mesh filename="package://underbot_description/meshes/arm_base.stl"/></geometry>
+        <material name="orange"><color rgba="1.0 0.6 0.0 1.0"/></material>
+      </visual>
+      <collision>
+        <origin xyz="0 ${reflect * 0.02} 0" rpy="0 0 0"/>
+        <geometry><box size="0.045 0.04 0.05"/></geometry>
+      </collision>
+      <xacro:box_inertia m="0.15" x="0.045" y="0.04" z="0.05"/>
+    </link>
+
+    <joint name="${prefix}arm_mount_joint" type="fixed">
+      <parent link="body_column"/>
+      <child link="${prefix}arm_base"/>
+      <origin xyz="0 ${reflect * 0.14} 0.25" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ================= UPPER ARM ================= -->
+    <link name="${prefix}upper_arm">
+      <visual>
+        <origin xyz="0 0 -0.06" rpy="0 0 0"/>
+        <geometry><mesh filename="package://underbot_description/meshes/upper_arm.stl"/></geometry>
+        <material name="green"><color rgba="0.0 0.8 0.0 1.0"/></material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.06" rpy="0 0 0"/>
+        <geometry><box size="0.03 0.03 0.12"/></geometry>
+      </collision>
+      <xacro:box_inertia m="0.12" x="0.03" y="0.03" z="0.12"/>
+    </link>
+
+    <joint name="${prefix}shoulder_joint" type="revolute">
+      <parent link="${prefix}arm_base"/>
+      <child link="${prefix}upper_arm"/>
+      <origin xyz="0 ${reflect * 0.04} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-1.87" upper="1.87" effort="8.0" velocity="3.14"/>
+      <dynamics damping="2.0" friction="1.0"/>
+    </joint>
+
+    <!-- ================= FOREARM ================= -->
+    <link name="${prefix}forearm">
+      <visual>
+        <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+        <geometry><mesh filename="package://underbot_description/meshes/forearm.stl"/></geometry>
+        <material name="cyan"><color rgba="0.0 0.8 0.8 1.0"/></material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.05" rpy="0 0 0"/>
+        <geometry><box size="0.025 0.025 0.10"/></geometry>
+      </collision>
+      <xacro:box_inertia m="0.10" x="0.025" y="0.025" z="0.10"/>
+    </link>
+
+    <joint name="${prefix}elbow_joint" type="revolute">
+      <parent link="${prefix}upper_arm"/>
+      <child link="${prefix}forearm"/>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-2.11" upper="1.61" effort="6.0" velocity="3.14"/>
+      <dynamics damping="1.5" friction="0.8"/>
+    </joint>
+
+    <!-- ================= WRIST (Fixed) ================= -->
+    <link name="${prefix}wrist">
+      <visual>
+        <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+        <geometry><mesh filename="package://underbot_description/meshes/wrist.stl"/></geometry>
+        <material name="purple"><color rgba="0.6 0.0 0.8 1.0"/></material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+        <geometry><box size="0.025 0.025 0.03"/></geometry>
+      </collision>
+      <xacro:box_inertia m="0.08" x="0.025" y="0.025" z="0.03"/>
+    </link>
+
+    <joint name="${prefix}wrist_fixed_joint" type="fixed">
+      <parent link="${prefix}forearm"/>
+      <child link="${prefix}wrist"/>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ================= GRIPPER ================= -->
+    <link name="${prefix}gripper_left">
+      <visual>
+        <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+        <geometry><mesh filename="package://underbot_description/meshes/gripper.stl"/></geometry>
+        <material name="pink"><color rgba="1.0 0.4 0.7 1.0"/></material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+        <geometry><box size="0.008 0.012 0.04"/></geometry>
+      </collision>
+      <xacro:box_inertia m="0.03" x="0.008" y="0.012" z="0.04"/>
+    </link>
+
+    <link name="${prefix}gripper_right">
+      <visual>
+        <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+        <!-- Reuse the same gripper STL -->
+        <geometry><mesh filename="package://underbot_description/meshes/gripper.stl"/></geometry>
+        <material name="pink"><color rgba="1.0 0.4 0.7 1.0"/></material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+        <geometry><box size="0.008 0.012 0.04"/></geometry>
+      </collision>
+      <xacro:box_inertia m="0.03" x="0.008" y="0.012" z="0.04"/>
+    </link>
+
+    <joint name="${prefix}finger_left_joint" type="prismatic">
+      <parent link="${prefix}wrist"/>
+      <child link="${prefix}gripper_left"/>
+      <origin xyz="0 0.006 -0.03" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="0.0" upper="0.025" effort="30.0" velocity="0.1"/>
+      <dynamics damping="0.5" friction="0.2"/>
+    </joint>
+
+    <joint name="${prefix}finger_right_joint" type="prismatic">
+      <parent link="${prefix}wrist"/>
+      <child link="${prefix}gripper_right"/>
+      <origin xyz="0 -0.006 -0.03" rpy="0 0 0"/>
+      <axis xyz="0 -1 0"/>
+      <limit lower="0.0" upper="0.025" effort="30.0" velocity="0.1"/>
+      <dynamics damping="0.5" friction="0.2"/>
+      <mimic joint="${prefix}finger_left_joint" multiplier="1.0" offset="0.0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>
