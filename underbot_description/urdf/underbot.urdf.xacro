@@ -1,16 +1,9 @@
 <?xml version="1.0"?>
-<robot name="underbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-  <!-- Include all component files -->
-  <xacro:include filename="$(find underbot_description)/urdf/inertias.xacro"/>
-  <xacro:include filename="$(find underbot_description)/urdf/base.xacro"/>
-  <xacro:include filename="$(find underbot_description)/urdf/arm.xacro"/>
-  <xacro:include filename="$(find underbot_description)/urdf/sensors.xacro"/>
-
-  <!-- Instantiation of the Left Arm (reflect=1) -->
-  <xacro:underbot_arm prefix="l_" reflect="1" />
-
-  <!-- Instantiation of the Right Arm (reflect=-1) -->
-  <xacro:underbot_arm prefix="r_" reflect="-1" />
-
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="underbot">
+  <xacro:include filename="base.xacro" />
+  <xacro:underbot_base />
+  <xacro:include filename="sensors.xacro" />
+  <xacro:underbot_sensors />
+  <xacro:include filename="arm.xacro" />
+  <xacro:underbot_arm />
 </robot>

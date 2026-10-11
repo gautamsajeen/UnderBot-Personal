@@ -1,82 +1,66 @@
 Panels:
   - Class: rviz_common/Displays
-    Help Height: 78
     Name: Displays
-    Property Tree Widget:
-      Expanded:
-        - /Global Options1
-        - /Status1
-        - /RobotModel1
-      Splitter Ratio: 0.5
-    Tree Height: 500
+  - Class: rviz_common/Views
+    Name: Views
 Visualization Manager:
   Class: ""
+  Global Options:
+    Background Color: 35; 38; 42
+    Fixed Frame: base_link
+    Frame Rate: 30
   Displays:
-    - Alpha: 0.5
-      Cell Size: 1
-      Class: rviz_default_plugins/Grid
-      Color: 160; 160; 164
+    - Class: rviz_default_plugins/Grid
+      Name: Ground grid
       Enabled: true
-      Line Style:
-        Line Width: 0.03
-        Value: Lines
-      Name: Grid
-      Normal Cell Count: 0
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
+      Alpha: 0.35
+      Cell Size: 0.1
+      Color: 155; 155; 155
       Plane: XY
-      Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Plane Cell Count: 20
+      Reference Frame: base_link
       Value: true
-    - Alpha: 1
-      Class: rviz_default_plugins/RobotModel
+    - Class: rviz_default_plugins/RobotModel
+      Name: Underbot WR141E R08
+      Enabled: true
+      Alpha: 1
       Collision Enabled: false
       Description Source: Topic
       Description Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
         Value: /robot_description
-      Enabled: true
-      Name: RobotModel
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        History Policy: Keep Last
+        Depth: 5
+      Visual Enabled: true
       TF Prefix: ""
       Update Interval: 0
       Value: true
-      Visual Enabled: true
-  Enabled: true
-  Global Options:
-    Background Color: 48; 48; 48
-    Fixed Frame: base_link
-    Frame Rate: 30
-  Name: root
+    - Class: rviz_default_plugins/TF
+      Name: Joint frames
+      Enabled: false
+      Frame Timeout: 15
+      Marker Scale: 0.12
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Value: false
   Tools:
     - Class: rviz_default_plugins/Interact
-      Hide Inactive Objects: true
     - Class: rviz_default_plugins/MoveCamera
     - Class: rviz_default_plugins/Select
-  Value: true
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.5
-      Enable Stereo Rendering:
-        Stereo Eye Separation: 0.06
-        Stereo Focal Distance: 1
-        Swap Stereo Eyes: false
-        Value: false
+      Name: Current View
+      Distance: 2.3
       Focal Point:
         X: 0
         Y: 0
-        Z: 0.3
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05
-      Invert Z Axis: false
-      Name: Current View
-      Near Clip Distance: 0.01
-      Pitch: 0.4
-      Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
+        Z: 0.42
+      Pitch: 0.35
       Yaw: 0.8
+      Target Frame: base_link
+Window Geometry:
+  Width: 1280
+  Height: 850
