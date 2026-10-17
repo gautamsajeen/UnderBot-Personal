@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>underbot_description</name>
-  <version>0.8.0</version>
-  <description>Underbot R08 WR141E mobile dual-arm model with a 200 mm square tower and bare camera electronics reservation.</description>
+  <version>0.9.0</version>
+  <description>Underbot R09 detailed visual model with 200 mm floors, 204 mm covers, and the tested R08 WR141E physical configuration.</description>
   <maintainer email="maintainer@example.invalid">Underbot project</maintainer>
   <license>Unspecified</license>
   <buildtool_depend>ament_cmake</buildtool_depend>

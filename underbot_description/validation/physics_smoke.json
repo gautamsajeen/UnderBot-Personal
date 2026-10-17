@@ -1,7 +1,7 @@
 {
   "engine": "MuJoCo 3.15.0",
   "urdf": "urdf/underbot.portable.urdf",
-  "generated_at_utc": "2026-10-11T14:21:23.294858+00:00",
+  "generated_at_utc": "2026-10-17T21:04:42.147514+00:00",
   "urdf_sha256": "589055d459d67174ca98c76689f6f99c45dc8ab15cf91992ec5ae4d87fbd9b97",
   "source_topology": {
     "link_count": 23,

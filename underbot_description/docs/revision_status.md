@@ -1,7 +1,7 @@
-# Revision R08 — 200 mm tower
+# R09 visual revision and R08 physical configuration
 
-The user explicitly changed the entire tower to200 × 200 mm plates and specified that the Kinect electronics will be removed from their casing and installed inside. R08 implements that instruction.
+R09 adds detailed, dimension-preserving visual meshes and textured viewing exports. The accepted 200 × 200 mm floor/frame bounds, 204 × 204 mm covered body and 500 mm posts remain the reference design. R08 joint origins, rotations, axes, limits, collision shapes and inertial parameters are retained.
 
-Frame and floor blanks are200 mm square, with 160 mm clear space between 20 mm posts. All sixteen horizontal rails become160 mm cuts from the original 200 mm stock. External 2 mm covers give a 204 × 204 mm covered body; the user explicitly selected this arrangement to retain exact 200 × 200 mm floor bounds. The GB70 is upright and floor-ring bottoms are reflowed to205/480/555/685 mm. The Kinect case is replaced by separate provisional internal electronics and an open optical aperture. The 500 mm posts and WR141E base stay in place.
+The source parameter/geometry manifest still identifies the R08 physical design. R09 visual meshes are built by the Blender source supplied in the final bundle, not by the older simple-mesh generator alone. If dimensions change, rebuild the physical manifest first, rebuild detailed visuals, then repeat validation and refresh the archive.
 
-Bare-camera dimensions, mass and calibration and other hardware estimates remain unverified. Current validation hashes identify R08 files; old R07 package/preview outputs remain separately available. No old R07 evidence should be used as validation of this model.
+The current mesh files and their hashes are recorded in the refreshed validation reports. Earlier render/mesh evidence is not used to validate the R09 surfaces. Actual hardware assumptions remain listed in accuracy_and_physics.md.

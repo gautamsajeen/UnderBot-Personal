@@ -5,7 +5,7 @@ find_package(ament_cmake REQUIRED)
 
 # This package contains description assets only. A simulator or hardware
 # interface supplies joint feedback and actuation separately.
-install(DIRECTORY urdf meshes launch rviz config docs
+install(DIRECTORY urdf meshes launch rviz config docs textures
   DESTINATION share/${PROJECT_NAME}
 )
 install(FILES README.md DESTINATION share/${PROJECT_NAME})

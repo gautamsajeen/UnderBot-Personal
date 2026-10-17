@@ -1,6 +1,6 @@
 # Underbot independent authoring validation
 
-Status: **PASS**
+Status: **PASS_WITH_REVIEW_NOTES**
 
 Independent Python authoring validation; no simulator import or dynamics run.
 
@@ -19,7 +19,7 @@ None.
 
 ## Review notes
 
-None.
+- base_link.stl: closed oriented visual shells touch at 4 nonmanifold edges; not a unioned physics solid
 
 ## Scope limits
 

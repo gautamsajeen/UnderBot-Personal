@@ -1,4 +1,6 @@
-# Underbot WR141E — R08, 200 mm tower
+# Underbot WR141E — R09 detailed visuals, 200 mm tower
+
+**R09 visual revision:** detailed STL surfaces and optional textured OBJ/MTL visuals, retaining the R08 physical configuration. `urdf/underbot.textured.urdf` uses the OBJ materials; support depends on the importer. The assembly STL and embedded-texture GLB are supplied in the surrounding final export bundle.
 
 The tower frame and each floor blank are now **200 × 200 mm**. Four 20 × 20 × 500 mm posts surround a 160 × 160 mm clear opening. The original sixteen 200 mm rails are cut to 160 mm. Each 3 mm clear polycarbonate floor has 20 mm corner reliefs to clear the posts and rests on the perimeter rails. Flat 2 mm matte-black plastic front/side panels attach outside the frame; the rear service panel remains clear. The covered tower is **204 × 204 mm**, as selected by the user. Hinges, fasteners and the directly mounted arms project locally beyond the nominal tower body.
 
@@ -14,8 +16,8 @@ The GB70 is upright with its 222 mm length vertical. Floor-ring bottoms are 205,
 | `urdf/underbot.urdf` | ROS package mesh paths |
 | `urdf/underbot.urdf.xacro` | Modular source entry point |
 | `urdf/underbot.gazebo.urdf` | Optional Gazebo controller/surface profile |
-| `viewer.html` | Offline joint and geometry inspector |
-| `docs/floor_plan_R08.svg` | Dimensioned 200 mm floor/frame plan |
+| `viewer.html` | Offline joint and geometry inspector; simple colours, not PBR textures |
+| `docs/floor_plan_R09.svg` | Dimensioned 200 mm floor/frame plan |
 | `config/model_parameters.json` | Dimensions and evidence classification |
 | `config/actuation.json` | Commanded, passive and mimic joints |
 | `cad/build_underbot.FCMacro` | FreeCAD native-solid reconstruction source |
@@ -47,11 +49,11 @@ The model has 23 links and 22 joints: 4 fixed, 4 continuous and 14 arm/jaw revol
 
 Estimated mass is **19.6010078 kg**. Massive links have explicit mass, COM and valid tensors; fixed shape-free sensor frames explicitly have zero mass/tensor. The stock 9.1 kg mower baseline is split among chassis, rear wheels and caster; the added NOCO is separate. Arm dimensions, installed masses, actuator ratings and bare-camera packaging remain estimates. [Accuracy register](docs/accuracy_and_physics.md) and [static review](docs/physics_review.md) describe their practical limits. No payload rating is established.
 
-Independent authoring checks cover dimensions, STL resources/topology, joint bases, mirrored FK, inertias and sampled clearances. MuJoCo imports the actual portable URDF with a mobile-root/ground/control adapter; PyBullet separately imports/renders and compares nonzero FK. Reports identify actual settings and source hashes. ROS/RViz2, Gazebo, Isaac Sim/Lab and FreeCAD native execution was unavailable. The FreeCAD macro is supplied as syntax-checked source; no native FCStd/STEP export is claimed.
+Independent authoring checks cover dimensions, STL resources/topology, joint bases, mirrored FK, inertias and sampled clearances. MuJoCo imports the actual portable URDF with a mobile-root/ground/control adapter; PyBullet separately imports the detailed visual meshes and compares nonzero FK. Reports identify actual settings and source hashes. The preview is rendered from the corresponding detailed Blender assembly. ROS/RViz2, Gazebo, Isaac Sim/Lab and FreeCAD native execution was unavailable. The FreeCAD macro is supplied as syntax-checked source; no native FCStd/STEP export is claimed.
 
 ## Rebuild after measurements
 
-Update source parameters and component definitions, then run Python 3 with NumPy:
+Update source parameters and component definitions, then run Python 3 with NumPy. These commands recreate the basic physical model and simple visuals; to retain R09 detail and textures, also rebuild and integrate the Blender export using the surrounding bundle's instructions before final checks:
 
 ```sh
 python scripts/generate_model.py

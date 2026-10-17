@@ -1,5 +1,5 @@
 {
-  "file": "urdf/underbot.portable.urdf",
+  "file": "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\urdf\\underbot.portable.urdf",
   "units": "m, kg, rad, kg m^2",
   "scope": "Independent Python authoring validation; no simulator import or dynamics run",
   "limitations": [
@@ -24,14 +24,14 @@
     "base_link": {
       "visual": {
         "min": [
-          -0.2789979875087738,
-          -0.1899981051683426,
-          0.060000449419021606
+          -0.27900001406669617,
+          -0.1899999976158142,
+          0.059999994933605194
         ],
         "max": [
-          0.2789999842643738,
-          0.19199998676776886,
-          0.732999861240387
+          0.27900001406669617,
+          0.19200000166893005,
+          0.7329999804496765
         ]
       },
       "collision": {
@@ -50,14 +50,14 @@
     "left_wheel": {
       "visual": {
         "min": [
-          -0.27249907732009887,
-          0.15200024922192096,
-          9.226799011219367e-07
+          -0.2725000011920929,
+          0.15199999590218066,
+          -1.1920928966180355e-09
         ],
         "max": [
-          -0.08750092267990112,
-          0.20199975077807902,
-          0.18499907732009888
+          -0.0874999988079071,
+          0.20200000409781932,
+          0.1850000011920929
         ]
       },
       "collision": {
@@ -76,14 +76,14 @@
     "right_wheel": {
       "visual": {
         "min": [
-          -0.27249907732009887,
-          -0.20199975077807902,
-          9.226799011219367e-07
+          -0.2725000011920929,
+          -0.20200000409781932,
+          -1.1920928966180355e-09
         ],
         "max": [
-          -0.08750092267990112,
-          -0.15200024922192096,
-          0.18499907732009888
+          -0.0874999988079071,
+          -0.15199999590218066,
+          0.1850000011920929
         ]
       },
       "collision": {
@@ -102,14 +102,14 @@
     "caster_swivel_link": {
       "visual": {
         "min": [
-          0.19000015050172805,
-          -0.02999969944357872,
-          0.034000367522239686
+          0.19000000149011612,
+          -0.029999999329447746,
+          0.03399999499320984
         ],
         "max": [
-          0.22399991020560264,
-          0.02999969944357872,
-          0.12499984972178936
+          0.2239999996125698,
+          0.029999999329447746,
+          0.12499999966472387
         ]
       },
       "collision": {
@@ -128,14 +128,14 @@
     "caster_link": {
       "visual": {
         "min": [
-          0.1550003995001316,
-          -0.02049979567527771,
-          3.9950013160094944e-07
+          0.15500000089406968,
+          -0.020500000566244125,
+          8.940696655246327e-10
         ],
         "max": [
-          0.2349996004998684,
-          0.02049979567527771,
-          0.07999960049986839
+          0.23499999910593034,
+          0.020500000566244125,
+          0.07999999910593032
         ]
       },
       "collision": {
@@ -154,14 +154,14 @@
     "camera_mount": {
       "visual": {
         "min": [
-          -0.03249977447092533,
-          -0.0772499218583107,
-          0.6115000157058239
+          -0.032499999850988386,
+          -0.07725000381469727,
+          0.6115000008046627
         ],
         "max": [
-          0.02899999439716339,
-          0.0772499218583107,
-          0.6594998745620251
+          0.029000001847743987,
+          0.07725000381469727,
+          0.6595000012218952
         ]
       },
       "collision": {
@@ -180,14 +180,14 @@
     "lidar_mount": {
       "visual": {
         "min": [
-          -0.10519964963197709,
-          -0.03519964963197708,
-          0.7330002249999937
+          -0.10519999980926514,
+          -0.03519999980926514,
+          0.733
         ],
         "max": [
-          -0.034800350368022925,
-          0.03519964963197708,
-          0.7779997745454311
+          -0.03480000019073487,
+          0.03519999980926514,
+          0.7780000017881393
         ]
       },
       "collision": {
@@ -206,14 +206,14 @@
     "left_arm_base": {
       "visual": {
         "min": [
-          -0.09999969944381376,
-          0.10800000999970615,
-          0.5150003005564213
+          -0.09999999932968279,
+          0.1079999999997062,
+          0.5150000006705523
         ],
         "max": [
-          -0.04000030055642129,
-          0.15599988120823677,
-          0.5749996994438138
+          -0.04000000067055226,
+          0.15600000041752632,
+          0.5749999993296828
         ]
       },
       "collision": {
@@ -232,14 +232,14 @@
     "left_upper_arm": {
       "visual": {
         "min": [
-          -0.08699998974850703,
-          0.1289117982694517,
-          0.4478178494150738
+          -0.08700000092437793,
+          0.12891154376052655,
+          0.4478173353490164
         ],
         "max": [
-          -0.05300001025211973,
-          0.21132494722222392,
-          0.5600619148114494
+          -0.05299999907624883,
+          0.21132531607011198,
+          0.5600621768199043
         ]
       },
       "collision": {
@@ -258,14 +258,14 @@
     "left_forearm": {
       "visual": {
         "min": [
-          -0.08699998974889472,
-          0.19150008979477284,
-          0.4360675121918915
+          -0.08700000092476562,
+          0.19150000038780565,
+          0.43606733337795717
         ],
         "max": [
-          -0.05300001025240777,
-          0.29049954909164905,
-          0.4720671530146938
+          -0.05299999907653687,
+          0.29050000357706546,
+          0.47206733182862815
         ]
       },
       "collision": {
@@ -284,14 +284,14 @@
     "left_wrist": {
       "visual": {
         "min": [
-          -0.0869999897490579,
-          0.27141179827003287,
-          0.4088464469886859
+          -0.0870000009249288,
+          0.27141154376110765,
+          0.4088461877921153
         ],
         "max": [
-          -0.05300001025281749,
-          0.3238250969046372,
-          0.4691292474153002
+          -0.052999999076946594,
+          0.32382531860355845,
+          0.46912950942375525
         ]
       },
       "collision": {
@@ -310,14 +310,14 @@
     "left_hand": {
       "visual": {
         "min": [
-          -0.09399975992853335,
-          0.29341178840943294,
-          0.38184772364434394
+          -0.0940000002097576,
+          0.2934115436793948,
+          0.3818474793799671
         ],
         "max": [
-          -0.04600024007354998,
-          0.34258821183448196,
-          0.43102414672840733
+          -0.045999999792325726,
+          0.3425884560988588,
+          0.43102439179933316
         ]
       },
       "collision": {
@@ -336,14 +336,14 @@
     "left_gripper_left": {
       "visual": {
         "min": [
-          -0.06788945090893508,
-          0.3147058791402197,
-          0.3448361275811054
+          -0.0677401915651914,
+          0.31470577167636254,
+          0.3449652049215277
         ],
         "max": [
-          -0.04600006001916416,
-          0.3587607662053231,
-          0.403141609887654
+          -0.045999999948858096,
+          0.35868629498721943,
+          0.40314170661354864
         ]
       },
       "collision": {
@@ -362,14 +362,14 @@
     "left_gripper_right": {
       "visual": {
         "min": [
-          -0.09399993998307588,
-          0.31470587914009185,
-          0.3448361275811054
+          -0.09400000005338156,
+          0.314705771676234,
+          0.3449652049215277
         ],
         "max": [
-          -0.07211054909330494,
-          0.35876076620519526,
-          0.403141609887654
+          -0.07225980843704827,
+          0.35868629498709087,
+          0.40314170661354864
         ]
       },
       "collision": {
@@ -388,14 +388,14 @@
     "right_arm_base": {
       "visual": {
         "min": [
-          -0.09999969944381376,
-          -0.15599988120823677,
-          0.5150003005564213
+          -0.09999999932968279,
+          -0.15600000041752632,
+          0.5150000006705523
         ],
         "max": [
-          -0.04000030055642129,
-          -0.10800000999970615,
-          0.5749996994438138
+          -0.04000000067055226,
+          -0.1079999999997062,
+          0.5749999993296828
         ]
       },
       "collision": {
@@ -414,14 +414,14 @@
     "right_upper_arm": {
       "visual": {
         "min": [
-          -0.08699998974850703,
-          -0.21132494722222392,
-          0.4478178494150738
+          -0.08700000092437793,
+          -0.21132531607011198,
+          0.4478173353490164
         ],
         "max": [
-          -0.05300001025211973,
-          -0.1289117982694517,
-          0.5600619148114494
+          -0.05299999907624883,
+          -0.12891154376052655,
+          0.5600621768199043
         ]
       },
       "collision": {
@@ -440,14 +440,14 @@
     "right_forearm": {
       "visual": {
         "min": [
-          -0.08699998974889472,
-          -0.29049954909164905,
-          0.4360675121918915
+          -0.08700000092476562,
+          -0.29050000357706546,
+          0.43606733337795717
         ],
         "max": [
-          -0.05300001025240777,
-          -0.19150008979477284,
-          0.4720671530146938
+          -0.05299999907653687,
+          -0.19150000038780565,
+          0.47206733182862815
         ]
       },
       "collision": {
@@ -466,14 +466,14 @@
     "right_wrist": {
       "visual": {
         "min": [
-          -0.0869999897490579,
-          -0.3238250969046372,
-          0.4088464469886859
+          -0.0870000009249288,
+          -0.32382531860355845,
+          0.4088461877921153
         ],
         "max": [
-          -0.05300001025281749,
-          -0.27141179827003287,
-          0.4691292474153002
+          -0.052999999076946594,
+          -0.27141154376110765,
+          0.46912950942375525
         ]
       },
       "collision": {
@@ -492,14 +492,14 @@
     "right_hand": {
       "visual": {
         "min": [
-          -0.09399975992853335,
-          -0.34258821183448196,
-          0.38184772364434394
+          -0.0940000002097576,
+          -0.3425884560988588,
+          0.3818474793799671
         ],
         "max": [
-          -0.04600024007354998,
-          -0.29341178840943294,
-          0.43102414672840733
+          -0.045999999792325726,
+          -0.2934115436793948,
+          0.43102439179933316
         ]
       },
       "collision": {
@@ -518,14 +518,14 @@
     "right_gripper_left": {
       "visual": {
         "min": [
-          -0.09399993998307588,
-          -0.35876076620519526,
-          0.3448361275811054
+          -0.09400000005338156,
+          -0.35868629498709087,
+          0.3449652049215277
         ],
         "max": [
-          -0.07211054909330494,
-          -0.31470587914009185,
-          0.403141609887654
+          -0.07225980843704827,
+          -0.314705771676234,
+          0.40314170661354864
         ]
       },
       "collision": {
@@ -544,14 +544,14 @@
     "right_gripper_right": {
       "visual": {
         "min": [
-          -0.06788945090893508,
-          -0.3587607662053231,
-          0.3448361275811054
+          -0.0677401915651914,
+          -0.35868629498721943,
+          0.3449652049215277
         ],
         "max": [
-          -0.04600006001916416,
-          -0.3147058791402197,
-          0.403141609887654
+          -0.045999999948858096,
+          -0.31470577167636254,
+          0.40314170661354864
         ]
       },
       "collision": {
@@ -569,855 +569,855 @@
     }
   },
   "stl_meshes": {
-    "meshes/base_link.stl": {
-      "triangles": 1988,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link.stl": {
+      "triangles": 26452,
       "bounds_min": [
-        -0.2789979875087738,
-        -0.14799852669239044,
-        0.060000449419021606
+        -0.27900001406669617,
+        -0.14800000190734863,
+        0.059999994933605194
       ],
       "bounds_max": [
-        0.2789999842643738,
-        0.14799852669239044,
-        0.732999861240387
+        0.27900001406669617,
+        0.14800000190734863,
+        0.7329999804496765
       ],
-      "signed_volume_m3": 0.013501379775619294,
+      "signed_volume_m3": 0.013500807893261508,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 4,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": false
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link_worx_orange.stl": {
+      "triangles": 2488,
+      "bounds_min": [
+        -0.27900001406669617,
+        -0.1899999976158142,
+        0.12299999594688416
+      ],
+      "bounds_max": [
+        0.27900001406669617,
+        0.1899999976158142,
+        0.20499999821186066
+      ],
+      "signed_volume_m3": 0.012083357765031624,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/base_link_worx_orange.stl": {
-      "triangles": 236,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link_servo_black.stl": {
+      "triangles": 7848,
       "bounds_min": [
-        -0.2789972126483917,
-        -0.1899981051683426,
-        0.12300032377243042
+        -0.1770000010728836,
+        -0.18700000643730164,
+        0.07499999552965164
       ],
       "bounds_max": [
-        0.2789972126483917,
-        0.1899981051683426,
-        0.20499995350837708
+        0.27900001406669617,
+        0.18700000643730164,
+        0.6060000061988831
       ],
-      "signed_volume_m3": 0.012084388404093918,
+      "signed_volume_m3": 0.0022992073751595824,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/base_link_servo_black.stl": {
-      "triangles": 624,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link_control_red.stl": {
+      "triangles": 376,
       "bounds_min": [
-        -0.1769999861717224,
-        -0.18699997663497925,
-        0.07500037550926208
+        0.06499999761581421,
+        -0.03199999779462814,
+        0.15300001204013824
       ],
       "bounds_max": [
-        0.2789999842643738,
-        0.18699997663497925,
-        0.6059998869895935
+        0.1525000035762787,
+        0.19050000607967377,
+        0.20499999821186066
       ],
-      "signed_volume_m3": 0.0022997857291195793,
+      "signed_volume_m3": 3.0482189357049162e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/base_link_control_red.stl": {
-      "triangles": 24,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link_aluminium.stl": {
+      "triangles": 45128,
       "bounds_min": [
-        0.06500034779310226,
-        -0.03199978172779083,
-        0.1530001163482666
+        -0.17800000309944153,
+        -0.1080000028014183,
+        0.16200000047683716
       ],
       "bounds_max": [
-        0.15249982476234436,
-        0.19049996137619019,
-        0.20499995350837708
-      ],
-      "signed_volume_m3": 3.0519095164389813e-05,
-      "degenerate_triangles": 0,
-      "open_or_nonmanifold_edges": 0,
-      "inconsistently_oriented_edges": 0,
-      "closed_oriented_multishell_surface": true,
-      "closed": true
-    },
-    "meshes/base_link_aluminium.stl": {
-      "triangles": 6216,
-      "bounds_min": [
-        -0.17799997329711914,
-        -0.10799995809793472,
-        0.16200003027915955
-      ],
-      "bounds_max": [
-        0.12899993360042572,
-        0.19199998676776886,
+        0.1290000081062317,
+        0.19200000166893005,
         0.6754999756813049
       ],
-      "signed_volume_m3": 1.670136817496535e-05,
+      "signed_volume_m3": 1.6505987314308897e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/base_link_polycarbonate.stl": {
-      "triangles": 188,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link_polycarbonate.stl": {
+      "triangles": 2476,
       "bounds_min": [
-        -0.171999990940094,
-        -0.09999900311231613,
+        -0.1720000058412552,
+        -0.10000000149011612,
         0.22500000894069672
       ],
       "bounds_max": [
-        0.02999899908900261,
-        0.09999900311231613,
+        0.030000001192092896,
+        0.10000000149011612,
         0.7080000042915344
       ],
-      "signed_volume_m3": 0.000644781677234408,
+      "signed_volume_m3": 0.0006447878528193964,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/base_link_pcb_green.stl": {
-      "triangles": 72,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\base_link_pcb_green.stl": {
+      "triangles": 1128,
       "bounds_min": [
-        -0.09799972176551819,
-        -0.04249957576394081,
+        -0.09800000488758087,
+        -0.042500000447034836,
         0.4165000021457672
       ],
       "bounds_max": [
-        -0.005000200122594833,
-        0.04249957576394081,
+        -0.005000000819563866,
+        0.042500000447034836,
         0.5839999914169312
       ],
-      "signed_volume_m3": 4.735057567128441e-05,
+      "signed_volume_m3": 4.7297535748901715e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_wheel.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_wheel.stl": {
+      "triangles": 3456,
       "bounds_min": [
-        -0.09249907732009888,
-        -0.024999750778079033,
-        -0.09249907732009888
+        -0.0925000011920929,
+        -0.02500000409781933,
+        -0.0925000011920929
       ],
       "bounds_max": [
-        0.09249907732009888,
-        0.024999750778079033,
-        0.09249907732009888
+        0.0925000011920929,
+        0.02500000409781933,
+        0.0925000011920929
       ],
-      "signed_volume_m3": 0.0013401375349784653,
+      "signed_volume_m3": 0.0009407741447469417,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_wheel_aluminium.stl": {
-      "triangles": 2496,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_wheel_aluminium.stl": {
+      "triangles": 16892,
       "bounds_min": [
-        -0.051799483597278595,
-        -0.024749992415308952,
-        -0.051799483597278595
+        -0.05180000141263008,
+        -0.02474999986588955,
+        -0.05180000141263008
       ],
       "bounds_max": [
-        0.051799483597278595,
-        0.024749992415308952,
-        0.051799483597278595
+        0.05180000141263008,
+        0.02474999986588955,
+        0.05180000141263008
       ],
-      "signed_volume_m3": 0.0004036819637051904,
+      "signed_volume_m3": 0.000404736371770048,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_wheel.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_wheel.stl": {
+      "triangles": 3456,
       "bounds_min": [
-        -0.09249907732009888,
-        -0.024999750778079033,
-        -0.09249907732009888
+        -0.0925000011920929,
+        -0.02500000409781933,
+        -0.0925000011920929
       ],
       "bounds_max": [
-        0.09249907732009888,
-        0.024999750778079033,
-        0.09249907732009888
+        0.0925000011920929,
+        0.02500000409781933,
+        0.0925000011920929
       ],
-      "signed_volume_m3": 0.0013401375349784653,
+      "signed_volume_m3": 0.0009407741447469417,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_wheel_aluminium.stl": {
-      "triangles": 2496,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_wheel_aluminium.stl": {
+      "triangles": 16892,
       "bounds_min": [
-        -0.051799483597278595,
-        -0.024749992415308952,
-        -0.051799483597278595
+        -0.05180000141263008,
+        -0.02474999986588955,
+        -0.05180000141263008
       ],
       "bounds_max": [
-        0.051799483597278595,
-        0.024749992415308952,
-        0.051799483597278595
+        0.05180000141263008,
+        0.02474999986588955,
+        0.05180000141263008
       ],
-      "signed_volume_m3": 0.0004036819637051904,
+      "signed_volume_m3": 0.000404736371770048,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/caster_swivel_link_aluminium.stl": {
-      "triangles": 384,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\caster_swivel_link_aluminium.stl": {
+      "triangles": 4088,
       "bounds_min": [
-        -0.02349996566772461,
-        -0.02999969944357872,
-        -0.07349996268749237
+        -0.023499999195337296,
+        -0.029999999329447746,
+        -0.07349999994039536
       ],
       "bounds_max": [
-        0.008999910205602646,
-        0.02999969944357872,
-        0.01499984972178936
+        0.008999999612569809,
+        0.029999999329447746,
+        0.014999999664723873
       ],
-      "signed_volume_m3": 9.91447261400138e-06,
+      "signed_volume_m3": 9.935305495889005e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/caster_swivel_link.stl": {
-      "triangles": 24,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\caster_swivel_link.stl": {
+      "triangles": 376,
       "bounds_min": [
-        -0.024999849498271942,
-        -0.028999969363212585,
-        -0.07599963247776031
+        -0.02499999850988388,
+        -0.029000001028180122,
+        -0.07600000500679016
       ],
       "bounds_max": [
-        0.004999849945306778,
-        0.028999969363212585,
-        -0.0020003700628876686
+        0.004999999888241291,
+        0.029000001028180122,
+        -0.0020000003278255463
       ],
-      "signed_volume_m3": 2.6639199035148457e-05,
+      "signed_volume_m3": 2.6589690946785873e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/caster_link.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\caster_link.stl": {
+      "triangles": 3068,
       "bounds_min": [
-        -0.03999960049986839,
-        -0.019999800249934196,
-        -0.03999960049986839
+        -0.03999999910593033,
+        -0.020000001415610313,
+        -0.03999999910593033
       ],
       "bounds_max": [
-        0.03999960049986839,
-        0.019999800249934196,
-        0.03999960049986839
+        0.03999999910593033,
+        0.020000001415610313,
+        0.03999999910593033
       ],
-      "signed_volume_m3": 0.00020048222187808395,
+      "signed_volume_m3": 0.00020100598296880637,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/caster_link_servo_black.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\caster_link_servo_black.stl": {
+      "triangles": 2044,
       "bounds_min": [
-        -0.016999829560518265,
-        -0.02049979567527771,
-        -0.016999829560518265
+        -0.017000000923871994,
+        -0.020500000566244125,
+        -0.017000000923871994
       ],
       "bounds_max": [
-        0.016999829560518265,
-        0.02049979567527771,
-        0.016999829560518265
+        0.017000000923871994,
+        0.020500000566244125,
+        0.017000000923871994
       ],
-      "signed_volume_m3": 3.711740314034878e-05,
+      "signed_volume_m3": 3.720128754843618e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/camera_mount_pcb_green.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\camera_mount_pcb_green.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.02749977447092533,
-        -0.07499925047159195,
-        -0.0234999842941761
+        -0.027499999850988388,
+        -0.07500000298023224,
+        -0.023499999195337296
       ],
       "bounds_max": [
-        0.01749977469444275,
-        0.07499925047159195,
-        -0.02050001546740532
+        0.017500001937150955,
+        0.07500000298023224,
+        -0.020500000566244125
       ],
-      "signed_volume_m3": 2.0249384338686675e-05,
+      "signed_volume_m3": 2.0238611332925988e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/camera_mount_aluminium.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\camera_mount_aluminium.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.02749977447092533,
-        -0.049999501556158066,
-        -0.020499899983406067
+        -0.027499999850988388,
+        -0.05000000074505806,
+        -0.020500000566244125
       ],
       "bounds_max": [
-        0.01749977469444275,
-        0.049999501556158066,
-        -0.000500100024510175
+        0.017500001937150955,
+        0.05000000074505806,
+        -0.0005000000819563866
       ],
-      "signed_volume_m3": 8.999730097383312e-05,
+      "signed_volume_m3": 8.993075989675013e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/camera_mount.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\camera_mount.stl": {
+      "triangles": 188,
       "bounds_min": [
-        0.00600012019276619,
-        -0.076999232172966,
-        -0.0004998749936930835
+        0.0059999991208314896,
+        -0.07699999958276749,
+        -0.0005000000819563866
       ],
       "bounds_max": [
-        0.029999880120158195,
-        0.076999232172966,
-        0.02449987456202507
+        0.029999999329447746,
+        0.07699999958276749,
+        0.024500001221895218
       ],
-      "signed_volume_m3": 9.239722871365884e-05,
+      "signed_volume_m3": 9.23147035683342e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/camera_mount_servo_black.stl": {
-      "triangles": 396,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\camera_mount_servo_black.stl": {
+      "triangles": 4276,
       "bounds_min": [
-        0.026000039651989937,
-        -0.0772499218583107,
-        -0.001499920035712421
+        0.025999998673796654,
+        -0.07725000381469727,
+        -0.0015000003622844815
       ],
       "bounds_max": [
-        0.03399999439716339,
-        0.0772499218583107,
-        0.019999919459223747
+        0.03400000184774399,
+        0.07725000381469727,
+        0.020000001415610313
       ],
-      "signed_volume_m3": 3.6577027779067606e-06,
+      "signed_volume_m3": 3.660308459661283e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/lidar_mount_servo_black.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\lidar_mount_servo_black.stl": {
+      "triangles": 3068,
       "bounds_min": [
-        -0.034999649971723557,
-        -0.034999649971723557,
-        2.2499999374758772e-07
+        -0.03500000014901161,
+        -0.03500000014901161,
+        0.0
       ],
       "bounds_max": [
-        0.034999649971723557,
-        0.034999649971723557,
-        0.04499977454543114
+        0.03500000014901161,
+        0.03500000014901161,
+        0.04500000178813934
       ],
-      "signed_volume_m3": 0.00017268096760597723,
+      "signed_volume_m3": 0.00017313185055711606,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/lidar_mount_worx_orange.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\lidar_mount_worx_orange.stl": {
+      "triangles": 3068,
       "bounds_min": [
-        -0.03519964963197708,
-        -0.03519964963197708,
-        0.0040000202134251595
+        -0.03519999980926514,
+        -0.03519999980926514,
+        0.003999999724328518
       ],
       "bounds_max": [
-        0.03519964963197708,
-        0.03519964963197708,
-        0.007999979890882969
+        0.03519999980926514,
+        0.03519999980926514,
+        0.00800000037997961
       ],
-      "signed_volume_m3": 1.5525341423345394e-05,
+      "signed_volume_m3": 1.5558805798908528e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_arm_base_servo_black.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_arm_base_servo_black.stl": {
+      "triangles": 3068,
       "bounds_min": [
-        -0.020999789237976074,
-        -0.020999789237976074,
-        0.004000150132924318
+        -0.020999999716877937,
+        -0.020999999716877937,
+        0.003999999724328518
       ],
       "bounds_max": [
-        0.020999789237976074,
-        0.020999789237976074,
-        0.03399984911084175
+        0.020999999716877937,
+        0.020999999716877937,
+        0.03399999812245369
       ],
-      "signed_volume_m3": 4.1443431112334616e-05,
+      "signed_volume_m3": 4.154534293667774e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_arm_base_aluminium.stl": {
-      "triangles": 24,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_arm_base_aluminium.stl": {
+      "triangles": 376,
       "bounds_min": [
-        -0.02999969944357872,
-        -0.02999969944357872,
-        9.99999993922529e-09
+        -0.029999999329447746,
+        -0.029999999329447746,
+        0.0
       ],
       "bounds_max": [
-        0.02999969944357872,
-        0.02999969944357872,
-        0.04799988120794296
+        0.029999999329447746,
+        0.029999999329447746,
+        0.04800000041723251
       ],
-      "signed_volume_m3": 4.583862614604819e-05,
+      "signed_volume_m3": 4.579298986177121e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_upper_arm_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_upper_arm_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.006999799981713295,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.03299979865550995,
-        0.009999900124967098,
-        0.017999820411205292
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.879913604527366e-05,
+      "signed_volume_m3": 2.8759902888175768e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_upper_arm_aluminium.stl": {
-      "triangles": 1176,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_upper_arm_aluminium.stl": {
+      "triangles": 9072,
       "bounds_min": [
-        -0.008999910205602646,
-        -0.0169999897480011,
-        -0.012499875389039516
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
       ],
       "bounds_max": [
-        0.10499947518110275,
-        0.0169999897480011,
-        0.012499875389039516
+        0.10499999672174454,
+        0.017000000923871994,
+        0.012500000186264515
       ],
-      "signed_volume_m3": 1.1589811358425255e-05,
+      "signed_volume_m3": 1.158012479089451e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_forearm_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_forearm_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.006999799981713295,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.03299979865550995,
-        0.009999900124967098,
-        0.017999820411205292
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.879913604527366e-05,
+      "signed_volume_m3": 2.8759902888175768e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_forearm_aluminium.stl": {
-      "triangles": 1176,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_forearm_aluminium.stl": {
+      "triangles": 9072,
       "bounds_min": [
-        -0.008999910205602646,
-        -0.0169999897480011,
-        -0.012499875389039516
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
       ],
       "bounds_max": [
-        0.08999954909086227,
-        0.0169999897480011,
-        0.012499875389039516
+        0.09000000357627869,
+        0.017000000923871994,
+        0.012500000186264515
       ],
-      "signed_volume_m3": 1.0089855635046237e-05,
+      "signed_volume_m3": 1.0080893139305349e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_wrist_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_wrist_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.006999799981713295,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.03299979865550995,
-        0.009999900124967098,
-        0.017999820411205292
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.879913604527366e-05,
+      "signed_volume_m3": 2.8759902888175768e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_wrist_aluminium.stl": {
-      "triangles": 1176,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_wrist_aluminium.stl": {
+      "triangles": 9072,
       "bounds_min": [
-        -0.008999910205602646,
-        -0.0169999897480011,
-        -0.012499875389039516
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
       ],
       "bounds_max": [
-        0.04499977454543114,
-        0.0169999897480011,
-        0.012499875389039516
+        0.04500000178813934,
+        0.017000000923871994,
+        0.012500000186264515
       ],
-      "signed_volume_m3": 5.589988802167773e-06,
+      "signed_volume_m3": 5.5831961419861476e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_hand_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_hand_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.007999819703400135,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.007999999448657036,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.027999820187687874,
-        0.009999900124967098,
-        0.017999820411205292
+        0.0279999990016222,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.5919223245392936e-05,
+      "signed_volume_m3": 2.5881592554740974e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_hand_aluminium.stl": {
-      "triangles": 204,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_hand_aluminium.stl": {
+      "triangles": 2232,
       "bounds_min": [
-        -0.0009999600006267428,
-        -0.023999759927392006,
-        -0.01799996942281723
+        -0.0010000007459893823,
+        -0.024000000208616257,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.02499987557530403,
-        0.023999759927392006,
-        0.013999859802424908
+        0.02500000037252903,
+        0.024000000208616257,
+        0.014000000432133675
       ],
-      "signed_volume_m3": 1.2111597864239086e-05,
+      "signed_volume_m3": 1.2099035081750907e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_gripper_left_aluminium.stl": {
-      "triangles": 204,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_gripper_left_aluminium.stl": {
+      "triangles": 2232,
       "bounds_min": [
-        -0.0059999399818480015,
-        -0.015889450907707214,
-        -0.008999910205602646
+        -0.006000000052154064,
+        -0.01574019156396389,
+        -0.008999999612569809
       ],
       "bounds_max": [
-        0.05093323066830635,
-        0.0059999399818480015,
-        0.008999910205602646
+        0.05078413337469101,
+        0.006000000052154064,
+        0.008999999612569809
       ],
-      "signed_volume_m3": 7.788731586626217e-06,
+      "signed_volume_m3": 7.763253371951737e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/left_gripper_right_aluminium.stl": {
-      "triangles": 204,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\left_gripper_right_aluminium.stl": {
+      "triangles": 2232,
       "bounds_min": [
-        -0.0059999399818480015,
-        -0.0059999399818480015,
-        -0.008999910205602646
+        -0.006000000052154064,
+        -0.006000000052154064,
+        -0.008999999612569809
       ],
       "bounds_max": [
-        0.05093323066830635,
-        0.015889450907707214,
-        0.008999910205602646
+        0.05078413337469101,
+        0.01574019156396389,
+        0.008999999612569809
       ],
-      "signed_volume_m3": 7.788731586626217e-06,
+      "signed_volume_m3": 7.76325337195174e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_arm_base_servo_black.stl": {
-      "triangles": 192,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_arm_base_servo_black.stl": {
+      "triangles": 3068,
       "bounds_min": [
-        -0.020999789237976074,
-        -0.020999789237976074,
-        0.004000150132924318
+        -0.020999999716877937,
+        -0.020999999716877937,
+        0.003999999724328518
       ],
       "bounds_max": [
-        0.020999789237976074,
-        0.020999789237976074,
-        0.03399984911084175
+        0.020999999716877937,
+        0.020999999716877937,
+        0.03399999812245369
       ],
-      "signed_volume_m3": 4.1443431112334616e-05,
+      "signed_volume_m3": 4.154534293667774e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_arm_base_aluminium.stl": {
-      "triangles": 24,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_arm_base_aluminium.stl": {
+      "triangles": 376,
       "bounds_min": [
-        -0.02999969944357872,
-        -0.02999969944357872,
-        9.99999993922529e-09
+        -0.029999999329447746,
+        -0.029999999329447746,
+        0.0
       ],
       "bounds_max": [
-        0.02999969944357872,
-        0.02999969944357872,
-        0.04799988120794296
+        0.029999999329447746,
+        0.029999999329447746,
+        0.04800000041723251
       ],
-      "signed_volume_m3": 4.583862614604819e-05,
+      "signed_volume_m3": 4.579298986177121e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_upper_arm_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_upper_arm_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.006999799981713295,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.03299979865550995,
-        0.009999900124967098,
-        0.017999820411205292
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.879913604527366e-05,
+      "signed_volume_m3": 2.8759902888175768e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_upper_arm_aluminium.stl": {
-      "triangles": 1176,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_upper_arm_aluminium.stl": {
+      "triangles": 9072,
       "bounds_min": [
-        -0.008999910205602646,
-        -0.0169999897480011,
-        -0.012499875389039516
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
       ],
       "bounds_max": [
-        0.10499947518110275,
-        0.0169999897480011,
-        0.012499875389039516
+        0.10499999672174454,
+        0.017000000923871994,
+        0.012500000186264515
       ],
-      "signed_volume_m3": 1.1589811358425255e-05,
+      "signed_volume_m3": 1.158012479089451e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_forearm_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_forearm_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.006999799981713295,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.03299979865550995,
-        0.009999900124967098,
-        0.017999820411205292
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.879913604527366e-05,
+      "signed_volume_m3": 2.8759902888175768e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_forearm_aluminium.stl": {
-      "triangles": 1176,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_forearm_aluminium.stl": {
+      "triangles": 9072,
       "bounds_min": [
-        -0.008999910205602646,
-        -0.0169999897480011,
-        -0.012499875389039516
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
       ],
       "bounds_max": [
-        0.08999954909086227,
-        0.0169999897480011,
-        0.012499875389039516
+        0.09000000357627869,
+        0.017000000923871994,
+        0.012500000186264515
       ],
-      "signed_volume_m3": 1.0089855635046237e-05,
+      "signed_volume_m3": 1.0080893139305349e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_wrist_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_wrist_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.006999799981713295,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.03299979865550995,
-        0.009999900124967098,
-        0.017999820411205292
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.879913604527366e-05,
+      "signed_volume_m3": 2.8759902888175768e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_wrist_aluminium.stl": {
-      "triangles": 1176,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_wrist_aluminium.stl": {
+      "triangles": 9072,
       "bounds_min": [
-        -0.008999910205602646,
-        -0.0169999897480011,
-        -0.012499875389039516
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
       ],
       "bounds_max": [
-        0.04499977454543114,
-        0.0169999897480011,
-        0.012499875389039516
+        0.04500000178813934,
+        0.017000000923871994,
+        0.012500000186264515
       ],
-      "signed_volume_m3": 5.589988802167773e-06,
+      "signed_volume_m3": 5.5831961419861476e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_hand_servo_black.stl": {
-      "triangles": 12,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_hand_servo_black.stl": {
+      "triangles": 188,
       "bounds_min": [
-        -0.007999819703400135,
-        -0.009999900124967098,
-        -0.017999820411205292
+        -0.007999999448657036,
+        -0.009999999776482582,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.027999820187687874,
-        0.009999900124967098,
-        0.017999820411205292
+        0.0279999990016222,
+        0.009999999776482582,
+        0.017999999225139618
       ],
-      "signed_volume_m3": 2.5919223245392936e-05,
+      "signed_volume_m3": 2.5881592554740974e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_hand_aluminium.stl": {
-      "triangles": 204,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_hand_aluminium.stl": {
+      "triangles": 2232,
       "bounds_min": [
-        -0.0009999600006267428,
-        -0.023999759927392006,
-        -0.01799996942281723
+        -0.0010000007459893823,
+        -0.024000000208616257,
+        -0.017999999225139618
       ],
       "bounds_max": [
-        0.02499987557530403,
-        0.023999759927392006,
-        0.013999859802424908
+        0.02500000037252903,
+        0.024000000208616257,
+        0.014000000432133675
       ],
-      "signed_volume_m3": 1.2111597864239086e-05,
+      "signed_volume_m3": 1.2099035081750907e-05,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_gripper_left_aluminium.stl": {
-      "triangles": 204,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_gripper_left_aluminium.stl": {
+      "triangles": 2232,
       "bounds_min": [
-        -0.0059999399818480015,
-        -0.015889450907707214,
-        -0.008999910205602646
+        -0.006000000052154064,
+        -0.01574019156396389,
+        -0.008999999612569809
       ],
       "bounds_max": [
-        0.05093323066830635,
-        0.0059999399818480015,
-        0.008999910205602646
+        0.05078413337469101,
+        0.006000000052154064,
+        0.008999999612569809
       ],
-      "signed_volume_m3": 7.788731586626217e-06,
+      "signed_volume_m3": 7.763253371951737e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
       "closed_oriented_multishell_surface": true,
       "closed": true
     },
-    "meshes/right_gripper_right_aluminium.stl": {
-      "triangles": 204,
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Final_R09\\underbot_description\\meshes\\right_gripper_right_aluminium.stl": {
+      "triangles": 2232,
       "bounds_min": [
-        -0.0059999399818480015,
-        -0.0059999399818480015,
-        -0.008999910205602646
+        -0.006000000052154064,
+        -0.006000000052154064,
+        -0.008999999612569809
       ],
       "bounds_max": [
-        0.05093323066830635,
-        0.015889450907707214,
-        0.008999910205602646
+        0.05078413337469101,
+        0.01574019156396389,
+        0.008999999612569809
       ],
-      "signed_volume_m3": 7.788731586626217e-06,
+      "signed_volume_m3": 7.76325337195174e-06,
       "degenerate_triangles": 0,
       "open_or_nonmanifold_edges": 0,
       "inconsistently_oriented_edges": 0,
@@ -2812,7 +2812,8 @@
     "limitations": "Based on declared estimated masses; ignores payload, acceleration, friction, gear efficiency and multi-joint combinations."
   },
   "errors": [],
-  "warnings": [],
-  "status": "PASS",
-  "publication_note": "Local authoring paths normalized to package-relative paths; results and tested model hashes unchanged."
+  "warnings": [
+    "base_link.stl: closed oriented visual shells touch at 4 nonmanifold edges; not a unioned physics solid"
+  ],
+  "status": "PASS_WITH_REVIEW_NOTES"
 }

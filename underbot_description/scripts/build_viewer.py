@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 PASSIVE_JOINTS = {"caster_swivel_joint", "caster_wheel_joint"}
-REVISION = "R08"
+REVISION = "R09"
 
 
 def replace_once(template, original, replacement):
