@@ -520,19 +520,19 @@ class Validator:
             'checks': checks}
 
     def sketch_dimensions(self):
-        """Check independently transcribed R08 nominal geometry, not hardware accuracy."""
+        """Check independently transcribed R10 nominal geometry, not hardware accuracy."""
         path = self.package/'config'/'geometry_manifest.json'
         if not path.is_file():
-            self.error('R08 source geometry manifest is missing')
+            self.error('R10 source geometry manifest is missing')
             return
         data = json.loads(path.read_text(encoding='utf-8-sig'))
         expected = {'base_length': .558, 'base_width': .404, 'base_height': .205,
                     'frame_width': .200, 'frame_depth': .200,
                     'post_size': .020, 'post_length': .500, 'post_bottom': .205,
-                    'frame_center_x': -.070, 'ring_bottoms': [.205, .480, .555, .685],
+                    'frame_center_x': -.140, 'ring_bottoms': [.205, .480, .555, .685],
                     'width_rail_length': .160, 'depth_rail_length': .160,
                     'shelf_thickness': .003, 'arm_root_z': .545, 'arm_root_y': .108,
-                    'camera_center': [-.005, 0, .635],
+                    'camera_center': [-.075, 0, .635],
                     'camera_optical_offset': [.034, .06925, .0065],
                     'camera_aperture_half_width': .078,
                     'camera_aperture_bottom': .603, 'camera_aperture_top': .6625,
@@ -545,7 +545,7 @@ class Validator:
                 return False
         def require(actual_value, expected_value, label, tolerance=1e-9):
             if not same(actual_value, expected_value, tolerance):
-                self.error(f'R08 {label}: expected {expected_value}, found {actual_value}')
+                self.error(f'R10 {label}: expected {expected_value}, found {actual_value}')
         def dark_opaque(part):
             rgba = np.asarray(part.get('rgba', []), dtype=float)
             return rgba.shape == (4,) and np.isfinite(rgba).all() and np.max(rgba[:3]) <= .12 and abs(rgba[3]-1) < 1e-8
@@ -557,89 +557,92 @@ class Validator:
         posts = [p for p in parts if p.get('name', '').startswith('post_')]
         rails = [p for p in parts if p.get('name', '').startswith('rail_')]
         if len(posts) != 4 or len(rails) != 16:
-            self.error(f'R08 stock count: expected 4 posts / 16 rails; found {len(posts)} / {len(rails)}')
-        post_centres = [(-.160, -.090, .455), (-.160, .090, .455),
-                        (.020, -.090, .455), (.020, .090, .455)]
+            self.error(f'R10 stock count: expected 4 posts / 16 rails; found {len(posts)} / {len(rails)}')
+        post_centres = [(-.230, -.090, .455), (-.230, .090, .455),
+                        (-.050, -.090, .455), (-.050, .090, .455)]
         unmatched = list(post_centres)
         for p in posts:
             require(p.get('size'), [.500], f'{p["name"]} upright stock length')
             if p.get('kind') != 'extrusion':
-                self.error(f'R08 {p["name"]}: upright must be extrusion source geometry')
+                self.error(f'R10 {p["name"]}: upright must be extrusion source geometry')
             match = next((q for q in unmatched if same(p.get('xyz'), q)), None)
             if match is None:
-                self.error(f'R08 {p["name"]}: unexpected or duplicate post centre {p.get("xyz")}')
+                self.error(f'R10 {p["name"]}: unexpected or duplicate post centre {p.get("xyz")}')
             else:
                 unmatched.remove(match)
             require(np.abs(rotation(p.get('rpy', [0, 0, 0]))[:, 2]), [0, 0, 1], f'{p["name"]} upright direction')
             if not dark_opaque(p):
-                self.error(f'R08 {p["name"]}: frame finish must be opaque black')
+                self.error(f'R10 {p["name"]}: frame finish must be opaque black')
         rail_slots = []
         for z in (.215, .490, .565, .695):
-            rail_slots.extend([(.160, [-.070, -.090, z], [1, 0, 0]),
-                               (.160, [-.070, .090, z], [1, 0, 0]),
-                               (.160, [-.160, 0, z], [0, 1, 0]),
-                               (.160, [.020, 0, z], [0, 1, 0])])
+            rail_slots.extend([(.160, [-.140, -.090, z], [1, 0, 0]),
+                               (.160, [-.140, .090, z], [1, 0, 0]),
+                               (.160, [-.230, 0, z], [0, 1, 0]),
+                               (.160, [-.050, 0, z], [0, 1, 0])])
         rail_counts = {'160_mm_width': 0, '160_mm_depth': 0}
         for p in rails:
             axis = np.abs(rotation(p.get('rpy', [0, 0, 0]))[:, 2])
             match = next((q for q in rail_slots if same(p.get('size'), [q[0]]) and same(p.get('xyz'), q[1]) and same(axis, q[2])), None)
             if match is None:
-                self.error(f'R08 {p["name"]}: rail length, centre, direction or ring placement differs from the 200x200 frame')
+                self.error(f'R10 {p["name"]}: rail length, centre, direction or ring placement differs from the 200x200 frame')
             else:
                 rail_slots.remove(match)
                 rail_counts['160_mm_width' if same(match[2], [0, 1, 0]) else '160_mm_depth'] += 1
             if p.get('kind') != 'extrusion' or not dark_opaque(p):
-                self.error(f'R08 {p["name"]}: horizontal stock must be black extrusion source geometry')
+                self.error(f'R10 {p["name"]}: horizontal stock must be black extrusion source geometry')
         require(list(rail_counts.values()), [8, 8], 'width/depth rail counts')
 
         floors = [p for p in parts if p.get('name', '').startswith('polycarbonate_floor_')]
         if len(floors) != 4:
-            self.error(f'R08 shelves: expected four notched floor/roof source parts, found {len(floors)}')
+            self.error(f'R10 shelves: expected four notched floor/roof source parts, found {len(floors)}')
         base_colliders = self.geometries.get('base_link', {}).get('collision', [])
         post_shapes = [g for g in base_colliders if g['name'].startswith(('post_', 'base_link_post_'))]
         remaining_posts = list(post_centres)
         if len(post_shapes) != 4:
-            self.error(f'R08 frame: expected four post box colliders, found {len(post_shapes)}')
+            self.error(f'R10 frame: expected four post box colliders, found {len(post_shapes)}')
         for g in post_shapes:
             require(g['hi']-g['lo'], [.020, .020, .500], f'{g["name"]} post collider dimensions')
             require(g['origin'][:3, :3], np.eye(3), f'{g["name"]} post collider orientation')
             match = next((q for q in remaining_posts if same(g['origin'][:3, 3], q)), None)
             if g['type'] != 'box' or match is None:
-                self.error(f'R08 {g["name"]}: unexpected or duplicated URDF post collider')
+                self.error(f'R10 {g["name"]}: unexpected or duplicated URDF post collider')
             else:
                 remaining_posts.remove(match)
         rail_shapes = [g for g in base_colliders if g['name'].startswith(('rail_', 'base_link_rail_'))]
         remaining_rails = []
         for z in (.215, .490, .565, .695):
-            remaining_rails.extend([([.160, .020, .020], [-.070, -.090, z]),
-                                    ([.160, .020, .020], [-.070, .090, z]),
-                                    ([.020, .160, .020], [-.160, 0, z]),
-                                    ([.020, .160, .020], [.020, 0, z])])
+            remaining_rails.extend([([.160, .020, .020], [-.140, -.090, z]),
+                                    ([.160, .020, .020], [-.140, .090, z]),
+                                    ([.020, .160, .020], [-.230, 0, z]),
+                                    ([.020, .160, .020], [-.050, 0, z])])
         if len(rail_shapes) != 16:
-            self.error(f'R08 frame: expected sixteen rail box colliders, found {len(rail_shapes)}')
+            self.error(f'R10 frame: expected sixteen rail box colliders, found {len(rail_shapes)}')
         for g in rail_shapes:
             match = next((q for q in remaining_rails if same(g['hi']-g['lo'], q[0]) and same(g['origin'][:3, 3], q[1]) and same(g['origin'][:3, :3], np.eye(3))), None)
             if g['type'] != 'box' or match is None:
-                self.error(f'R08 {g["name"]}: URDF rail collider differs from the independently specified frame')
+                self.error(f'R10 {g["name"]}: URDF rail collider differs from the independently specified frame')
             else:
                 remaining_rails.remove(match)
         floor_area = .200*.200-4*.020*.020
         for i, z in enumerate((.205, .480, .555, .685)):
             named = [p for p in floors if p.get('name') == f'polycarbonate_floor_{i}']
             if len(named) != 1:
-                self.error(f'R08 missing uniquely identified notched floor {i}')
+                self.error(f'R10 missing uniquely identified notched floor {i}')
                 continue
             p = named[0]
             if p.get('kind') != 'prism':
-                self.error(f'R08 {p["name"]}: expected notched prism, not a full rectangular sheet crossing the posts')
+                self.error(f'R10 {p["name"]}: expected notched prism, not a full rectangular sheet crossing the posts')
             require(p.get('size'), [.200, .200, .003], f'{p["name"]} outside reservation and thickness')
-            require(p.get('xyz'), [-.070, 0, z+.0215], f'{p["name"]} rail-top placement')
+            rgba = np.asarray(p.get('rgba', []), dtype=float)
+            if p.get('material') != 'polycarbonate' or rgba.shape != (4,) or not (0. < rgba[3] < .3):
+                self.error(f'R10 {p["name"]}: internal floor must be transparent polycarbonate')
+            require(p.get('xyz'), [-.140, 0, z+.0215], f'{p["name"]} rail-top placement')
             expected_polygon = np.array([[-.100, -.080], [-.080, -.080], [-.080, -.100], [.080, -.100],
                                          [.080, -.080], [.100, -.080], [.100, .080], [.080, .080],
                                          [.080, .100], [-.080, .100], [-.080, .080], [-.100, .080]])
             polygon = np.asarray(p.get('polygon', []), dtype=float)
             if polygon.shape != (12, 2) or not any(same(polygon, np.roll(q, k, axis=0)) for q in (expected_polygon, expected_polygon[::-1]) for k in range(12)):
-                self.error(f'R08 {p["name"]}: source polygon differs from the 200mm square with 20mm corner notches')
+                self.error(f'R10 {p["name"]}: source polygon differs from the 200mm square with 20mm corner notches')
             else:
                 area = abs(float(np.sum(polygon[:, 0]*np.roll(polygon[:, 1], -1)-polygon[:, 1]*np.roll(polygon[:, 0], -1)))/2)
                 require(area, floor_area, f'{p["name"]} independently calculated polygon area')
@@ -648,17 +651,17 @@ class Validator:
                 require(p.get('mass'), floor_area*.003*density, f'{p["name"]} mass from notched area and declared density')
             floor_geos = [g for g in base_colliders if g['name'].startswith((f'floor_{i}_', f'base_link_floor_{i}_'))]
             if len(floor_geos) != 3 or any(g['type'] != 'box' for g in floor_geos):
-                self.error(f'R08 floor {i}: expected three box colliders for the notched shelf decomposition')
-            expected_sections = [([.160, .200, .003], [-.070, 0, z+.0215]),
-                                 ([.020, .160, .003], [-.160, 0, z+.0215]),
-                                 ([.020, .160, .003], [.020, 0, z+.0215])]
+                self.error(f'R10 floor {i}: expected three box colliders for the notched shelf decomposition')
+            expected_sections = [([.160, .200, .003], [-.140, 0, z+.0215]),
+                                 ([.020, .160, .003], [-.230, 0, z+.0215]),
+                                 ([.020, .160, .003], [-.050, 0, z+.0215])]
             for g in floor_geos:
                 t = self.world['base_link'] @ g['origin']
                 size = g['hi']-g['lo']
                 centre = transform_points(t, ((g['lo']+g['hi'])/2)[None])[0]
                 match = next((q for q in expected_sections if same(size, q[0]) and same(centre, q[1]) and same(t[:3, :3], np.eye(3))), None)
                 if match is None:
-                    self.error(f'R08 {g["name"]}: unexpected notched floor collision section')
+                    self.error(f'R10 {g["name"]}: unexpected notched floor collision section')
                 else:
                     expected_sections.remove(match)
                 half = size/2
@@ -666,7 +669,7 @@ class Validator:
                 lo, hi = bounds.min(0), bounds.max(0)
                 for q in post_centres:
                     if oriented_box_intersects((centre, t[:3, :3], half), (np.asarray(q), np.eye(3), np.array([.010, .010, .250]))):
-                        self.error(f'R08 {g["name"]}: notched shelf collider penetrates a corner post')
+                        self.error(f'R10 {g["name"]}: notched shelf collider penetrates a corner post')
                 supported = False
                 for rail in rails:
                     rt = rotation(rail.get('rpy', [0, 0, 0]))
@@ -678,37 +681,37 @@ class Validator:
                         supported = True
                         break
                 if not supported:
-                    self.error(f'R08 {g["name"]}: shelf section has no nominal rail-top support')
+                    self.error(f'R10 {g["name"]}: shelf section has no nominal rail-top support')
 
         battery_parts = [p for p in parts if p.get('name') == 'noco_gb70']
         if len(battery_parts) != 1:
-            self.error('R08 expected one upright NOCO GB70 source body')
+            self.error('R10 expected one upright NOCO GB70 source body')
         for p in battery_parts:
             require(p.get('size'), [.069, .099, .222], 'upright GB70 body depth/width/height')
-            require(p.get('xyz'), [-.070, 0, .343], 'upright GB70 body centre')
+            require(p.get('xyz'), [-.140, 0, .343], 'upright GB70 body centre')
             require(rotation(p.get('rpy', [0, 0, 0])), np.eye(3), 'upright GB70 box orientation')
         reservations = [g for g in base_colliders if g['name'] in ('noco_installed_reserve', 'base_link_noco_installed_reserve')]
         if len(reservations) != 1:
-            self.error('R08 expected one upright GB70 full installation reservation')
+            self.error('R10 expected one upright GB70 full installation reservation')
         for g in reservations:
             require(g['hi']-g['lo'], [.070, .152, .222], 'upright GB70 installed reservation dimensions')
             t = self.world['base_link'] @ g['origin']
             require(t[:3, :3], np.eye(3), 'upright GB70 installed reservation orientation')
             points = transform_points(t, box_vertices(g['lo'], g['hi']))
             lo, hi = points.min(0), points.max(0)
-            require((lo+hi)/2, [-.070, 0, .343], 'upright GB70 installed reservation centre')
+            require((lo+hi)/2, [-.140, 0, .343], 'upright GB70 installed reservation centre')
             require(lo[2], .232, 'GB70 installed reservation support datum')
-            if lo[0] < -.150-1e-9 or hi[0] > .010+1e-9 or lo[1] < -.080-1e-9 or hi[1] > .080+1e-9 or hi[2] > .480+1e-9:
-                self.error('R08 GB70 installation reservation exceeds the clear lower bay')
+            if lo[0] < -.220-1e-9 or hi[0] > -.060+1e-9 or lo[1] < -.080-1e-9 or hi[1] > .080+1e-9 or hi[2] > .480+1e-9:
+                self.error('R10 GB70 installation reservation exceeds the clear lower bay')
             require([lo[1]+.080, .080-hi[1]], [.004, .004], 'upright GB70 installed lateral clearance')
 
         sides = [p for p in parts if p.get('name', '').startswith(('side_-1_', 'side_1_', 'side_left_', 'side_right_')) and p.get('kind') == 'box']
         fronts = [p for p in parts if any(tag in p.get('name', '') for tag in ('front_sheet', 'front_door')) and p.get('kind') == 'box']
         if not sides or not fronts:
-            self.error('R08 source register must identify side panels and front sheet/door components')
+            self.error('R10 source register must identify side panels and front sheet/door components')
         for p in sides+fronts:
             if not dark_opaque(p):
-                self.error(f'R08 {p["name"]}: front and side panels must have an opaque matte-black appearance')
+                self.error(f'R10 {p["name"]}: front and side panels must have an opaque matte-black appearance')
         for p in sides:
             if p.get('name', '').endswith(('_lower', '_upper')):
                 require(p.get('size', [None])[0], .200, f'{p["name"]} outside-frame side-panel depth')
@@ -716,28 +719,40 @@ class Validator:
             require(p.get('size', [None, None])[1], .002, f'{p["name"]} side-panel thickness')
             extent = np.abs(rotation(p.get('rpy', [0, 0, 0]))) @ (np.asarray(p['size'], dtype=float)/2)
             lo, hi = np.asarray(p['xyz'])-extent, np.asarray(p['xyz'])+extent
-            if lo[0] < -.170-1e-9 or hi[0] > .030+1e-9 or lo[1] < -.102-1e-9 or hi[1] > .102+1e-9:
-                self.error(f'R08 {p["name"]}: side sheet exceeds the 204mm covered-body or 200mm frame-depth envelope')
-        aperture = (np.array([.031, 0, .63275]), np.eye(3), np.array([.001, .078, .02975]))
+            if lo[0] < -.240-1e-9 or hi[0] > -.040+1e-9 or lo[1] < -.102-1e-9 or hi[1] > .102+1e-9:
+                self.error(f'R10 {p["name"]}: side sheet exceeds the 204mm covered-body or 200mm frame-depth envelope')
+        aperture = (np.array([-.039, 0, .63275]), np.eye(3), np.array([.001, .078, .02975]))
         for p in fronts:
             require(p.get('size', [None])[0], .002, f'{p["name"]} front-door sheet thickness')
-            require(p.get('xyz', [None])[0], .031, f'{p["name"]} outside-frame front-door plane')
+            require(p.get('xyz', [None])[0], -.039, f'{p["name"]} outside-frame front-door plane')
             if p.get('name', '').endswith(('_lower', '_upper')):
                 require(p.get('size', [None, None])[1], .200, f'{p["name"]} full front-door width')
             shape = (np.asarray(p['xyz'], dtype=float), rotation(p.get('rpy', [0, 0, 0])), np.asarray(p['size'], dtype=float)/2)
             if oriented_box_intersects(shape, aperture):
-                self.error(f'R08 {p["name"]}: opaque sheet obstructs the 156x59.5mm optical aperture')
+                self.error(f'R10 {p["name"]}: opaque sheet obstructs the 156x59.5mm optical aperture')
         rear = [p for p in parts if p.get('name') == 'rear_door_closed']
         if len(rear) != 1:
-            self.error('R08 expected one clear rear service door')
+            self.error('R10 expected one opaque black plastic rear service door')
         for p in rear:
+            if not dark_opaque(p) or p.get('material') != 'matte_black':
+                self.error('R10 rear service door must be opaque black plastic, not clear polycarbonate')
+            require(p.get('mass'), .002*.200*.460*1050., 'rear-door nominal plastic mass')
             require(p.get('size', [None])[0], .002, 'rear-door thickness')
             require(p.get('size', [None, None])[1], .200, 'full rear-door width')
-            require(p.get('xyz', [None])[0], -.171, 'outside-frame rear-door plane')
+            require(p.get('xyz', [None])[0], -.241, 'outside-frame rear-door plane')
         # Fixed parts share base_link, so inter-link screening cannot discover
         # a cover crossing a shelf. Check these interfaces explicitly.
         fixed_shelves = [g for g in base_colliders if g['name'].startswith(('floor_', 'base_link_floor_'))]
         source_camera_shelves = [p for p in parts if p.get('name') == 'camera_shelf' and p.get('kind') == 'box']
+        if len(source_camera_shelves) != 1:
+            self.error('R10 expected one transparent polycarbonate internal camera shelf')
+        for p in source_camera_shelves:
+            rgba = np.asarray(p.get('rgba', []), dtype=float)
+            if p.get('material') != 'polycarbonate' or rgba.shape != (4,) or not (0. < rgba[3] < .3):
+                self.error('R10 camera shelf must be transparent polycarbonate')
+            require(p.get('size'), [.080, .156, .003], 'camera shelf size')
+            require(p.get('xyz'), [-.080, 0., .600], 'camera shelf internal datum')
+            require(p.get('mass'), .080*.156*.003*1200., 'camera shelf nominal polycarbonate mass')
         for p in fronts+sides+rear:
             cover = (np.asarray(p['xyz'], dtype=float), rotation(p.get('rpy', [0, 0, 0])), np.asarray(p['size'], dtype=float)/2)
             for g in fixed_shelves:
@@ -745,59 +760,59 @@ class Validator:
                 centre = transform_points(t, ((g['lo']+g['hi'])/2)[None])[0]
                 shelf = (centre, t[:3, :3], (g['hi']-g['lo'])/2)
                 if oriented_box_intersects(cover, shelf):
-                    self.error(f'R08 fixed construction: {p["name"]} penetrates {g["name"]}')
+                    self.error(f'R10 fixed construction: {p["name"]} penetrates {g["name"]}')
             for shelf in source_camera_shelves:
                 shape = (np.asarray(shelf['xyz'], dtype=float), rotation(shelf.get('rpy', [0, 0, 0])), np.asarray(shelf['size'], dtype=float)/2)
                 if oriented_box_intersects(cover, shape):
-                    self.error(f'R08 fixed construction: {p["name"]} penetrates {shelf["name"]}')
+                    self.error(f'R10 fixed construction: {p["name"]} penetrates {shelf["name"]}')
         if any('t12' in p.get('name', '').lower() or 'xiaomi' in p.get('name', '').lower() for p in parts):
-            self.error('R08 base source still includes obsolete Xiaomi/T12 components')
+            self.error('R10 base source still includes obsolete Xiaomi/T12 components')
 
         structure = self.report.get('structure', {})
         require(structure.get('link_count'), 23, 'link count')
         require(structure.get('joint_count'), 22, 'joint count')
         if structure.get('joint_types') != {'fixed': 4, 'continuous': 4, 'revolute': 14}:
-            self.error(f'R08 joint types differ: {structure.get("joint_types")}')
+            self.error(f'R10 joint types differ: {structure.get("joint_types")}')
         require(structure.get('independent_joint_coordinates'), 16, 'independent coordinate count')
         require(data.get('independent_commands'), 14, 'commanded coordinate count in source register')
 
         def child_joint(child, parent, kind, xyz, axis):
             candidates = [(n, j) for n, j in self.joint_data.items() if j['child'] == child]
             if len(candidates) != 1:
-                self.error(f'R08 {child}: expected one parent joint')
+                self.error(f'R10 {child}: expected one parent joint')
                 return None
             name, j = candidates[0]
             if j['parent'] != parent or j['type'] != kind:
-                self.error(f'R08 {name}: expected {kind} joint from {parent}')
+                self.error(f'R10 {name}: expected {kind} joint from {parent}')
             require(j['origin'][:3, 3], xyz, f'{name} parent-frame pivot')
             require(j['origin'][:3, :3], np.eye(3), f'{name} parent-frame rotation')
             require(j['axis'], axis, f'{name} local axis')
             return name
         for side, sign in (('left', 1), ('right', -1)):
-            child_joint(side+'_wheel', 'base_link', 'continuous', [-.180, sign*.177, .0925], [0, 1, 0])
-            require(self.world.get(side+'_wheel', np.eye(4))[:3, 3], [-.180, sign*.177, .0925], f'{side} wheel world centre')
+            child_joint(side+'_wheel', 'base_link', 'continuous', [-.170, sign*.167, .1025], [0, 1, 0])
+            require(self.world.get(side+'_wheel', np.eye(4))[:3, 3], [-.170, sign*.167, .1025], f'{side} wheel world centre')
             shapes = self.geometries.get(side+'_wheel', {}).get('collision', [])
-            rollers = [g for g in shapes if g['type'] == 'cylinder' and same(g['hi']-g['lo'], [.185, .185, .050])]
+            rollers = [g for g in shapes if g['type'] == 'cylinder' and same(g['hi']-g['lo'], [.205, .205, .040])]
             if len(rollers) != 1:
-                self.error(f'R08 {side} wheel: expected one 92.5mm-radius, 50mm-wide cylinder contact')
+                self.error(f'R10 {side} wheel: expected one 102.5mm-radius, estimated 40mm-wide cylinder contact')
             for g in rollers:
                 require(g['origin'][:3, 3], [0, 0, 0], f'{side} wheel collider centre')
                 require(np.abs(g['origin'][:3, :3][:, 2]), [0, 1, 0], f'{side} rolling cylinder axis')
-        swivel = child_joint('caster_swivel_link', 'base_link', 'continuous', [.215, 0, .110], [0, 0, 1])
-        roller = child_joint('caster_link', 'caster_swivel_link', 'continuous', [-.020, 0, -.070], [0, 1, 0])
-        require(self.world.get('caster_link', np.eye(4))[:3, 3], [.195, 0, .040], 'neutral caster wheel centre')
+        swivel = child_joint('caster_swivel_link', 'base_link', 'continuous', [.190, 0, .110], [0, 0, 1])
+        roller = child_joint('caster_link', 'caster_swivel_link', 'continuous', [-.020, 0, -.0705], [0, 1, 0])
+        require(self.world.get('caster_link', np.eye(4))[:3, 3], [.170, 0, .0395], 'neutral caster wheel centre')
         caster_shapes = self.geometries.get('caster_link', {}).get('collision', [])
-        caster_rollers = [g for g in caster_shapes if g['type'] == 'cylinder' and same(g['hi']-g['lo'], [.080, .080, .040])]
+        caster_rollers = [g for g in caster_shapes if g['type'] == 'cylinder' and same(g['hi']-g['lo'], [.079, .079, .055])]
         if len(caster_rollers) != 1:
-            self.error('R08 caster: expected one 40mm-radius, 40mm-wide rolling cylinder')
+            self.error('R10 caster: expected one 39.5mm-radius, approximately 55mm-wide rolling cylinder')
         for g in caster_rollers:
             require(g['origin'][:3, 3], [0, 0, 0], 'caster wheel collider centre')
             require(np.abs(g['origin'][:3, :3][:, 2]), [0, 1, 0], 'caster rolling cylinder axis')
         if any(frozenset(pair) == frozenset(('base_link', 'caster_link')) for pair in self.expected.get('allow_collision_pairs', [])):
-            self.error('R08 caster wheel/chassis collisions must not be suppressed by a broad allowed pair')
+            self.error('R10 caster wheel/chassis collisions must not be suppressed by a broad allowed pair')
         contacts = self.expected.get('ground_contacts', [])
         if set(contacts) != {'left_wheel', 'right_wheel', 'caster_link'} or len(contacts) != 3:
-            self.error(f'R08 expected three rolling ground-contact links, found {contacts}')
+            self.error(f'R10 expected three rolling ground-contact links, found {contacts}')
         passive_names = [name for name in (swivel, roller) if name is not None]
         commanded = [n for n, j in self.joint_data.items() if j['type'] != 'fixed' and j['mimic'] is None and n not in passive_names]
         require(len(commanded), 14, 'independent actuated coordinates after excluding the two passive caster joints')
@@ -805,29 +820,29 @@ class Validator:
         camera = self.geometries.get('camera_mount', {}).get('collision', [])
         camera_bodies = [g for g in camera if g['type'] == 'box' and same(g['hi']-g['lo'], [.070, .156, .056])]
         if len(camera_bodies) != 1:
-            self.error('R08 camera: expected provisional casing-free 70x156x56mm module reservation')
+            self.error('R10 camera: expected provisional casing-free 70x156x56mm module reservation')
         for g in camera_bodies:
             t = self.world['camera_mount'] @ g['origin']
             centre = transform_points(t, ((g['lo']+g['hi'])/2)[None])[0]
-            require(centre, [-.006, 0, .6315], 'provisional bare-camera world reservation centre')
+            require(centre, [-.076, 0, .6315], 'provisional bare-camera world reservation centre')
             require(t[:3, :3], np.eye(3), 'straight-ahead bare-camera reservation rotation')
             points = transform_points(t, box_vertices(g['lo'], g['hi']))
             lo, hi = points.min(0), points.max(0)
-            require(lo, [-.041, -.078, .6035], 'bare-camera reservation lower bounds')
-            require(hi, [.029, .078, .6595], 'bare-camera reservation upper bounds')
-            if lo[0] < -.170-1e-9 or hi[0] > .030+1e-9 or lo[1] < -.080-1e-9 or hi[1] > .080+1e-9:
-                self.error('R08 provisional camera reservation exceeds the frame or between-post lateral opening')
+            require(lo, [-.111, -.078, .6035], 'bare-camera reservation lower bounds')
+            require(hi, [-.041, .078, .6595], 'bare-camera reservation upper bounds')
+            if lo[0] < -.240-1e-9 or hi[0] > -.040+1e-9 or lo[1] < -.080-1e-9 or hi[1] > .080+1e-9:
+                self.error('R10 provisional camera reservation exceeds the frame or between-post lateral opening')
             require([lo[1]+.080, .080-hi[1]], [.002, .002], 'bare-camera reservation lateral clearances')
-            require(.030-hi[0], .001, 'bare-camera front frame setback')
+            require(-.040-hi[0], .001, 'bare-camera front frame setback')
         camera_joint = self.joint_data.get('camera_mount_joint')
         if camera_joint is not None:
-            require(camera_joint['origin'][:3, 3], [-.005, 0, .635], 'bare-camera mount origin')
+            require(camera_joint['origin'][:3, 3], [-.075, 0, .635], 'bare-camera mount origin')
         optical_joint = self.joint_data.get('camera_optical_joint')
         if optical_joint is not None:
             require(optical_joint['origin'][:3, 3], [.034, .06925, .0065], 'provisional depth optical-frame offset')
         camera_parts = data.get('links', {}).get('camera_mount', {}).get('parts', [])
         if any('housing' in p.get('name', '').lower() or 'case' in p.get('name', '').lower() for p in camera_parts):
-            self.error('R08 camera visual source still declares a casing/housing component')
+            self.error('R10 camera visual source still declares a casing/housing component')
         module_parts = {
             'kinect_logic_board_provisional': ([.045, .150, .003], [-.005, 0, -.022]),
             'kinect_heatspreader_provisional': ([.045, .100, .020], [-.005, 0, -.0105]),
@@ -835,13 +850,13 @@ class Validator:
         for name, (size, xyz) in module_parts.items():
             found = [p for p in camera_parts if p.get('name') == name]
             if len(found) != 1:
-                self.error(f'R08 expected one provisional bare-camera component {name}')
+                self.error(f'R10 expected one provisional bare-camera component {name}')
             for p in found:
                 require(p.get('size'), size, f'{name} provisional dimensions')
                 require(p.get('xyz'), xyz, f'{name} provisional local centre')
         lens_parts = {p.get('name'): p for p in camera_parts if p.get('name') in ('rgb_lens', 'depth_lens')}
         if set(lens_parts) != {'rgb_lens', 'depth_lens'}:
-            self.error('R08 expected provisional RGB and depth optical parts')
+            self.error('R10 expected provisional RGB and depth optical parts')
         else:
             require(lens_parts['rgb_lens'].get('xyz', [0, None])[1], -.06925, 'provisional RGB lateral position')
             require(lens_parts['depth_lens'].get('xyz', [0, None])[1], .06925, 'provisional depth lateral position')
@@ -851,12 +866,12 @@ class Validator:
             name = side+'_arm_base_joint'
             j = self.joint_data.get(name)
             if j is None:
-                self.error(f'R08 missing {name}')
+                self.error(f'R10 missing {name}')
             else:
-                require((self.world[j['parent']] @ j['origin'])[:3, 3], [-.070, sign*.108, .545], f'{name} world root pivot')
+                require((self.world[j['parent']] @ j['origin'])[:3, 3], [-.140, sign*.108, .545], f'{name} world root pivot')
 
-        self.report['r08_dimension_register_check'] = {
-            'source': 'Independently transcribed R08 construction constants and explicit provisional simulation geometry; checked against source register and URDF transforms/colliders',
+        self.report['r10_dimension_register_check'] = {
+            'source': 'Independently transcribed R10 construction constants and explicit provisional simulation geometry; checked against source register and URDF transforms/colliders',
             'expected_parameters_m': expected, 'post_count': len(posts), 'rail_counts': rail_counts,
             'frame_clear_width_depth_m': [.160, .160], 'provisional_bare_camera_side_clearance_m': .002,
             'frame_outside_width_depth_m': [.200, .200], 'covered_body_width_depth_m': [.204, .204],
@@ -869,10 +884,11 @@ class Validator:
             'independent_coordinates': 16, 'commanded_coordinates': 14, 'passive_caster_joints': passive_names,
             'source_categories': {
                 'manufacturer_envelope': 'WR141E exterior 558x404x205mm only; not a measured body surface',
+                'online_supplier_dimensions': 'Rear wheel diameter 205mm from OEM50024699 supplier and WR141E retailer; front diameter 79mm and approximate 55mm width from OEM50036897 supplier. These are not measured on this robot.',
                 'supplied_stock': 'Four 20x20x500mm posts; sixteen 200mm rails cut to 160mm',
-                'approved_construction_change': '200x200mm frame and floors, 204x204mm externally covered body, 160x160mm clear opening, black frame/front/sides, internal casing-free camera reservation',
-                'provisional_unmeasured_simulation_inputs': 'Bare-camera module fit, PCB/optics/heat-sink sizes, camera optical calibration, retained 970g camera mass budget, wheel/caster geometry, chassis/frame mounting datum, arm pivots and all mass/actuator values'},
-            'limitations': 'Confirms internal consistency with nominal R08 construction and declared provisional inputs. Does not verify physical hardware, as-built tolerances, payload, mounting strength or real-world dynamics.'}
+                'approved_construction_change': '200x200mm frame and floors, 204x204mm externally covered body, 160x160mm clear opening, black aluminium frame and four opaque black plastic sides, internal casing-free camera reservation',
+                'provisional_unmeasured_simulation_inputs': 'Bare-camera module fit, PCB/optics/heat-sink sizes, camera optical calibration, retained 970g camera mass budget, wheel widths, track/axle locations, chassis/frame mounting datum, arm pivots and all mass/actuator values'},
+            'limitations': 'Confirms internal consistency with nominal R10 construction and declared provisional inputs. Does not verify physical hardware, as-built tolerances, payload, mounting strength or real-world dynamics.'}
 
     def gravity_loads(self, positions):
         world = self.fk(positions)
@@ -1011,8 +1027,8 @@ def markdown(report):
         v = report['inertials']
         lines += [f"Estimated total mass: {v['total_mass_kg']:.6f} kg. Zero-pose centre of mass in root frame: {v['zero_pose_world_com_m']} m.",
                   'Each massive-link inertia was checked for finite positive mass, positive principal moments and the principal-moment triangle inequalities. Shape-free fixed reference frames may explicitly declare zero mass and a zero tensor; these contribute no mass and may have no moving descendants.', '']
-    if 'r08_dimension_register_check' in report:
-        lines += ['R08 nominal construction was checked independently: WR141E 558 × 404 × 205 mm published envelope; 200 ×200 mm frame and floors; 204 ×204 mm covered body with external 2 mm sheets; four 500 mm posts; sixteen 160 mm rails; 160 ×160 mm clear opening; black frame/front/sides; upright GB70 body and installation reservation; casing-free camera reservation with 2 mm lateral gaps; wheel contacts, two passive caster joints and arm root datums. The stripped camera module dimensions, optics, retained camera mass, wheel/caster geometry and mounting positions are provisional simulation inputs. These checks establish consistency and fit of declared reservations, not verified hardware fit. Fixed cover/shelf interfaces are checked for penetration independently of inter-link screening. The source register, URDF transforms/colliders and all referenced meshes were checked separately.', '']
+    if 'r10_dimension_register_check' in report:
+        lines += ['R10 nominal construction was checked independently: WR141E 558 × 404 × 205 mm published envelope; 200 ×200 mm frame and floors; 204 ×204 mm covered body with external 2 mm sheets; four 500 mm posts; sixteen 160 mm rails; 160 ×160 mm clear opening; black aluminium frame and four opaque black plastic sides; upright GB70 body and installation reservation; casing-free camera reservation with 2 mm lateral gaps; wheel contacts, two passive caster joints and arm root datums. Online sources support 205mm rear and 79mm front wheel diameters; 55mm front width is approximate. The stripped camera module, optics, retained camera mass, rear tyre width, track, axle locations and mounting positions remain provisional simulation inputs. These checks establish consistency and fit of declared reservations, not verified hardware fit. Fixed cover/shelf interfaces are checked for penetration independently of inter-link screening. The source register, URDF transforms/colliders and all referenced meshes were checked separately.', '']
     for title, values in [('Errors', report['errors']), ('Review notes', report['warnings']), ('Scope limits', report['limitations'])]:
         lines += [f'## {title}', '']
         lines += [f'- {v}' for v in values] if values else ['None.']

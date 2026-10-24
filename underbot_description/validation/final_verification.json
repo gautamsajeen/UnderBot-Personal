@@ -1,0 +1,79 @@
+{
+  "revision": "R10",
+  "status": "PASS_WITH_DOCUMENTED_ESTIMATES",
+  "generated_at_utc": "2026-10-24T16:36:12.105207+00:00",
+  "source_geometry_sha256": "65ee53bbb4cf6999a8490a796054ec43d1a2208e0e9038807684b40be7396ecc",
+  "core_urdf_sha256": "c66f99720353890a69291c1be2767eeb88faa4f657e95f9a92061f0273e65ade",
+  "portable_urdf_sha256": "0daab387d38a86e5e90bae42bb30a04153d4ae816c9dd1822a9f1908ed1a9588",
+  "component_count": 293,
+  "triangle_count": 250452,
+  "independent_checks": 6098,
+  "mass_kg": 19.51724779999999,
+  "floor_frame_mm": [
+    200,
+    200
+  ],
+  "covered_body_mm": [
+    204,
+    204
+  ],
+  "post_mm": [
+    20,
+    20,
+    500
+  ],
+  "reports": {
+    "authoring_checks": {
+      "status": "PASS_WITH_REVIEW_NOTES",
+      "path": "validation/authoring_checks.json",
+      "sha256": "05117713cc42dcf59fb54cf153220a3928b4a07978f6171411e3a1f0cf45dae8"
+    },
+    "portable_checks": {
+      "status": "PASS_WITH_REVIEW_NOTES",
+      "path": "validation/portable_checks.json",
+      "sha256": "7c3833582d181845eed04011c91c28ac4e337ab5da02fd41ec2066c98cdd9c5c"
+    },
+    "xacro_check": {
+      "status": "PASS",
+      "path": "validation/xacro_check.json",
+      "sha256": "9c522d571c0ba6f3923afef90fbd4e17e1f89801bc4bfd432a548b0d0ee2b460"
+    },
+    "pybullet_import_R10": {
+      "status": "PASS",
+      "path": "validation/pybullet_import_R10.json",
+      "sha256": "df51943bd4f0f3810da30a13a573a881d92e5e9d84136749ab9b2b17b9473edd"
+    },
+    "viewer_checks_R10": {
+      "status": "PASS",
+      "path": "validation/viewer_checks_R10.json",
+      "sha256": "e546b36df6e000dd15e7094499b1c473bc5b6ec4210e6d71b076acdb7bdd992a"
+    },
+    "physics_smoke": {
+      "status": "PASS",
+      "path": "validation/physics_smoke.json",
+      "sha256": "2fbb5ccc56a812058ea138f68654ae044012e9225cbe5a796778a2cf50b9b488"
+    },
+    "static_physics": {
+      "status": "PASS_CURRENT_INPUT_HASH",
+      "path": "validation/static_physics.json",
+      "sha256": "46852921a6ce7d5bdcf294448405e6798e20c4f1dd5925b98f6758703dc36301"
+    },
+    "independent_geometry": {
+      "status": "PASS",
+      "path": "validation/independent_geometry.json",
+      "sha256": "ff04617b3726a011a2464cce589e8f60941f4fae9520cc90070c602e41e6d326"
+    }
+  },
+  "review_notes": [
+    "base_link.stl: closed oriented visual shells touch at 4 nonmanifold edges; not a unioned physics solid"
+  ],
+  "limits": [
+    "The floor/frame dimensions and accepted 204 mm covered body are user requirements. The 3 mm floors and 2 mm covers are proposed material thicknesses.",
+    "WR141E 558 \u00d7 404 \u00d7 205 mm and upright GB70 body 69 \u00d7 99 \u00d7 222 mm are published envelopes. Replacement-part suppliers publish the 205 mm rear and 79 mm front wheel diameters; detailed chassis and battery contours remain reference-derived approximations.",
+    "Rear tyre width 40 mm, track 334 mm, axle positions \u2212170/+170 mm, caster trail 20 mm and approximate 55 mm caster width are online-reference estimates, not a factory dimensioned drawing.",
+    "Bare Kinect layout, arm pivots/lengths, electronics, installed hardware masses, joint limits and motor ratings remain unmeasured design inputs. Mathematical mass/inertia checks do not certify actual hardware dynamics.",
+    "The 140 mm rearward tower offset is a proposed mounting position intended to leave the controls accessible. Base attachment holes and structural load capacity are not measured or certified.",
+    "Closed STL shells may overlap at fasteners/assembly interfaces. A watertight collection of shells is not a Boolean-unioned print-ready solid."
+  ],
+  "native_Gazebo_Isaac_RViz_FreeCAD_tested": false
+}

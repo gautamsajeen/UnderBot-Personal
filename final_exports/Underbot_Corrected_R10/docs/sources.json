@@ -1,0 +1,38 @@
+{
+  "checked_date": "2026-10-18",
+  "model": "Worx Landroid M500 WR141E",
+  "published_envelope_mm": {
+    "length": 558,
+    "width": 404,
+    "height": 205
+  },
+  "published_front_wheel_count": 1,
+  "dimension_evidence": "https://eu.worx.com/en/robot-mower-landroid-s-robot-mower-for-lawns-up-to-400-m2-wr141e/",
+  "manual": "https://cdn2.hubspot.net/hubfs/5237793/User%20Manual/Landroid%20M%202019/User_Manual_WR141E_EN.pdf",
+  "range_comparison": "https://eu.worx.com/en/landroid/landroid-models/",
+  "files": {
+    "official_WR141E_view4.webp": "https://eu.worx.com/wp-content/plugins/woocommerce-onpage/storage/cache/6b5f548dd9d2db60ece9c703c33d2a47229934f2.900x.webp/WR141E%20M500%20%20%284%29.webp",
+    "official_WR141E_view5.webp": "https://eu.worx.com/wp-content/plugins/woocommerce-onpage/storage/cache/12452a36e360447d61f0f6307253aa9bf3d2c8c4.900x.webp/WR141E%20M500%20%20%285%29.webp",
+    "official_WR141E_view6.webp": "https://eu.worx.com/wp-content/plugins/woocommerce-onpage/storage/cache/47a1526eef9ef651f38c6ab4b5d15dd1b6dc9341.900x.webp/WR141E%20M500%20%20%286%29.webp",
+    "wr141_dimensioni_retailer.png": "https://ferramentacardelli.com/cdn/shop/products/wr141_dimensioni_1042x700.png?v=1696526525",
+    "User_Manual_WR141E_EN.pdf": "https://cdn2.hubspot.net/hubfs/5237793/User%20Manual/Landroid%20M%202019/User_Manual_WR141E_EN.pdf"
+  },
+  "unverified_hardware_dimensions": [
+    "stock tyre width",
+    "axle track",
+    "wheelbase",
+    "caster trail",
+    "chassis mounting interfaces"
+  ],
+  "mass_conflict": {
+    "current_product_page_with_battery_kg": 9.1,
+    "original_manual_machinery_weight_kg": 8.5
+  },
+  "warnings": [
+    "Product-page heading says S400 despite WR141E / M500 identifiers and 500m2 technical table.",
+    "Manual maintenance illustrations are generic and show two casters; product-specific table confirms one.",
+    "Retailer-hosted orthographic-looking drawing is not an OEM manufacturing drawing."
+  ],
+  "wheel_dimension_follow_up": "wheel_dimension_evidence.json supersedes the initial unresolved tyre-diameter entry; supplier rear205/front79 mm.",
+  "core_dimensions_rechecked": "2026-10-24"
+}

@@ -1,13 +1,12 @@
 {
-  "algorithm": "SHA-256",
   "files": {
     "cad/build_underbot.FCMacro": {
-      "bytes": 9294,
-      "sha256": "64d6f70bd1beac4677c9a076d0bbb9e1de83dfa5c5fabe714be87bbdd9ef6282"
+      "bytes": 9685,
+      "sha256": "2611b7c07e7e34cc23b8eee01ba7197b1f0c24c2acc3337b03d8ac6ada418591"
     },
     "cad/README.md": {
-      "bytes": 2511,
-      "sha256": "bb30514d1e42db4dead34501ea4567c4286c01c066dbb48583372ca8ff4da557"
+      "bytes": 2839,
+      "sha256": "631dd254819839a6f7c2897e27a311085e5892903a7401cafd7d77042699fef5"
     },
     "CMakeLists.txt": {
       "bytes": 848,
@@ -23,435 +22,431 @@
     },
     "config/gazebo_plugins.xml": {
       "bytes": 7281,
-      "sha256": "dffe72531761281a758cdd6d4076aa0d9e22131e015ef40bea92d6c4f0776850"
+      "sha256": "082686a575a19381ee7c6781759c9584cd7dc2a356377819db5c94b445334249"
     },
     "config/geometry_manifest.json": {
-      "bytes": 204860,
-      "sha256": "439c8ad7781f00fce2a9d085e63e6bf840d15aa85a874fcfc8bee48ea1db9b48"
+      "bytes": 805486,
+      "sha256": "65ee53bbb4cf6999a8490a796054ec43d1a2208e0e9038807684b40be7396ecc"
     },
     "config/joint_limits.yaml": {
       "bytes": 4511,
       "sha256": "9874da6a9d4c8094a93d64b5c6311a0ceac0cab0cc8346e2c3bc49b71918942f"
     },
     "config/model_parameters.json": {
-      "bytes": 3589,
-      "sha256": "87048fb22ba4bdaf6097d20eb90c2aee88312669244e6949c55e3fce6443a99d"
+      "bytes": 4091,
+      "sha256": "705dd45d6387fcc2fac0b7b70ee88f8c3f5e263140ea6cd673844650176d9ebd"
     },
     "config/ros2_controllers.example.yaml": {
       "bytes": 1879,
-      "sha256": "fe16a8eee37a50f785d6e0e27166ec34ae8a3686f1b5bfac3115e63421b5b623"
+      "sha256": "6d226cd5a2e98c815a7df632d9db6e8b593fbe9ae27cbdeb20508e1e075b76bc"
     },
     "config/underbot_empty.sdf": {
       "bytes": 1391,
       "sha256": "1c857450e5ec3f27c0cda76d48cde7862d3be31bf171f75556c5b7828597ca2f"
     },
     "config/validation_expectations.json": {
-      "bytes": 8946,
-      "sha256": "72a1e771ce9505a58e2f60bd605da12a7cf53f742bd7de71e0c374f8bbb2a787"
+      "bytes": 8976,
+      "sha256": "cfd6b2cc7e5afed2702d81deed0b7b8d7b609af8eff5720054c8879ae1594ec5"
     },
     "docs/accuracy_and_physics.md": {
-      "bytes": 8043,
-      "sha256": "89324bca384a645765e0d18e187830608a76d2e47d631cc1f8d4ea9f10713e58"
+      "bytes": 9444,
+      "sha256": "235e2ed77bcb1e4533847abe39e80672870fad189fa0108cad413e08a36f1c0f"
     },
-    "docs/floor_plan_R08.svg": {
+    "docs/floor_plan_R10.svg": {
       "bytes": 2227,
-      "sha256": "9648a09ee0bf09d9f07879b522a212022aed8a2e3dcea00b4b343b082486aa22"
-    },
-    "docs/floor_plan_R09.svg": {
-      "bytes": 2227,
-      "sha256": "65e8234697313a713025e8a27cfbb1c7eef504d83e94394b6a4e71b97e32ee21"
+      "sha256": "c172ec2d25d33dc14b6f6bc5db98617f7e96944abfd357475504638cd8eafed9"
     },
     "docs/model_preview.png": {
-      "bytes": 5475592,
-      "sha256": "f159c106ca09816c5d2c1c8fe266a95162bcc59355382be957630dc82aba630e"
+      "bytes": 5445669,
+      "sha256": "f11a445ad59e463c7d471e63585a5ffa4c1a90010253de675325e486b355239e"
     },
     "docs/physics_review.md": {
-      "bytes": 7915,
-      "sha256": "1074ae4d07fe5a54c26125e1b60f8385fc5b5ae22222d7ae3481cc06a802a45f"
+      "bytes": 9498,
+      "sha256": "982736c2a01ad6bb4b1c16e25f94e1b0ec33b65709e8595c581bb24f0bf16229"
     },
     "docs/revision_status.md": {
-      "bytes": 937,
-      "sha256": "a35089e06b7e3be6fe53f4eafdeb5e5cf356615d9954f984fe95b07225e04022"
+      "bytes": 1760,
+      "sha256": "bbc9c952efc55aa95c847a4fd8d173fcb8388f0a7c4ae15d816fa28165a5b721"
     },
     "docs/simulation_import.md": {
-      "bytes": 13228,
-      "sha256": "258834725b2e164aa4ed9ce3d81f8081238a5e3823ab2471248a89b7648ee36f"
+      "bytes": 13796,
+      "sha256": "85d92a6e620067d5ce22eb774b37a9d393f54adbc9ffcb85eefac3af4554fcab"
     },
     "launch/display.launch.py": {
       "bytes": 4262,
       "sha256": "90b7a8840617e3b455dd21b1ce5721f445309daa86bdda3ce25a09c19f89b132"
     },
     "meshes/base_link.obj": {
-      "bytes": 10893316,
-      "sha256": "29077aa33a045e9de5f8bfe8b768009b423655487f865b8708c6415be8cadae7"
+      "bytes": 12841381,
+      "sha256": "e26693c77d9ffdb3facc8f48b20c72191fde6ac57fa0f8ed4ae474660febaa70"
     },
     "meshes/base_link.stl": {
-      "bytes": 1322684,
-      "sha256": "203dd50f6c5d83d771d2fa1b3a845de699d6ca28ef2f7303f87df9cb755c5bec"
+      "bytes": 1558684,
+      "sha256": "ad860155da0956465839b234d266fbf2b9b8d2120f5742a77d737c9b00dfdd1b"
     },
     "meshes/base_link_aluminium.obj": {
-      "bytes": 18291590,
-      "sha256": "554d650379c03b0db61d1d5359a84371bdd061d001489c4b50dd76f6fe85922e"
+      "bytes": 20922985,
+      "sha256": "b8d6b125b74c11007c0626ff3de45fae0ca8b6ad81cafa8ddc680c7875c440ad"
     },
     "meshes/base_link_aluminium.stl": {
-      "bytes": 2256484,
-      "sha256": "74bfcdddb5412c3bdf93910fa71f4c945a80f42e12277613038a9297e347351a"
+      "bytes": 2564284,
+      "sha256": "01cd047a2858da97a2d0966082b4097e64f2f5b1c39d2ae2a7a016994186e543"
     },
     "meshes/base_link_control_red.obj": {
-      "bytes": 145770,
-      "sha256": "2682f1363c0dda6a902c94d7a2dc31b05da54ef9a4b859acf2707d2b8032dac3"
+      "bytes": 1808050,
+      "sha256": "edf267edd78eba2dde950d637b40ddf3b4137a21ffb68756a3ac6b8bdb459bb6"
     },
     "meshes/base_link_control_red.stl": {
-      "bytes": 18884,
-      "sha256": "aace3362c494e21cae6b73c2a394977ec9cee2fdd01d1f25bd26e586fc1e0fde"
+      "bytes": 223284,
+      "sha256": "a5d94fa6f5647ca291f9cc5a7adc926a81d045fc839f474a2282068453a78f60"
     },
     "meshes/base_link_pcb_green.obj": {
-      "bytes": 460041,
-      "sha256": "5d13568c5061401d817616d0d323a4cb9fc5f18b741b1ce4483df20b562de7b0"
+      "bytes": 2635058,
+      "sha256": "1dc441f120f64695dbe853da15832199f7f5ed052ca6aaaa25004968add07faf"
     },
     "meshes/base_link_pcb_green.stl": {
-      "bytes": 56484,
-      "sha256": "375ceb1877e4a40545f7a5a26032140025fc8434f6124e7f7c94544be3f131ff"
+      "bytes": 319684,
+      "sha256": "febbf5683d03dd59b3a4d00bd61e68dfd08d8591f85eef4fafc6c70fe473768c"
     },
     "meshes/base_link_polycarbonate.obj": {
-      "bytes": 988499,
-      "sha256": "fba0e8b17a0a9197e286ed7a5b03889bdba2cb0bd2645a8af09626d57511842d"
+      "bytes": 990836,
+      "sha256": "c6722d47defc7ea74c1a2f3aaa0960c1b4476965e277253b0e4e96c91046d208"
     },
     "meshes/base_link_polycarbonate.stl": {
       "bytes": 123884,
-      "sha256": "6d1243ae66f7258e7182ccb26c867b282c6c8feda1fe4b7b3aad2a0a540be810"
+      "sha256": "fc0779d847489c260de7596005c9cbff401cc54be7325c309604db9ff8a94c54"
     },
     "meshes/base_link_servo_black.obj": {
-      "bytes": 3200659,
-      "sha256": "76e3f39d08a49af4b16a49c44bde9e3e965d3da1beeecbc3b5662dc3713dc441"
+      "bytes": 3506319,
+      "sha256": "72b19a3230ef357b1814820e4da0afcbcee80d3eb6d929523d3fae90c6f52fb2"
     },
     "meshes/base_link_servo_black.stl": {
-      "bytes": 392484,
-      "sha256": "23ac28516fe848ab0a3a87b105577b42a0a96f26688c99195f3a46fb91440d71"
+      "bytes": 426284,
+      "sha256": "6f23233b7df678a238b44194f65d6aa7be599e6cd5d2a07df4047a1af49124f8"
     },
     "meshes/base_link_worx_orange.obj": {
-      "bytes": 980444,
-      "sha256": "1f75705a941906d7f08011d55f89c3088c28831f8871390d67a9dcac02643174"
+      "bytes": 2495934,
+      "sha256": "a40f5555716f3fdae1f138a5151d47634abfe6242b3ca39d70c65992f01dd2ca"
     },
     "meshes/base_link_worx_orange.stl": {
-      "bytes": 124484,
-      "sha256": "2b71fca18cd52ba1e101422c4c59f31954b2ee2746bbb57240a5084f6855a292"
+      "bytes": 309884,
+      "sha256": "67709b1d96f7c7d62b0b986fcf3cd3563e88dbab5f47896bf6446494a8d1663e"
     },
     "meshes/camera_mount.obj": {
       "bytes": 74318,
-      "sha256": "b06f66bd8d38e109b99138e9fa17480e03cb865e9ff14fc3e938fce115119fac"
+      "sha256": "d5ed24b4d033ed449e0cb9ab045fe5409510fd155ddc8ef1e36b6ea163765dcd"
     },
     "meshes/camera_mount.stl": {
       "bytes": 9484,
-      "sha256": "7c192ed32f07c99131545a38be68cdddb54247222de5a9bd21c9091361a7c7aa"
+      "sha256": "fe6c489377c34f9ac4cd7d89693bd4da0064933e49c7a07a3a865956755f9413"
     },
     "meshes/camera_mount_aluminium.obj": {
       "bytes": 75612,
-      "sha256": "fa029986b804a8b92ccf4f04da0044f30823a4514dc64dd6e688bd683d20137f"
+      "sha256": "fc8a3f6a0c9c0e00a8b50c963f5cbb2c95688a6382049405875aeb78c45938f1"
     },
     "meshes/camera_mount_aluminium.stl": {
       "bytes": 9484,
-      "sha256": "f3edf75bc00bea27554b8af24f40f647d118699eb1e31b3e9a0c844504a0d908"
+      "sha256": "dc44473067a6af6136b8aa25f54a5dbccd25c8283d39de9ed0781310e54e4b44"
     },
     "meshes/camera_mount_pcb_green.obj": {
       "bytes": 75089,
-      "sha256": "1b9cfeae8be809eb69151a9c5abf12befe1f3e20439f570ee7d915ad8fe03a6d"
+      "sha256": "cdfe39667d8a9e66a4561f025783504007fecbb755974ca69c159e1105bce8d4"
     },
     "meshes/camera_mount_pcb_green.stl": {
       "bytes": 9484,
-      "sha256": "0506a07b5d0da019c961b2c9ef33d9c284af97456585e15ccf3fe497f3cbdcab"
+      "sha256": "d260abb44584f089fa14f164f6c580e245756bffd0df289b9404e2af5ba6704a"
     },
     "meshes/camera_mount_servo_black.obj": {
       "bytes": 1760767,
-      "sha256": "15cfec901cbe2744fe6a403afc6d5d28043c8294d716898f9a9a55ace514575c"
+      "sha256": "3f815bb78d933a2bb7515910a88bc2029e3b19fd74d212f3262571cf27d3eb12"
     },
     "meshes/camera_mount_servo_black.stl": {
       "bytes": 213884,
-      "sha256": "b4b541fb42a58915cd960f9cfae95ea39651054c0c275d881272abc47d0da394"
+      "sha256": "ac114433a81064708adbb3c63e0775db4f0a2d07a93adc171471a31b0fd22a60"
     },
     "meshes/caster_link.obj": {
-      "bytes": 1252903,
-      "sha256": "a5d3eb17061ea11a4b66e7f3ee5958a5674c09035fd86f5e4b5befa2f9ef9395"
+      "bytes": 1252893,
+      "sha256": "520900176868a53893501c4a03380e51b2e5f4934e9d459797b67e58caa27d27"
     },
     "meshes/caster_link.stl": {
       "bytes": 153484,
-      "sha256": "23135c9b7ce34aab1def0d5fd88132b6a24783dbe59df246d3392498ccee3cc3"
+      "sha256": "68c5cfe190e8e42161fa9b09ace751484c64b0584f00506230b583b2ecd2ea87"
     },
     "meshes/caster_link_servo_black.obj": {
-      "bytes": 837472,
-      "sha256": "ef51a09340d6c8c4c09a41aa1e45fcd0dabe31bde113767887781bad6496ba94"
+      "bytes": 836935,
+      "sha256": "54d378c92e7f080ebc8268c5189a10a3e7d897cc672d5c632d13d01ec3b8714d"
     },
     "meshes/caster_link_servo_black.stl": {
       "bytes": 102284,
-      "sha256": "303ca1ddd6a7faeef8784768a0dd71feffb679af739b5e75ec38be43c23a8397"
+      "sha256": "336119bb1fbd34b0db83e50c26e414b1267103df8bc6c5d331265dbc84b56c2b"
     },
     "meshes/caster_swivel_link.obj": {
-      "bytes": 151647,
-      "sha256": "a629b1f507c6812357888a52540f05c09ce5564334f39960e71892079cc4e154"
+      "bytes": 151975,
+      "sha256": "4318f0f21f4acd45af7cab3a146f41c9922392163b71dd502098ff569eb1a243"
     },
     "meshes/caster_swivel_link.stl": {
       "bytes": 18884,
-      "sha256": "7d255dd7888944b965c7fe220d9a7340807b8a416a536f77f7b0eaa6f6f501d4"
+      "sha256": "fedca1a52faeb994d16dab80820607d85d38a57441c766503385e784f4d5148a"
     },
     "meshes/caster_swivel_link_aluminium.obj": {
-      "bytes": 1702301,
-      "sha256": "472d45cb37d6105be41b046af7d26d90e769a678f9baa2fbfd19a7c97ac96ee0"
+      "bytes": 1702781,
+      "sha256": "8d93ad7e59fa1bd64d6e7ff506683f0309ef5b9b2ca66d982c711d9cfa605503"
     },
     "meshes/caster_swivel_link_aluminium.stl": {
       "bytes": 204484,
-      "sha256": "41946ea6ccd1dd69ae55aa8de849e6013060fae5db138d5189a44c41f15a0af1"
+      "sha256": "2966ae3a4a4c010321a2483c2c81092650066df18888d60a0bf8dcd74f09904e"
     },
     "meshes/left_arm_base_aluminium.obj": {
       "bytes": 150191,
-      "sha256": "f30bd561bffa2c2dd4e3030f467ca0868947c3ced1c492698a5f917bf5bc3b30"
+      "sha256": "21c3c19814ccf4b6e240781887c9215f57ce80a2165cd5df588bc484245be775"
     },
     "meshes/left_arm_base_aluminium.stl": {
       "bytes": 18884,
-      "sha256": "acb8bd5ed0119bd58aac8d8df1c5825399930c703dea80c418e3ccba3ce060df"
+      "sha256": "946d65d4e57cbe9cabd9e4f4aec56aa850876cb75a87f5d17d8ef300756af2e5"
     },
     "meshes/left_arm_base_servo_black.obj": {
       "bytes": 1240437,
-      "sha256": "c047a1bf206b17923193643e438df5b49b0ba1c14b94dcefb372cc3e0ce64628"
+      "sha256": "3db0a53ac52ef1605c83518ed70aa80c12f47317e8671e4b2fbead860d68eead"
     },
     "meshes/left_arm_base_servo_black.stl": {
       "bytes": 153484,
-      "sha256": "2feb0526f7e44c7b0a1bce66fd9b1b8537816a8344f8ac72c4e64f6fcc7280d4"
+      "sha256": "4cae1ef6519b439ae6a7fbedc93dcce775f5b1e14b8192316dd2fd604429451e"
     },
     "meshes/left_forearm_aluminium.obj": {
       "bytes": 3778771,
-      "sha256": "ae68c517d485f19873f9b4e43cb4a10abfbd7dc0c6f76c6febd61dc1aa3cdd65"
+      "sha256": "b61718321669137a8f2149ee298878d1e95695644f3e4a8396fe43a0ea576520"
     },
     "meshes/left_forearm_aluminium.stl": {
       "bytes": 453684,
-      "sha256": "12133e83f200e728ccfefd0c11da99ae30cfdfdd9b32350f7c0ec20b1f69116c"
+      "sha256": "3f7289c9ea47c52aa1f432d522991e96c2e488b0ed9bca520c771b24eb17b5dd"
     },
     "meshes/left_forearm_servo_black.obj": {
       "bytes": 75465,
-      "sha256": "e639deb66abf6634c254a1e25cd1f320de2e20132484de3b1ff23d5481f91ea0"
+      "sha256": "a56890cceac33b6cdc4b5f279d835f2dc0f73a35665f75d68f62f702cec033c7"
     },
     "meshes/left_forearm_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "01dc874a536ba42d5c6fb9d0bff683282ab5618711431f43cdf084b0891c6f3d"
+      "sha256": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4"
     },
     "meshes/left_gripper_left_aluminium.obj": {
       "bytes": 927283,
-      "sha256": "ffde78605018b694f0cc24218412ecb9089efaccf008ad192ad48ed875b2669c"
+      "sha256": "047798711f68718ce5c975b77131af738ea41b9400eb6505cc7c5d04bb63c3c3"
     },
     "meshes/left_gripper_left_aluminium.stl": {
       "bytes": 111684,
-      "sha256": "4f291aa6346306f3e8789cc7ab0e6600af9d8141bbb077e0e03ff57aeb378714"
+      "sha256": "dfc3229b472fe4dcdbc835fa24761fa385c323c86fef742fe8d41a7f3d449626"
     },
     "meshes/left_gripper_right_aluminium.obj": {
       "bytes": 926980,
-      "sha256": "005925edd9013c26b92ffed700b1d02eb32d54c830ccfe42066985b0f5e721c1"
+      "sha256": "c848aadacde08fbd024ce2b06be08307abca08e36dbd25d21253e44c0bae2740"
     },
     "meshes/left_gripper_right_aluminium.stl": {
       "bytes": 111684,
-      "sha256": "5ce91fb9e5f1e84bcaacbcd504f83cd62ed7c156725b1c924b44311c3fddb1f3"
+      "sha256": "2bca7cf8cbd746c439eccdb70303d0b1e9a9034f84b767e4fa605221e2a59851"
     },
     "meshes/left_hand_aluminium.obj": {
       "bytes": 922743,
-      "sha256": "6a0702e651e1f948521a30b9646bfcc1e2d34fa345c57190ab9e51d90f6d0d31"
+      "sha256": "5f5fa01761f06fdaab256799c17e97b3091f50965ee967ed2c2f3984c44c5072"
     },
     "meshes/left_hand_aluminium.stl": {
       "bytes": 111684,
-      "sha256": "79efe4dfcaee4704db204ca267dfc69d45f31a0f27536c8332f47110c962f8b7"
+      "sha256": "05efc53e81cef60c741f1158ea65b41c776f96bed862a61b6e88718bd0a93463"
     },
     "meshes/left_hand_servo_black.obj": {
       "bytes": 75447,
-      "sha256": "dba82a7296af70ca7365d5367802f77f45d38f91c28a56e0cc49516998408ce0"
+      "sha256": "e4a64bda2be32bc49547832b3884112e1170e801a479fa6af0f8fb1d9ea2ccdd"
     },
     "meshes/left_hand_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "339387c3dd5bc6afea60a1330505cccdd567d46a5d4fb9cfefd4ce9fd954d79b"
+      "sha256": "8e200f4dd5dbd79d79eab4280faef12372c29d4a577f99a5bf576ca5c3aba0e1"
     },
     "meshes/left_upper_arm_aluminium.obj": {
       "bytes": 3778763,
-      "sha256": "8693a304c9754dfb21dadc7716cd07aa4913ab6e745738c4a01f3c756665bc6b"
+      "sha256": "13a7e61542fad04a2930b1c2960d11329a9579feb8057e5164aa2061fa81483d"
     },
     "meshes/left_upper_arm_aluminium.stl": {
       "bytes": 453684,
-      "sha256": "3989ce4f1762a230895bf9b47f3449804fc841e59cdffa7b97f7c28fe90f353a"
+      "sha256": "a4e279f6632fec290bd54426b4c21b243d7471edf70812e976328b128cfab5a2"
     },
     "meshes/left_upper_arm_servo_black.obj": {
       "bytes": 75467,
-      "sha256": "c72f9707f5d327b2caa125e152f2e2d1f11e49f3a43c2934d052948eb226d59a"
+      "sha256": "8ac68eb6389baeb883469875d3005737aeb395f9b22b81766c07014b46ccfbe6"
     },
     "meshes/left_upper_arm_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "01dc874a536ba42d5c6fb9d0bff683282ab5618711431f43cdf084b0891c6f3d"
+      "sha256": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4"
     },
     "meshes/left_wheel.obj": {
-      "bytes": 1381829,
-      "sha256": "74528524628ee5a6d2932162c9ef448006e629b677ff8db649112fdc2f4f3366"
+      "bytes": 4679335,
+      "sha256": "990985b946afc257bd69e9e89beaee7c24fea4412276b1c0355a1b5fb710ca3f"
     },
     "meshes/left_wheel.stl": {
-      "bytes": 172884,
-      "sha256": "4268144b3e6275177ea00f901bb15e5ff7978119ba14b6bb97b3c55ca221bd07"
+      "bytes": 562884,
+      "sha256": "5dc21cc0c291c1fa093aaae224d13f2cd60d862403049a7b96af1ac9ea7887db"
     },
-    "meshes/left_wheel_aluminium.obj": {
-      "bytes": 6925179,
-      "sha256": "f8fc56861e5f104f7378cb87e6a6d29c01fc80ef006e4965c9f533de89aa627b"
+    "meshes/left_wheel_servo_black.obj": {
+      "bytes": 4304242,
+      "sha256": "42b409ef04fd9c4f6dd9a80a622cc2142bdd23ac4de3af2abc636f682442d828"
     },
-    "meshes/left_wheel_aluminium.stl": {
-      "bytes": 844684,
-      "sha256": "ba5110b48e8dbe770c3f18b2f3388cbd28ed72cea67ebaa01da2ae71d2baf925"
+    "meshes/left_wheel_servo_black.stl": {
+      "bytes": 516684,
+      "sha256": "44494f5635b89f0c638e9108e653f4cfbb8fad33e5023cc5f8cd907d25c744b8"
     },
     "meshes/left_wrist_aluminium.obj": {
       "bytes": 3779699,
-      "sha256": "685e6a23ab4cd2258ec4cb243b8e412a6c405c7e21cecc1afe28b3c5d1db4195"
+      "sha256": "d8826ba6507f111afa611feceabc53d169321a366955f882b88b62e9637490db"
     },
     "meshes/left_wrist_aluminium.stl": {
       "bytes": 453684,
-      "sha256": "6847f01432218badeaea9dec16a15a282166cb83f9c83fe6b9776f7c6d6c0aa0"
+      "sha256": "8756e14cf848daeef0217c8bcce28041c08c5c4beca180c9f6c76c9e9225132a"
     },
     "meshes/left_wrist_servo_black.obj": {
       "bytes": 75463,
-      "sha256": "04858ef28f661371f03ee9b056339d4062b47ac732840a932900e9405780394b"
+      "sha256": "fb03a069474f8c2b18246ac6dece1bf7a3d0539ffd5e72c1ba948834fc0f0f76"
     },
     "meshes/left_wrist_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "01dc874a536ba42d5c6fb9d0bff683282ab5618711431f43cdf084b0891c6f3d"
+      "sha256": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4"
     },
     "meshes/lidar_mount_servo_black.obj": {
       "bytes": 1226719,
-      "sha256": "d4680ccc276482a605d78edf4a9038ef770665a9863b4b9654ef46faef9a6df4"
+      "sha256": "49047458c2b49db8cde6c0b468f8de4d8e6a05b1b1b64ff0afc4685750edfd6e"
     },
     "meshes/lidar_mount_servo_black.stl": {
       "bytes": 153484,
-      "sha256": "9c283172b1a697dbc3033bd5b41a2810be7feaaf7898d632bc32c7fb5304587f"
+      "sha256": "57aa7655982ed79d07772329795f944775015bcc88b14b5078c396830706dad1"
     },
     "meshes/lidar_mount_worx_orange.obj": {
       "bytes": 1245675,
-      "sha256": "112a09bb3e783e1f9da1b7b636a50226730c0e5016ceb5cb6b081abe89ee963d"
+      "sha256": "375a492f4ed705767c4708a115a6ea7d08745751ef15a14aff3f14acb6d1f041"
     },
     "meshes/lidar_mount_worx_orange.stl": {
       "bytes": 153484,
-      "sha256": "f46c5e7b183bbfda6e07cd2ef09d34dfa8941231b5dc4b197f57cbc6569655ce"
+      "sha256": "bd8191ef9cec04180fbee208430587598dd44e951d1d682d0667f73524bd4708"
     },
     "meshes/right_arm_base_aluminium.obj": {
       "bytes": 150193,
-      "sha256": "d480ec6e53a357a610eafc3dbcc708c5cd47fa50ed6b945b30d3a6c047b0fd4e"
+      "sha256": "0e0387951a79c6b5a16bd1727a6d593505784b6f1ea9b32aadc7f81bd3d074cf"
     },
     "meshes/right_arm_base_aluminium.stl": {
       "bytes": 18884,
-      "sha256": "acb8bd5ed0119bd58aac8d8df1c5825399930c703dea80c418e3ccba3ce060df"
+      "sha256": "946d65d4e57cbe9cabd9e4f4aec56aa850876cb75a87f5d17d8ef300756af2e5"
     },
     "meshes/right_arm_base_servo_black.obj": {
       "bytes": 1240438,
-      "sha256": "c1d3daf88606b2b552ba0a635a3c94f72e9d3d4a814d4d628bb490de6b1817db"
+      "sha256": "2c5b1f184bf1f36fe9eb81b9a8a0250ce24cc2afbae880c122f2e7e27fa468e1"
     },
     "meshes/right_arm_base_servo_black.stl": {
       "bytes": 153484,
-      "sha256": "2feb0526f7e44c7b0a1bce66fd9b1b8537816a8344f8ac72c4e64f6fcc7280d4"
+      "sha256": "4cae1ef6519b439ae6a7fbedc93dcce775f5b1e14b8192316dd2fd604429451e"
     },
     "meshes/right_forearm_aluminium.obj": {
       "bytes": 3778779,
-      "sha256": "011b4f884444fad55fcb21eae268f8b8d0c10c1084914ee27b4518dcea51f8ab"
+      "sha256": "30ffe2e8869257183f521061f3cf960ce02abd1092a1f4236bdd45f6438770bc"
     },
     "meshes/right_forearm_aluminium.stl": {
       "bytes": 453684,
-      "sha256": "12133e83f200e728ccfefd0c11da99ae30cfdfdd9b32350f7c0ec20b1f69116c"
+      "sha256": "3f7289c9ea47c52aa1f432d522991e96c2e488b0ed9bca520c771b24eb17b5dd"
     },
     "meshes/right_forearm_servo_black.obj": {
       "bytes": 75466,
-      "sha256": "3cdf3fda2f578d7dd82f08a0298ba9bb737fa3f078477dd96b42e02684d4c91a"
+      "sha256": "3d7adf257d19dcf69d375bbe1245049cb9301a74a61fd708e5c6119747629222"
     },
     "meshes/right_forearm_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "01dc874a536ba42d5c6fb9d0bff683282ab5618711431f43cdf084b0891c6f3d"
+      "sha256": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4"
     },
     "meshes/right_gripper_left_aluminium.obj": {
       "bytes": 927285,
-      "sha256": "f081e1424e010968546291695256c4a96665423eab2755e72bb23fd49c38383a"
+      "sha256": "56b86a68b34e849d0b419f0c992b0b6657648bca45a4d6f4ced66888c583eebb"
     },
     "meshes/right_gripper_left_aluminium.stl": {
       "bytes": 111684,
-      "sha256": "4f291aa6346306f3e8789cc7ab0e6600af9d8141bbb077e0e03ff57aeb378714"
+      "sha256": "dfc3229b472fe4dcdbc835fa24761fa385c323c86fef742fe8d41a7f3d449626"
     },
     "meshes/right_gripper_right_aluminium.obj": {
       "bytes": 926982,
-      "sha256": "380b01a7fbc464f78b846249e6b42ead31e34d8eeda28e884c3a4e2d01a03a76"
+      "sha256": "433908e84bbeb838d3c65ff1aff3ddc910beae9528f3f691e88d1810ab80ef3f"
     },
     "meshes/right_gripper_right_aluminium.stl": {
       "bytes": 111684,
-      "sha256": "5ce91fb9e5f1e84bcaacbcd504f83cd62ed7c156725b1c924b44311c3fddb1f3"
+      "sha256": "2bca7cf8cbd746c439eccdb70303d0b1e9a9034f84b767e4fa605221e2a59851"
     },
     "meshes/right_hand_aluminium.obj": {
       "bytes": 922745,
-      "sha256": "a491c8fb05f2aea66309863585e2ee44dc188f98a67bbdb46798fdde04ba4a27"
+      "sha256": "dac9a00a9a78ce0a89393b9b032f3bd419f3ff7765aa043198718c6eb67f2a4e"
     },
     "meshes/right_hand_aluminium.stl": {
       "bytes": 111684,
-      "sha256": "79efe4dfcaee4704db204ca267dfc69d45f31a0f27536c8332f47110c962f8b7"
+      "sha256": "05efc53e81cef60c741f1158ea65b41c776f96bed862a61b6e88718bd0a93463"
     },
     "meshes/right_hand_servo_black.obj": {
       "bytes": 75448,
-      "sha256": "cebd1fc76d46a50f94228e5a0ce3803cbdc0f67d5720079570cf3d1b186b8c3f"
+      "sha256": "8f69e5722e3906aa588852438b2637671cc2fd66c37c04d748fdb1e4d695a23b"
     },
     "meshes/right_hand_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "339387c3dd5bc6afea60a1330505cccdd567d46a5d4fb9cfefd4ce9fd954d79b"
+      "sha256": "8e200f4dd5dbd79d79eab4280faef12372c29d4a577f99a5bf576ca5c3aba0e1"
     },
     "meshes/right_upper_arm_aluminium.obj": {
       "bytes": 3778771,
-      "sha256": "219d4db8e635f66c47b97d4a4467fb4784939d7348a785ad3d3f2ff09593528e"
+      "sha256": "67d42442a1b05071563fcc230f375022e4d40b2f0af1981e381aaeb932e03c90"
     },
     "meshes/right_upper_arm_aluminium.stl": {
       "bytes": 453684,
-      "sha256": "3989ce4f1762a230895bf9b47f3449804fc841e59cdffa7b97f7c28fe90f353a"
+      "sha256": "a4e279f6632fec290bd54426b4c21b243d7471edf70812e976328b128cfab5a2"
     },
     "meshes/right_upper_arm_servo_black.obj": {
       "bytes": 75468,
-      "sha256": "996c920499e464460e83861fc8490fe9dbc7c3298ac5d0d0b58cf7dcf549c6a5"
+      "sha256": "07150cbd84c9d5fadcdf073b7590099138c9cf445cd63db973226036067f8fcf"
     },
     "meshes/right_upper_arm_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "01dc874a536ba42d5c6fb9d0bff683282ab5618711431f43cdf084b0891c6f3d"
+      "sha256": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4"
     },
     "meshes/right_wheel.obj": {
-      "bytes": 1381830,
-      "sha256": "9c22fb5502b821c641b5f67c96ad6db2b118b1e407c86376105d1027b703fe16"
+      "bytes": 4679338,
+      "sha256": "b1c4cf4bc33534c4967f82a3f4e8c3a6a813eee259dd5e242abb60e41c0b1c6c"
     },
     "meshes/right_wheel.stl": {
-      "bytes": 172884,
-      "sha256": "4268144b3e6275177ea00f901bb15e5ff7978119ba14b6bb97b3c55ca221bd07"
+      "bytes": 562884,
+      "sha256": "5dc21cc0c291c1fa093aaae224d13f2cd60d862403049a7b96af1ac9ea7887db"
     },
-    "meshes/right_wheel_aluminium.obj": {
-      "bytes": 6925192,
-      "sha256": "632c0b2faf80d855f0eaad57991deedb2e0ecfb1b42d45fc4aba5ce21d7c903d"
+    "meshes/right_wheel_servo_black.obj": {
+      "bytes": 4304251,
+      "sha256": "d94f1e2ddffeb8fb09bf3f7654db1bfe5ea811497f6f28cf65bf3dcf7acd7dbd"
     },
-    "meshes/right_wheel_aluminium.stl": {
-      "bytes": 844684,
-      "sha256": "ba5110b48e8dbe770c3f18b2f3388cbd28ed72cea67ebaa01da2ae71d2baf925"
+    "meshes/right_wheel_servo_black.stl": {
+      "bytes": 516684,
+      "sha256": "44494f5635b89f0c638e9108e653f4cfbb8fad33e5023cc5f8cd907d25c744b8"
     },
     "meshes/right_wrist_aluminium.obj": {
       "bytes": 3779707,
-      "sha256": "1c1bdbf560dc5db0e72d41101fe93748d28cff41dd96feeca3ef714462a44e32"
+      "sha256": "aeb7a86651404fe58f0517d6eb543e0e76f78dfb554a4b538235c140ffd9bb24"
     },
     "meshes/right_wrist_aluminium.stl": {
       "bytes": 453684,
-      "sha256": "6847f01432218badeaea9dec16a15a282166cb83f9c83fe6b9776f7c6d6c0aa0"
+      "sha256": "8756e14cf848daeef0217c8bcce28041c08c5c4beca180c9f6c76c9e9225132a"
     },
     "meshes/right_wrist_servo_black.obj": {
       "bytes": 75464,
-      "sha256": "73e572ff8a34c006842021c5c23b8c0819bc59300659e74bfb2f5cb97c5ecbde"
+      "sha256": "3219a2c1d32e4a516bd6f22c64337ad709e9a48966c1d5115ed41d92a1d1f26c"
     },
     "meshes/right_wrist_servo_black.stl": {
       "bytes": 9484,
-      "sha256": "01dc874a536ba42d5c6fb9d0bff683282ab5618711431f43cdf084b0891c6f3d"
+      "sha256": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4"
     },
-    "meshes/Underbot_R09.mtl": {
-      "bytes": 1743,
-      "sha256": "c64ad2b58be0143dcb5d7deda7949586fc533dd5f4594c098d0c5d53a1e23ebc"
+    "meshes/Underbot_R10.mtl": {
+      "bytes": 1741,
+      "sha256": "278666fc21c909b9148ce1037be93adf9c4f1e863647289f82deee6b94b016b2"
     },
     "package.xml": {
-      "bytes": 864,
-      "sha256": "ed7e7b67f8c4f96a20c9e6369a44c21bed23fb77307d68d03ce1cf4b95b913cd"
+      "bytes": 865,
+      "sha256": "2dfb6830f914d14907d401d65d365217d32a42da856f2b7fc7054c97abb1df48"
     },
     "README.md": {
-      "bytes": 6081,
-      "sha256": "5f270517e5b94b30a06460ed79552d3e1aa3c081dcdd0ac01e8077d6581a0738"
+      "bytes": 4854,
+      "sha256": "b771a076996305b296198e5f5c8f9233b0243e71094e83147f903b85bdf6bdc0"
     },
     "rviz/underbot.rviz": {
       "bytes": 1580,
@@ -459,19 +454,19 @@
     },
     "scripts/build_viewer.py": {
       "bytes": 6072,
-      "sha256": "e3395e4ea72c2bd361f7f359f90df4f5288e18f32adc3b33eba11b0ba619d894"
+      "sha256": "4ebcdc97bac85677328ea1b1d83d0f820d5dfe4f750c9a4c449f362ddd60e5d8"
     },
     "scripts/check_sources.py": {
-      "bytes": 3992,
-      "sha256": "b83fc98e2b2525aa1f311edbce11c911ebae0e470eaea7d4414b77b5b9957cd6"
+      "bytes": 6080,
+      "sha256": "e1e6c56c1532500e426dcee824e9c7451963280aa7d9ad22c2c50157ceb7d67c"
     },
     "scripts/generate_model.py": {
-      "bytes": 31797,
-      "sha256": "05e1a10e608b763e649562360879409e111be94f676342f42120d9af2008f8e5"
+      "bytes": 30645,
+      "sha256": "8a562d61eaff16a735ac2a8f89865c318093ada60a17ccc4b87a2b9c6545605d"
     },
     "scripts/physics_smoke_test.py": {
-      "bytes": 27016,
-      "sha256": "85775281413a530293879278e9444ece68ea85acd2a9ab7afc622607bc732549"
+      "bytes": 27602,
+      "sha256": "0588250143af4306be718235817c18df088800adb7197cf68bc442d9c3cae1b9"
     },
     "scripts/prepare_simulation.py": {
       "bytes": 10534,
@@ -482,12 +477,12 @@
       "sha256": "396055109aea79b1d6fb66576c908e25201594724ffbeb9e8c9dda033da27e3b"
     },
     "scripts/validate_model.py": {
-      "bytes": 65039,
-      "sha256": "f6edee223d4248f73e59aec7c16c72cc1b5fc3847c5730349faa92b4136905bc"
+      "bytes": 67801,
+      "sha256": "0ce412be82281dd036a90d671b0fc7788055d8205f5a9c8087e50a883e936e93"
     },
     "scripts/verify_pybullet_import.py": {
-      "bytes": 10020,
-      "sha256": "c3ac838514834325e751978311f88be99c89150539f6fb0ca4449e4816ef36a0"
+      "bytes": 12998,
+      "sha256": "33c281110f6ecb5398b16f5342bb3c0011fe853c1b38b999ca71bec272f05da9"
     },
     "scripts/verify_viewer.cjs": {
       "bytes": 5654,
@@ -496,6 +491,10 @@
     "scripts/viewer_template.html": {
       "bytes": 17023,
       "sha256": "46968448ddc788e0e96363cdfe1ca2883a52330667206868ca4226e2cba557f8"
+    },
+    "scripts/wr141e_geometry.py": {
+      "bytes": 7770,
+      "sha256": "f1df06c877337aeac7625b5dd929438bc452bbd1e6bb7f8d0d22590cb7b0d6cc"
     },
     "textures/black_abs_basecolor.png": {
       "bytes": 402157,
@@ -510,16 +509,16 @@
       "sha256": "553cfa7b7605e1ecb3a37c87df1a7ff9c5d902c314e12a967cc7242d1bd5c018"
     },
     "textures/black_painted_aluminium_basecolor.png": {
-      "bytes": 291706,
-      "sha256": "cc61bc70bf8fc6fb586d40613b0631cde66e1bfe405aba736448f4e8a7eb3f4f"
+      "bytes": 63949,
+      "sha256": "2961ca366bf9e690fa23b70982fd2cd4cb2c2147227524b4d6be40448d170072"
     },
     "textures/black_painted_aluminium_normal.png": {
       "bytes": 1521416,
       "sha256": "863527c57e03886854bcf9f0ac2302856b500718414dca14ded6324fa332fc6b"
     },
     "textures/black_painted_aluminium_roughness.png": {
-      "bytes": 1262469,
-      "sha256": "697fb7eb3c3830612c3a3dc299010281091f1514d3b332903d99d5bc5a1494a5"
+      "bytes": 1262618,
+      "sha256": "4a936b9b99d150952b55ada66f182c3b381cee5f89577ec10d0bda7e876e5ea0"
     },
     "textures/brushed_aluminium_basecolor.png": {
       "bytes": 82596,
@@ -571,103 +570,135 @@
     },
     "urdf/arm.xacro": {
       "bytes": 21428,
-      "sha256": "4e894ca8ed98e4b481d07999d63a8c1b69d7637d57dfad0eded51db4db7bd656"
+      "sha256": "0820b897aed2227fb4cc6121e154d78dd177cd1af1e37986677085a6cd5287ea"
     },
     "urdf/base.xacro": {
-      "bytes": 20891,
-      "sha256": "1ae383f23e4f6cd3747308dd0d04f0e38ab6617e34894e246058afc8512a2549"
+      "bytes": 20738,
+      "sha256": "110ff11e3f93dee1a8caae77f38156385695e8d34bd0b43d99033006ead690ac"
     },
     "urdf/sensors.xacro": {
-      "bytes": 4552,
-      "sha256": "825ae3b3ef3565d9e9edc7f5f2c7e85e0050d02884f617802c6b89b030cee9b8"
+      "bytes": 4553,
+      "sha256": "7ac34c38bd8b259b874f4d4586de0c556257d85ad5c699e34b710e9833f23d6d"
     },
     "urdf/underbot.gazebo.urdf": {
-      "bytes": 48799,
-      "sha256": "607b8b1e658a45b90f976a54eeacf0359a44670b976b1e9c8c811ef32e197888"
+      "bytes": 48665,
+      "sha256": "488657543ef2dc5d16b396c243441505cc21998f07bf7519d7c1f9b431cd8657"
     },
     "urdf/underbot.portable.urdf": {
-      "bytes": 43022,
-      "sha256": "589055d459d67174ca98c76689f6f99c45dc8ab15cf91992ec5ae4d87fbd9b97"
+      "bytes": 42882,
+      "sha256": "0daab387d38a86e5e90bae42bb30a04153d4ae816c9dd1822a9f1908ed1a9588"
     },
     "urdf/underbot.textured.urdf": {
-      "bytes": 37354,
-      "sha256": "1731ae6fb579649e9c6a7ef81cd626e8a139b4ca81c02663dff5faef3873e94d"
+      "bytes": 37201,
+      "sha256": "0312e3ebd66c0049bad7331dfac9ea70247f07f73022211445536c2b2477d1ec"
     },
     "urdf/underbot.urdf": {
-      "bytes": 44282,
-      "sha256": "805ae58b87af3d3030c201def6d7126b09fd0e907e6bebbdabf9e0db6059e3c7"
+      "bytes": 44142,
+      "sha256": "c66f99720353890a69291c1be2767eeb88faa4f657e95f9a92061f0273e65ade"
     },
     "urdf/underbot.urdf.xacro": {
       "bytes": 316,
       "sha256": "b4b59799ed132a72dc03c4c6f4726801293a21436489f57ea62e1123cc518c31"
     },
     "validation/authoring_checks.json": {
-      "bytes": 84936,
-      "sha256": "8f4886607c1a56e6d21a05b3e3197a376123dc21ce8fbe903081e979403932e0"
+      "bytes": 85460,
+      "sha256": "05117713cc42dcf59fb54cf153220a3928b4a07978f6171411e3a1f0cf45dae8"
     },
     "validation/authoring_checks.md": {
-      "bytes": 2404,
-      "sha256": "fbb21b633a47c1e1b159fa9983c8f3331d299c987656129b8a74d960d687849f"
+      "bytes": 2548,
+      "sha256": "c1f2ad38b18aa92d80b322b06aba3aeae42107fdd8bc2d941342bed100355fa7"
     },
-    "validation/delivery_check.json": {
-      "bytes": 3763,
-      "sha256": "74c9f3120b5e04a7b080d1f2570fd12abb407f6189248230d7b5232cb46fa85e"
+    "validation/final_verification.json": {
+      "bytes": 3735,
+      "sha256": "5fa34323eb4fe4dbf0c0fd6e37c756dee81038420cc0826a616178e748507994"
+    },
+    "validation/final_verification.md": {
+      "bytes": 1082,
+      "sha256": "b3398970dc88527da573e26b641fe55ace570d768501761669035720b84e4d92"
+    },
+    "validation/history/authoring_checks_initial_meshes.json": {
+      "bytes": 85291,
+      "sha256": "b3b63d1f5a68d68210cec9dc471e959b6b3841710d300db25e88b3032188859e"
+    },
+    "validation/history/authoring_checks_initial_meshes.md": {
+      "bytes": 2431,
+      "sha256": "c4a3eb7729cef723eadcf13426c1cdad705474a63dc227283cc83fe248a1d35b"
+    },
+    "validation/history/physics_smoke_initial_gain3.json": {
+      "bytes": 12801,
+      "sha256": "b35a5b6ff37b0bfe59ca2af848641d8a1bb490866e64475f4a7c0c732a731881"
+    },
+    "validation/history/physics_smoke_initial_gain3.md": {
+      "bytes": 224,
+      "sha256": "88846d71736c5e40269ab99d96c01d279abd12e38024ceb9ed8abc2a947ccada"
+    },
+    "validation/history/README.md": {
+      "bytes": 152,
+      "sha256": "b730d64111a28be783641b65e767911ec17b924ebb14136eb991d3be1bf2b744"
+    },
+    "validation/independent_geometry.json": {
+      "bytes": 2628185,
+      "sha256": "ff04617b3726a011a2464cce589e8f60941f4fae9520cc90070c602e41e6d326"
+    },
+    "validation/independent_geometry.md": {
+      "bytes": 2407,
+      "sha256": "637ef27b933864b8fcb48fd85bc1a708d4f46cd590764ed8023ed6fa9b1ab78a"
     },
     "validation/physics_smoke.json": {
-      "bytes": 31355,
-      "sha256": "229d3385be0710189135c541c177e26c642ca723d60f0e02714d93a7f8703cfa"
+      "bytes": 32150,
+      "sha256": "2fbb5ccc56a812058ea138f68654ae044012e9225cbe5a796778a2cf50b9b488"
     },
     "validation/physics_smoke.md": {
       "bytes": 2101,
-      "sha256": "260164fc104778a2ea9b2292d3ed9183db2cc747941977107905b832f9ce654e"
+      "sha256": "fb0c6314b764590ad93c7846ccfa8fb5376f00d8ccb2781bbc8149879d6d67df"
     },
     "validation/portable_checks.json": {
-      "bytes": 84945,
-      "sha256": "04a892d0cce64e9d6d7b61217431a55e3f1f180613688465235c282f5a9de89d"
+      "bytes": 85469,
+      "sha256": "7c3833582d181845eed04011c91c28ac4e337ab5da02fd41ec2066c98cdd9c5c"
     },
     "validation/portable_checks.md": {
-      "bytes": 2413,
-      "sha256": "c522b1e95a18f0c23584a3e1164525fb2669ceda57f894982d15745cae51b94e"
+      "bytes": 2557,
+      "sha256": "1dd9b9bb20543c4c09a3a47d64e4650639d1389aa9d423e1f95ff06537c79b97"
     },
-    "validation/pybullet_import_R09.json": {
-      "bytes": 22145,
-      "sha256": "133718281ba5bba28abfb88034368d9a4d15299ef2a0bd45ba424b684fded740"
+    "validation/pybullet_import_R10.json": {
+      "bytes": 26178,
+      "sha256": "df51943bd4f0f3810da30a13a573a881d92e5e9d84136749ab9b2b17b9473edd"
     },
-    "validation/pybullet_import_R09.md": {
+    "validation/pybullet_import_R10.md": {
       "bytes": 828,
-      "sha256": "f646d5c670b6dc9ab01e4c801bcd2a6fdb634841427f1b4fd95317215dafeaeb"
+      "sha256": "1f51f7ab62986ec0a3bb67e9333d9fb8fa7ddbd6c859001ddf17d4a5f69efb65"
     },
     "validation/static_physics.json": {
-      "bytes": 17699,
-      "sha256": "d86f488803455d4f7eebb2e299c247bd6233353521e6efa22c5967bcc2969da6"
+      "bytes": 17627,
+      "sha256": "46852921a6ce7d5bdcf294448405e6798e20c4f1dd5925b98f6758703dc36301"
     },
     "validation/static_physics.md": {
-      "bytes": 3432,
-      "sha256": "9d0dcb2bd0f921f51d6056536e7f5048b97fe5a10e9bebc0491603d2a8987c7e"
+      "bytes": 3430,
+      "sha256": "7a545791533d593c8c6e1f66eb2146c8aa19605d70fa8376228eca71855cf5ae"
     },
     "validation/underbot_imported.xml": {
-      "bytes": 17778,
-      "sha256": "89c326b83bf4548c568f026571e2f79fb86e8045dd1c8a1cda4b5b9beee994c6"
+      "bytes": 17920,
+      "sha256": "a8b7cd4093b6774b1729f8b1859097035fbe2aa159865171ba7afeb7625204b3"
     },
     "validation/underbot_smoke.xml": {
-      "bytes": 22392,
-      "sha256": "dcec8e7d5aaf8811d7cee7faad798cbae889893a0ebb5a1cc71a32dfaf33f2e5"
+      "bytes": 22548,
+      "sha256": "a2f82b5e5ab5086462e231904fdb3d874b4215ac74e85958486bf1096f237fa3"
     },
-    "validation/viewer_checks_R09.json": {
+    "validation/viewer_checks_R10.json": {
       "bytes": 935,
-      "sha256": "23cc9321449820ad1234e133b3e8328146b813ea458b709e2de6be12368cac94"
+      "sha256": "e546b36df6e000dd15e7094499b1c473bc5b6ec4210e6d71b076acdb7bdd992a"
     },
     "validation/xacro_check.json": {
-      "bytes": 520,
-      "sha256": "0e1703a926a1db13b6aa5061f82a2eb22f7fe30b6fa3fe037ed539764eaf7a3b"
+      "bytes": 934,
+      "sha256": "9c522d571c0ba6f3923afef90fbd4e17e1f89801bc4bfd432a548b0d0ee2b460"
     },
     "validation/xacro_expanded.urdf": {
-      "bytes": 35479,
-      "sha256": "04e32cfefaa39485ac6ba4edcb650d491f02307c1265de513ed4c5371a5099de"
+      "bytes": 35391,
+      "sha256": "14f3f19ee30763a58ef07962631d2c23b9f9f8d0ec2ed395b7e9eb4a7c1201e0"
     },
     "viewer.html": {
-      "bytes": 14936329,
-      "sha256": "6f272e144483696f4ff202b412d8fedf6cb0381efe539b5a41640e77a035c2b9"
+      "bytes": 16742406,
+      "sha256": "78c10cf6d53a8902cc54951d0457190b2cffc8d5bb1669405ce4e0adc45a84e5"
     }
   }
 }

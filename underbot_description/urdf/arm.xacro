@@ -402,7 +402,7 @@
     <joint name="left_arm_base_joint" type="revolute">
       <parent link="base_link" />
       <child link="left_arm_base" />
-      <origin xyz="-0.07 0.108 0.545" rpy="0 -1.57079632679 -1.57079632679" />
+      <origin xyz="-0.14 0.108 0.545" rpy="0 -1.57079632679 -1.57079632679" />
       <axis xyz="0 0 1" />
       <limit effort="1" velocity="1" lower="-0.785398163397" upper="0.785398163397" />
       <dynamics damping=".1" friction=".02" />
@@ -459,7 +459,7 @@
     <joint name="right_arm_base_joint" type="revolute">
       <parent link="base_link" />
       <child link="right_arm_base" />
-      <origin xyz="-0.07 -0.108 0.545" rpy="0 -1.57079632679 1.57079632679" />
+      <origin xyz="-0.14 -0.108 0.545" rpy="0 -1.57079632679 1.57079632679" />
       <axis xyz="0 0 -1" />
       <limit effort="1" velocity="1" lower="-0.785398163397" upper="0.785398163397" />
       <dynamics damping=".1" friction=".02" />

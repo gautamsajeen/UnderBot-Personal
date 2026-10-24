@@ -140,8 +140,9 @@ wheel_targets={name:0. for name in WHEELS}
 # The passive caster must turn against static tyre contact friction. A weak
 # velocity loop can stall at a correct, positive yaw sign even below effort caps.
 # This feedback gain changes only the torque-capped test controller.
-wheel_velocity_gain=3.
+wheel_velocity_gain=5.
 metadata['test_controller']={'wheel_velocity_gain_Nm_per_rad_s':wheel_velocity_gain,
+    'revision_reason':'R10 wider passive caster and revised COM caused excessive alignment lag at prior gain 3; gain 5 retains every original URDF torque cap, physical coefficient and test threshold.',
     'arm_kp_Nm_per_rad':30.,'arm_kd_Nm_per_rad_s':1.,
     'wrist_pitch_kp_Nm_per_rad':30.,'wrist_pitch_kd_Nm_per_rad_s':.05,
     'wrist_roll_kp_Nm_per_rad':12.,'wrist_roll_kd_Nm_per_rad_s':0.,
@@ -363,7 +364,7 @@ report={**metadata,'result':'PASS',
         'Passive caster alignment produces turn tracking lag; wheel commands are not perfectly achieved',
         'Proposed caster mechanics/friction and actuator gains are not calibrated hardware data']}
 (OUT/'physics_smoke.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
-text=['# Independent physics smoke test','',f"PASS — MuJoCo {mujoco.__version__} imported the actual portable URDF.",'',
+text=['# Independent physics smoke test','',f"PASS - MuJoCo {mujoco.__version__} imported the actual portable URDF.",'',
     f"Source SHA-256: `{report['urdf_sha256']}`.",
     f"Declared / imported mass: {declared_mass:.9f} / {report['mass_kg']:.9f} kg (estimated hardware inputs).",
     'Motors: 14. Caster swivel and rolling joints are passive; all recorded ground contacts belong to the three intended rolling bodies.',

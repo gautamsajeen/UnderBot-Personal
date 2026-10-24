@@ -6,8 +6,8 @@
     <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
-      <wheel_separation>0.354</wheel_separation>
-      <wheel_radius>0.0925</wheel_radius>
+      <wheel_separation>0.334</wheel_separation>
+      <wheel_radius>0.1025</wheel_radius>
       <topic>/underbot/cmd_vel</topic>
       <odom_topic>/underbot/odometry</odom_topic>
       <tf_topic>/underbot/odom_tf</tf_topic>

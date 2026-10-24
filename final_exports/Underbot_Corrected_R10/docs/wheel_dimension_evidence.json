@@ -1,0 +1,29 @@
+{
+  "checked_date": "2026-10-18",
+  "model": "Worx Landroid M500 WR141E",
+  "oem_parts_mapping_url": "https://media.adeo.com/media/5418924/media.pdf",
+  "rear": {
+    "part_number": "50024699",
+    "quantity": 2,
+    "diameter_mm": 205,
+    "bore_mm": 16.7,
+    "evidence_class": "supplier_published_exact_oem_part",
+    "source": "https://www.clasohlson.com/no/Hjul-Bakre-Worx-Landroid/p/51-2138",
+    "diameter_corroboration": "https://www.agrieuro.co.uk/worx-landroid-wr141e-robot-lawn-mower-with-perimeter-wire-lithium-ion-battery-m500-p-22628.html",
+    "width_mm": null,
+    "width_status": "not established; 40mm seller package thickness is not tyre width"
+  },
+  "front": {
+    "part_number": "50036897",
+    "quantity": 1,
+    "diameter_mm": 79,
+    "shaft_mm": 8,
+    "evidence_class": "supplier_published_exact_oem_part",
+    "source": "https://www.clasohlson.com/no/Hjul-fremre-Worx-Landroid-Landxcape/p/51-3393",
+    "approx_diameter_mm_secondary": 80,
+    "approx_width_mm_secondary": 55,
+    "secondary_source": "https://sklep.letmerepair.pl/pl/p/WORX-Przednie-kolo-do-kosiarki-autonomicznej-50036897/803",
+    "width_status": "supplier explicitly approximate; not independently corroborated"
+  },
+  "unpublished_values_not_found": ["stock rear tyre width", "wheel track", "wheelbase", "caster trail", "mounting-hole coordinates", "stripped chassis mass", "inertia tensor", "actuator limits"]
+}

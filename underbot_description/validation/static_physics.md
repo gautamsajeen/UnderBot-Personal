@@ -1,14 +1,14 @@
 # Independent static physics audit
 
-URDF SHA-256: `805ae58b87af3d3030c201def6d7126b09fd0e907e6bebbdabf9e0db6059e3c7`
+URDF SHA-256: `c66f99720353890a69291c1be2767eeb88faa4f657e95f9a92061f0273e65ade`
 
-Model mass: **19.601008 kg**. Gravity: 9.80665 m/s². No added payload.
+Model mass: **19.517248 kg**. Gravity: 9.80665 m/s². No added payload.
 
 Evaluated 2000 simultaneous arm configurations, including zero, limit probes and a deterministic Halton sequence.
 For every sampled arm pose, evaluated 720 full-circle caster angles and used a derivative bound to cover the angles between samples.
 
-Minimum sampled support margin: **101.694 mm**.
-Guaranteed lower bound across the full caster rotation, for these sampled arm poses: **101.648 mm**.
+Minimum sampled support margin: **84.350 mm**.
+Guaranteed lower bound across the full caster rotation, for these sampled arm poses: **84.306 mm**.
 Support status: **POSITIVE_FOR_SAMPLED_ARM_POSES_AT_ALL_CASTER_ANGLES**. This is a level-ground point-contact calculation, not a dynamic tip test or an exhaustive arm-workspace proof.
 
 | Independent input | Max absolute no-load holding torque (Nm) | URDF effort (Nm) | Samples over effort |

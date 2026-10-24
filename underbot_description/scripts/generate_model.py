@@ -1,4 +1,4 @@
-"""Rebuild the R08 WR141E geometry, STL visuals, portable URDF and modular Xacro.
+"""Rebuild the R10 WR141E geometry, STL visuals, portable URDF and modular Xacro.
 
 Python 3 + numpy. Dimensions use SI. Estimated hardware values are deliberate,
 documented inputs; this generator does not turn them into measurements.
@@ -6,22 +6,23 @@ documented inputs; this generator does not turn them into measurements.
 from pathlib import Path
 import json, math, struct, copy, xml.etree.ElementTree as E
 import numpy as np
+from wr141e_geometry import build_body, build_wheel
 
 ROOT = Path(__file__).resolve().parents[1]
 for folder in ('urdf', 'meshes', 'config', 'docs', 'cad', 'validation'):
     (ROOT / folder).mkdir(parents=True, exist_ok=True)
 PARAMS = ROOT / 'config/model_parameters.json'
-defaults = {'revision': 'R08 WR141E / 200mm tower / stripped Kinect reservation', 'units': 'm, kg, s, rad, kg*m^2', 'base_length': 0.558, 'base_width': 0.404, 'base_height': 0.205, 'stock_base_mass': 9.1, 'frame_width': 0.2, 'frame_depth': 0.2, 'frame_center_x': -0.07, 'post_size': 0.02, 'post_length': 0.5, 'post_bottom': 0.205, 'width_rail_length': 0.16, 'depth_rail_length': 0.16, 'ring_bottoms': [0.205, 0.48, 0.555, 0.685], 'shelf_thickness': 0.003, 'panel_thickness': 0.002, 'panel_bottom': 0.225, 'panel_top': 0.685, 'camera_center': [-0.005, 0, 0.635], 'camera_optical_offset': [0.034, 0.06925, 0.0065], 'camera_aperture_half_width': 0.078, 'camera_aperture_bottom': 0.603, 'camera_aperture_top': 0.6625, 'arm_root_z': 0.545, 'arm_root_y': 0.108, 'shoulder_offset': 0.04, 'upper_arm_length': 0.105, 'forearm_length': 0.09, 'wrist_length': 0.045, 'hand_length': 0.025, 'finger_length': 0.05, 'shoulder_zero_pitch': -2.6179938779914944, 'elbow_zero_pitch': 1.0471975511965976, 'wrist_zero_pitch': -1.0471975511965976, 'arm_base_range': 0.7853981633974483, 'shoulder_range': 0.3490658503988659, 'elbow_range': 0.3490658503988659, 'wrist_pitch_range': 0.5235987755982988, 'wheel_radius': 0.0925, 'wheel_width': 0.05, 'wheel_x': -0.18, 'wheel_half_separation': 0.177, 'wheel_mass': 0.75, 'retained_chassis_mass': 7.35, 'caster_radius': 0.04, 'caster_width': 0.04, 'caster_swivel_xyz': [0.215, 0, 0.11], 'caster_wheel_xyz': [-0.02, 0, -0.07], 'caster_mass': 0.1, 'caster_fork_mass': 0.15, 'noco_mass': 1.9, 'kinect_mass': 0.97, 'lidar_mass': 0.15, 't_slot_kg_per_m': 0.4, 'v_slot_kg_per_m': 0.4627, 'plastic_density': 1050.0, 'polycarbonate_density': 1200.0, 'aluminium_density': 2700.0, 'arm_effort': 1.0, 'arm_speed': 1.0, 'wheel_effort': 2.5, 'wheel_speed': 4.0, 'jaw_effort': 0.3, 'status': {'published_envelopes': ['WR141E558x404x205', 'stock base9.1kg with battery baseline', 'GB70 body222x99x69; installation222x152x70'], 'user_stock': ['20mm posts500mm x4', '20mm rails200mm x16; cut each to160mm for200mm outside frame'], 'sketch_proposals': ['200x200mm outside frame and floor blanks, 20mm corner reliefs', '2mm external flat covers; 204x204mm covered envelope around 200x200mm frame/floors', 'ring bottoms205/480/555/685mm', 'GB70 upright222mm high', 'bare Kinect components inside tower; layout unmeasured', 'mounting datum205mm', 'frame centre rearward70mm', 'closed doors'], 'unmeasured_estimates': ['wheel and caster geometry/mass', 'all arm pivots/lengths/limits/zeros', 'installed masses and mass distribution', 'actuator torque/speed', 'camera optical datum', 'plastic grade/thickness', 'LiDAR/compute/converter exact models', 'stripped Kinect PCB/optics/cooling/wiring layout and installed mass; .97kg allocation retained']}, 'floor_width': 0.2, 'floor_depth': 0.2, 'camera_packaging': 'Bare electronics reservation; not measured Kinect hardware', 'camera_module_collision_size': [0.07, 0.156, 0.056], 'camera_module_collision_xyz': [-0.001, 0, -0.0035], 'covered_body_width': 0.204, 'covered_body_depth': 0.204}
+defaults = {'revision': 'R10 WR141E reference-based correction / four black covers', 'units': 'm, kg, s, rad, kg*m^2', 'base_length': 0.558, 'base_width': 0.404, 'base_height': 0.205, 'stock_base_mass': 9.1, 'frame_width': 0.2, 'frame_depth': 0.2, 'frame_center_x': -0.14, 'post_size': 0.02, 'post_length': 0.5, 'post_bottom': 0.205, 'width_rail_length': 0.16, 'depth_rail_length': 0.16, 'ring_bottoms': [0.205, 0.48, 0.555, 0.685], 'shelf_thickness': 0.003, 'panel_thickness': 0.002, 'panel_bottom': 0.225, 'panel_top': 0.685, 'camera_center': [-0.075, 0, 0.635], 'camera_optical_offset': [0.034, 0.06925, 0.0065], 'camera_aperture_half_width': 0.078, 'camera_aperture_bottom': 0.603, 'camera_aperture_top': 0.6625, 'arm_root_z': 0.545, 'arm_root_y': 0.108, 'shoulder_offset': 0.04, 'upper_arm_length': 0.105, 'forearm_length': 0.09, 'wrist_length': 0.045, 'hand_length': 0.025, 'finger_length': 0.05, 'shoulder_zero_pitch': -2.6179938779914944, 'elbow_zero_pitch': 1.0471975511965976, 'wrist_zero_pitch': -1.0471975511965976, 'arm_base_range': 0.7853981633974483, 'shoulder_range': 0.3490658503988659, 'elbow_range': 0.3490658503988659, 'wrist_pitch_range': 0.5235987755982988, 'wheel_radius': 0.1025, 'wheel_width': 0.04, 'wheel_x': -0.17, 'wheel_half_separation': 0.167, 'wheel_mass': 0.75, 'retained_chassis_mass': 7.35, 'caster_radius': 0.0395, 'caster_width': 0.055, 'caster_swivel_xyz': [0.19, 0, 0.11], 'caster_wheel_xyz': [-0.02, 0, -0.0705], 'caster_mass': 0.1, 'caster_fork_mass': 0.15, 'noco_mass': 1.9, 'kinect_mass': 0.97, 'lidar_mass': 0.15, 't_slot_kg_per_m': 0.4, 'v_slot_kg_per_m': 0.4627, 'plastic_density': 1050.0, 'polycarbonate_density': 1200.0, 'aluminium_density': 2700.0, 'arm_effort': 1.0, 'arm_speed': 1.0, 'wheel_effort': 2.5, 'wheel_speed': 4.0, 'jaw_effort': 0.3, 'status': {'published_envelopes': ['WR141E558x404x205', 'stock base9.1kg with battery baseline', 'GB70 body222x99x69; installation222x152x70', 'rear wheel205mm: OEM50024699 supplier dimension and WR141E retailer corroboration', 'front wheel79mm: OEM50036897 supplier dimension; width55mm approximate supplier value'], 'user_stock': ['20mm posts500mm x4', '20mm rails200mm x16; cut each to160mm for200mm outside frame'], 'sketch_proposals': ['200x200mm outside frame and floor blanks, 20mm corner reliefs', '2mm external flat covers; 204x204mm covered envelope around 200x200mm frame/floors', 'ring bottoms205/480/555/685mm', 'GB70 upright222mm high', 'bare Kinect components inside tower; layout unmeasured', 'mounting datum205mm', 'frame centre rearward140mm', 'closed doors'], 'unmeasured_estimates': ['all arm pivots/lengths/limits/zeros', 'installed masses and mass distribution', 'actuator torque/speed', 'camera optical datum', 'plastic grade/thickness', 'LiDAR/compute/converter exact models', 'stripped Kinect PCB/optics/cooling/wiring layout and installed mass; .97kg allocation retained', 'rear tyre width40mm and track334mm derived from online orthographic drawing; not factory dimensions', 'drive axleX-170mm, caster centerX+170mm and20mm trail inferred from online drawing', 'wheel/caster masses and chassis inertia distribution', 'rearward frame centerX-140mm is proposed to clear original control panel']}, 'floor_width': 0.2, 'floor_depth': 0.2, 'camera_packaging': 'Bare electronics reservation; not measured Kinect hardware', 'camera_module_collision_size': [0.07, 0.156, 0.056], 'camera_module_collision_xyz': [-0.001, 0, -0.0035], 'covered_body_width': 0.204, 'covered_body_depth': 0.204}
 if not PARAMS.exists():
     PARAMS.write_text(json.dumps(defaults, indent=2), encoding='utf-8')
 P = json.loads(PARAMS.read_text(encoding='utf-8'))
 pi = math.pi
-BLACK = ('matte_black', [.045, .050, .055, 1])
+BLACK = ('matte_black', [.008, .009, .011, 1])
 METAL = ('aluminium', [.62, .68, .72, 1])
 DARK = ('servo_black', [.075, .085, .095, 1])
 GREEN = ('pcb_green', [.10, .32, .23, 1])
 BLUE = ('roof_blue', [.07, .15, .23, 1])
-CLEAR = ('polycarbonate', [.38, .55, .60, .5])
+CLEAR = ('polycarbonate', [.94, .975, .99, .16])
 ORANGE = ('worx_orange', [.96, .22, .015, 1])
 RED = ('control_red', [.65, .015, .015, 1])
 
@@ -89,7 +90,7 @@ def extrusion_tri(length):
     return np.array(ts)
 def stl(path,tri):
     with open(path,'wb') as f:
-        f.write(b'Underbot R08 SI metres - estimated hardware'.ljust(80,b' '));f.write(struct.pack('<I',len(tri)))
+        f.write(b'Underbot R10 SI metres - estimated hardware'.ljust(80,b' '));f.write(struct.pack('<I',len(tri)))
         for t in tri:
             n=np.cross(t[1]-t[0],t[2]-t[0]);n/=np.linalg.norm(n)
             f.write(struct.pack('<12fH',*n,*t.flatten(),0))
@@ -140,7 +141,7 @@ def inertia_of(d):
         area,center,xx,yy,xy=polygon_properties(d['polygon']);h=s[2]
         tensor=m*np.array([[yy/area+h*h/12,-xy/area,0],[-xy/area,xx/area+h*h/12,0],[0,0,(xx+yy)/area]])
         R=rot(d['rpy']);return R@tensor@R.T
-    if kind=='box':x,y,z=s;diag=[m*(y*y+z*z)/12,m*(x*x+z*z)/12,m*(x*x+y*y)/12]
+    if kind in ('box','loft'):x,y,z=s;diag=[m*(y*y+z*z)/12,m*(x*x+z*z)/12,m*(x*x+y*y)/12]
     elif kind=='cylinder':r,h=s;diag=[m*(3*r*r+h*h)/12]*2+[m*r*r/2]
     elif kind=='sphere':diag=[.4*m*s[0]**2]*3
     elif kind=='extrusion':
@@ -159,28 +160,8 @@ def inertial(l):
 base=link('base_link')
 cx=P['frame_center_x'];fw=P['frame_width'];fd=P['frame_depth'];ps=P['post_size']
 xp=(fd-ps)/2;yp=(fw-ps)/2
-# Stock mower total proxy is split between chassis, rear wheels and caster.
-# No shell volume is mistaken for a solid aluminium chassis.
-box(base,'wr141e_lower_chassis',[.400,.296,.090],(-.079,0,.105),c=BLACK,m=P['retained_chassis_mass']*.70)
-hood=[(.279,-.145),(.250,-.185),(.050,-.190),(-.110,-.145),(-.260,-.140),(-.279,-.115),(-.279,.115),(-.260,.140),(-.110,.145),(.050,.190),(.250,.185),(.279,.145)]
-prism(base,'wr141e_orange_hood',hood,.065,(0,0,.1555),ORANGE,P['retained_chassis_mass']*.30)
-collision(base,'rear_chassis','box',[.375,.296,.115],(-.0675,0,.1225))
-for sign in (-1,1):
-    collision(base,f'nose_side_{sign}','box',[.150,.080,.090],(.200,sign*.110,.115))
-collision(base,'nose_upper','box',[.170,.290,.028],(.194,0,.174))
-# Lower grille edge clears the full caster tyre width at every swivel angle.
-box(base,'front_grille',[.003,.290,.070],(.2775,0,.120),c=BLACK)
-collision(base,'front_grille','box',[.003,.290,.070],(.2775,0,.120))
-for y in np.linspace(-.126,.126,13):
-    box(base,f'front_grille_rib_{y}',[.003,.004,.065],(.2775,y,.120),c=DARK)
-for sign in (-1,1):
-    box(base,f'cut_to_edge_side_{sign}',[.205,.006,.075],(.110,sign*.184,.1125),c=DARK)
-box(base,'control_panel',[.118,.155,.007],(.130,0,.1955),c=DARK)
-cyl(base,'height_adjustment_dial',.020,.008,(.130,.047,.201),c=ORANGE)
-box(base,'stop_button',[.035,.044,.010],(.135,-.010,.200),c=RED)
-box(base,'display',[.030,.040,.001],(.145,-.055,.1995),c=BLACK)
-box(base,'side_charging_contact_bar',[.070,.009,.024],(.100,.186,.165),c=RED)
-for x in (.078,.122):box(base,f'charging_contact_{x}',[.014,.002,.006],(x,.191,.165),c=METAL)
+# Published envelope + documented online-derived exterior.
+build_body(globals(),P)
 # Proposed metal bridge: its datum is a design assumption, not a deck measurement.
 box(base,'chassis_adapter',[fd,fw,.006],(cx,0,.202),c=BLACK,m=fd*fw*.006*P['aluminium_density'])
 collision(base,'chassis_adapter','box',[fd,fw,.006],(cx,0,.202))
@@ -216,7 +197,7 @@ for n,sz,cen in [
  ('front_door_left_strip',[t,cover_width/2-aw,at-ab],(frontx,(cover_width/2+aw)/2,(at+ab)/2)),
  ('front_door_right_strip',[t,cover_width/2-aw,at-ab],(frontx,-(cover_width/2+aw)/2,(at+ab)/2))]:
     box(base,n,sz,cen,c=BLACK,m=np.prod(sz)*P['plastic_density']);collision(base,n,'box',sz,cen)
-box(base,'rear_door_closed',[t,cover_width,hi-lo],(rearx,0,zmid),c=CLEAR,m=t*cover_width*(hi-lo)*P['polycarbonate_density'])
+box(base,'rear_door_closed',[t,cover_width,hi-lo],(rearx,0,zmid),c=BLACK,m=t*cover_width*(hi-lo)*P['plastic_density'])
 collision(base,'rear_door_closed','box',[t,cover_width,hi-lo],(rearx,0,zmid))
 # Side sheets leave a110mm square carrier opening. Metal carriers bridge both posts.
 for sign in (-1,1):
@@ -256,28 +237,23 @@ for k in range(6):box(base,f'cooler_fin_{k}',[.035,.0015,.006],(cx,-.016+k*.006,
 for x in (cx-.024,cx+.024):
     for y in (-.035,.035):cyl(base,f'compute_standoff_{x}_{y}',.002,.003,(x,y,floor_top(2)+.0015),m=.001)
 box(base,'wiring_distribution',[.060,.090,.020],(cx+.030,0,floor_top(1)+.032),c=DARK,m=.180)
-for y in (-.055,.055):box(base,f'camera_vertical_bracket_{y}',[.004,.012,.1065],(-.037,y,.65175),c=BLACK,m=.012)
-box(base,'camera_shelf',[.080,.156,.003],(-.010,0,.600),c=BLACK,m=.080*.156*.003*P['aluminium_density'])
-for x in (-.025,.005):
+for y in (-.055,.055):box(base,f'camera_vertical_bracket_{y}',[.004,.012,.1065],(cx+.033,y,.65175),c=BLACK,m=.012)
+box(base,'camera_shelf',[.080,.156,.003],(cx+.060,0,.600),c=CLEAR,m=.080*.156*.003*P['polycarbonate_density'])
+for x in (cx+.045,cx+.075):
     for y in (-.065,.065):cyl(base,f'camera_pcb_standoff_{x}_{y}',.002,.010,(x,y,.6065),m=.001)
 box(base,'lidar_pedestal',[.036,.036,.025],(cx,0,.7205),c=BLACK,m=.025)
 
 for side,s in (('left',1),('right',-1)):
     wheel=link(side+'_wheel');r=P['wheel_radius'];w=P['wheel_width']
-    cyl(wheel,'rubber_tyre',r,w,r=(pi/2,0,0),c=BLACK,m=P['wheel_mass']*.8)
-    cyl(wheel,'hub',r*.56,w-.002,r=(pi/2,0,0),c=METAL,m=P['wheel_mass']*.2)
-    for sface in (-1,1):
-        for k in range(6):
-            a=2*pi*k/6
-            cyl(wheel,f'hub_bolt_{sface}_{k}',.002,.0015,(.015*math.sin(a),sface*(w/2-.001),.015*math.cos(a)),(pi/2,0,0))
+    build_wheel(globals(),wheel,P)
     collision(wheel,'rolling_contact','cylinder',[r,w],rpy=(pi/2,0,0))
     joint(side+'_wheel_joint',base,wheel,'continuous',(P['wheel_x'],s*P['wheel_half_separation'],r),axis=(0,1,0),limits=[None,None,P['wheel_effort'],P['wheel_speed']])
 fork=link('caster_swivel_link')
 cyl(fork,'swivel_shaft',.009,.030,(0,0,0),c=METAL,m=P['caster_fork_mass']*.40)
 for sign in (-1,1):
-    box(fork,f'fork_cheek_{sign}',[.030,.006,.074],(-.010,sign*.026,-.039),c=BLACK,m=P['caster_fork_mass']*.30)
-    collision(fork,f'fork_cheek_{sign}','box',[.030,.006,.074],(-.010,sign*.026,-.039))
-cyl(fork,'caster_axle',.0035,.060,(-.020,0,-.070),(pi/2,0,0),METAL)
+    box(fork,f'fork_cheek_{sign}',[.030,.006,.074],(-.010,sign*(P['caster_width']/2+.005),-.039),c=BLACK,m=P['caster_fork_mass']*.30)
+    collision(fork,f'fork_cheek_{sign}','box',[.030,.006,.074],(-.010,sign*(P['caster_width']/2+.005),-.039))
+cyl(fork,'caster_axle',.0035,.060,tuple(P['caster_wheel_xyz']),(pi/2,0,0),METAL)
 collision(fork,'swivel_shaft','cylinder',[.009,.030])
 joint('caster_swivel_joint',base,fork,'continuous',P['caster_swivel_xyz'],axis=(0,0,1),limits=[None,None,.05,20.])
 caster=link('caster_link')
@@ -346,7 +322,7 @@ for side,s in (('left',1),('right',-1)):
 
 def triangles(p):
     k=p['kind'];s=p['size']
-    t=box_tri(s) if k=='box' else cyl_tri(*s) if k=='cylinder' else sphere_tri(s[0]) if k=='sphere' else prism_tri(p['polygon'],s[2]) if k=='prism' else extrusion_tri(s[0])
+    t=np.asarray(p['vertices'])[np.asarray(p['faces'])] if k=='loft' else box_tri(s) if k=='box' else cyl_tri(*s) if k=='cylinder' else sphere_tri(s[0]) if k=='sphere' else prism_tri(p['polygon'],s[2]) if k=='prism' else extrusion_tri(s[0])
     # Micrometre-scale visual seam separation keeps independent primitive shells
     # topologically closed when combined in one STL. Physical shapes are unchanged.
     return (t*(1-1e-5))@rot(p['rpy']).T+vec(p['xyz'])
@@ -392,7 +368,7 @@ def joint_xml(j):
         if j['mimic']:E.SubElement(el,'mimic',{'joint':j['mimic'][0],'multiplier':fmt([j['mimic'][1]]),'offset':fmt([j['mimic'][2]])})
     return el
 for portable in (False,True):
-    robot=E.Element('robot',{'name':'underbot'});robot.append(E.Comment('R08 WR141E geometry; 200mm floors, 204mm external covers. Read docs/accuracy_and_physics.md before interpreting estimated values as hardware data.'))
+    robot=E.Element('robot',{'name':'underbot'});robot.append(E.Comment('R10 WR141E geometry; 200mm floors, 204mm external covers. Read docs/accuracy_and_physics.md before interpreting estimated values as hardware data.'))
     for n in links:robot.append(link_xml(n,portable))
     for j in joints:robot.append(joint_xml(j))
     save_xml(ROOT/'urdf'/('underbot.portable.urdf' if portable else 'underbot.urdf'),robot)
@@ -422,8 +398,8 @@ expect={'expected_joints':{},'expected_world_bounds':{},'ground_contacts':['left
         'sweep_joint_names':[j['name'] for j in joints if j['type']=='revolute' and not j['mimic']]}
 for j in joints:
     expect['expected_joints'][j['name']]={k:j[k] for k in ('parent','child','type','axis','xyz','rpy')}
-expect['expected_world_bounds']['lidar_mount']={'min':[-.1052,-.0352,.733],'max':[-.0348,.0352,.778],'geometry':'visual','tolerance':.0004}
-expect['expected_world_bounds']['camera_mount']={'min':[-.0325,-.07725,.6115],'max':[.029,.07725,.6595],'geometry':'visual','tolerance':.0005}
+expect['expected_world_bounds']['lidar_mount']={'min':[cx-.0352,-.0352,.733],'max':[cx+.0352,.0352,.778],'geometry':'visual','tolerance':.0004}
+expect['expected_world_bounds']['camera_mount']={'min':[P['camera_center'][0]-.0275,-.07725,.6115],'max':[P['camera_center'][0]+.034,.07725,.6595],'geometry':'visual','tolerance':.0005}
 expect['mirror_link_pairs']=[[f'left_{n}',f'right_{n}'] for n in ('arm_base','upper_arm','forearm','wrist','hand')]
 expect['mirror_link_pairs'] += [['left_gripper_left','right_gripper_right'],['left_gripper_right','right_gripper_left']]
 (ROOT/'config/validation_expectations.json').write_text(json.dumps(expect,indent=2),encoding='utf-8')

@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='utf-8'?>
 <package format="3">
   <name>underbot_description</name>
-  <version>0.9.0</version>
-  <description>Underbot R09 detailed visual model with 200 mm floors, 204 mm covers, and the tested R08 WR141E physical configuration.</description>
+  <version>0.10.0</version>
+  <description>Underbot R10 WR141E reference-based geometry with 200 mm transparent floors and four black tower covers.</description>
   <maintainer email="maintainer@example.invalid">Underbot project</maintainer>
   <license>Unspecified</license>
   <buildtool_depend>ament_cmake</buildtool_depend>

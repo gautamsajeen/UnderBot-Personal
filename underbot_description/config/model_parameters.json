@@ -1,5 +1,5 @@
 {
-  "revision": "R08 WR141E / 200mm tower / stripped Kinect reservation",
+  "revision": "R10 WR141E reference-based correction / four black covers",
   "units": "m, kg, s, rad, kg*m^2",
   "base_length": 0.558,
   "base_width": 0.404,
@@ -7,7 +7,7 @@
   "stock_base_mass": 9.1,
   "frame_width": 0.2,
   "frame_depth": 0.2,
-  "frame_center_x": -0.07,
+  "frame_center_x": -0.14,
   "post_size": 0.02,
   "post_length": 0.5,
   "post_bottom": 0.205,
@@ -24,7 +24,7 @@
   "panel_bottom": 0.225,
   "panel_top": 0.685,
   "camera_center": [
-    -0.005,
+    -0.075,
     0,
     0.635
   ],
@@ -51,23 +51,23 @@
   "shoulder_range": 0.3490658503988659,
   "elbow_range": 0.3490658503988659,
   "wrist_pitch_range": 0.5235987755982988,
-  "wheel_radius": 0.0925,
-  "wheel_width": 0.05,
-  "wheel_x": -0.18,
-  "wheel_half_separation": 0.177,
+  "wheel_radius": 0.1025,
+  "wheel_width": 0.04,
+  "wheel_x": -0.17,
+  "wheel_half_separation": 0.167,
   "wheel_mass": 0.75,
   "retained_chassis_mass": 7.35,
-  "caster_radius": 0.04,
-  "caster_width": 0.04,
+  "caster_radius": 0.0395,
+  "caster_width": 0.055,
   "caster_swivel_xyz": [
-    0.215,
+    0.19,
     0,
     0.11
   ],
   "caster_wheel_xyz": [
     -0.02,
     0,
-    -0.07
+    -0.0705
   ],
   "caster_mass": 0.1,
   "caster_fork_mass": 0.15,
@@ -88,7 +88,9 @@
     "published_envelopes": [
       "WR141E558x404x205",
       "stock base9.1kg with battery baseline",
-      "GB70 body222x99x69; installation222x152x70"
+      "GB70 body222x99x69; installation222x152x70",
+      "rear wheel205mm: OEM50024699 supplier dimension and WR141E retailer corroboration",
+      "front wheel79mm: OEM50036897 supplier dimension; width55mm approximate supplier value"
     ],
     "user_stock": [
       "20mm posts500mm x4",
@@ -101,18 +103,21 @@
       "GB70 upright222mm high",
       "bare Kinect components inside tower; layout unmeasured",
       "mounting datum205mm",
-      "frame centre rearward70mm",
+      "frame centre rearward140mm",
       "closed doors"
     ],
     "unmeasured_estimates": [
-      "wheel and caster geometry/mass",
       "all arm pivots/lengths/limits/zeros",
       "installed masses and mass distribution",
       "actuator torque/speed",
       "camera optical datum",
       "plastic grade/thickness",
       "LiDAR/compute/converter exact models",
-      "stripped Kinect PCB/optics/cooling/wiring layout and installed mass; .97kg allocation retained"
+      "stripped Kinect PCB/optics/cooling/wiring layout and installed mass; .97kg allocation retained",
+      "rear tyre width40mm and track334mm derived from online orthographic drawing; not factory dimensions",
+      "drive axleX-170mm, caster centerX+170mm and20mm trail inferred from online drawing",
+      "wheel/caster masses and chassis inertia distribution",
+      "rearward frame centerX-140mm is proposed to clear original control panel"
     ]
   },
   "floor_width": 0.2,

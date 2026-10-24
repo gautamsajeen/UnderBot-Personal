@@ -1,5 +1,5 @@
-# Underbot R09 SI metres; original URDF link-local coordinates
-mtllib Underbot_R09.mtl
+# Underbot R10 SI metres; original URDF link-local coordinates
+mtllib Underbot_R10.mtl
 o lidar_mount__lidar_head
 usemtl black_abs
 v 0.03500000015 0 0.0003999993205

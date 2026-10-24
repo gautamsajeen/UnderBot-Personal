@@ -1,5 +1,5 @@
-# Underbot R09 SI metres; original URDF link-local coordinates
-mtllib Underbot_R09.mtl
+# Underbot R10 SI metres; original URDF link-local coordinates
+mtllib Underbot_R10.mtl
 o camera_mount__kinect_logic_board_provisional
 usemtl pcb_green
 v -0.02749999985 -0.07476000488 -0.02325999923

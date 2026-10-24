@@ -1,0 +1,2820 @@
+{
+  "file": "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\urdf\\underbot.portable.urdf",
+  "units": "m, kg, rad, kg m^2",
+  "scope": "Independent Python authoring validation; no simulator import or dynamics run",
+  "limitations": [
+    "Hardware dimensions, masses, motor limits and contact coefficients are not measured by this validator.",
+    "Collision screening uses primitive oriented bounds; cylinder and mesh candidates may be false positives.",
+    "One-joint sweeps do not prove collision freedom for simultaneous multi-joint motion."
+  ],
+  "urdf_sha256": "0daab387d38a86e5e90bae42bb30a04153d4ae816c9dd1822a9f1908ed1a9588",
+  "structure": {
+    "name": "underbot",
+    "root": "base_link",
+    "link_count": 23,
+    "joint_count": 22,
+    "joint_types": {
+      "continuous": 4,
+      "fixed": 4,
+      "revolute": 14
+    },
+    "independent_joint_coordinates": 16
+  },
+  "zero_pose_world_bounds": {
+    "base_link": {
+      "visual": {
+        "min": [
+          -0.2789999842643738,
+          -0.20200000703334808,
+          0.048500001430511475
+        ],
+        "max": [
+          0.2789999842643738,
+          0.20200000703334808,
+          0.7329999804496765
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.275,
+          -0.1655,
+          0.065
+        ],
+        "max": [
+          0.25,
+          0.1655,
+          0.708
+        ]
+      }
+    },
+    "left_wheel": {
+      "visual": {
+        "min": [
+          -0.27249999910593037,
+          0.14699999672174455,
+          8.940696655246327e-10
+        ],
+        "max": [
+          -0.06750000089406968,
+          0.18700000327825547,
+          0.2049999991059303
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.2725,
+          0.14699999999949812,
+          -9.793554855974662e-14
+        ],
+        "max": [
+          -0.06750000000000002,
+          0.1870000000005019,
+          0.20500000000009794
+        ]
+      }
+    },
+    "right_wheel": {
+      "visual": {
+        "min": [
+          -0.27249999910593037,
+          -0.18700000327825547,
+          8.940696655246327e-10
+        ],
+        "max": [
+          -0.06750000089406968,
+          -0.14699999672174455,
+          0.2049999991059303
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.2725,
+          -0.1870000000005019,
+          -9.793554855974662e-14
+        ],
+        "max": [
+          -0.06750000000000002,
+          -0.14699999999949812,
+          0.20500000000009794
+        ]
+      }
+    },
+    "caster_swivel_link": {
+      "visual": {
+        "min": [
+          0.16500000149011612,
+          -0.035499997437000275,
+          0.03399999499320984
+        ],
+        "max": [
+          0.1989999996125698,
+          0.035499997437000275,
+          0.12499999966472387
+        ]
+      },
+      "collision": {
+        "min": [
+          0.16499999999999998,
+          -0.035500000000000004,
+          0.03400000000000001
+        ],
+        "max": [
+          0.199,
+          0.035500000000000004,
+          0.125
+        ]
+      }
+    },
+    "caster_link": {
+      "visual": {
+        "min": [
+          0.13049999818205835,
+          -0.02800000086426735,
+          -1.817941658321942e-09
+        ],
+        "max": [
+          0.20950000181794168,
+          0.02800000086426735,
+          0.07900000181794167
+        ]
+      },
+      "collision": {
+        "min": [
+          0.1305,
+          -0.027500000000193415,
+          -1.3464923620531977e-13
+        ],
+        "max": [
+          0.20950000000000002,
+          0.027500000000193415,
+          0.07900000000013466
+        ]
+      }
+    },
+    "camera_mount": {
+      "visual": {
+        "min": [
+          -0.10249999985098839,
+          -0.07725000381469727,
+          0.6115000008046627
+        ],
+        "max": [
+          -0.04099999815225601,
+          0.07725000381469727,
+          0.6595000012218952
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.111,
+          -0.078,
+          0.6035
+        ],
+        "max": [
+          -0.040999999999999995,
+          0.078,
+          0.6595000000000001
+        ]
+      }
+    },
+    "lidar_mount": {
+      "visual": {
+        "min": [
+          -0.17519999980926515,
+          -0.03519999980926514,
+          0.733
+        ],
+        "max": [
+          -0.10480000019073488,
+          0.03519999980926514,
+          0.7780000017881393
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.17500000000000002,
+          -0.035,
+          0.733
+        ],
+        "max": [
+          -0.10500000000000001,
+          0.035,
+          0.7779999999999999
+        ]
+      }
+    },
+    "left_arm_base": {
+      "visual": {
+        "min": [
+          -0.1699999993296828,
+          0.1079999999997062,
+          0.5150000006705523
+        ],
+        "max": [
+          -0.11000000067055227,
+          0.15600000041752632,
+          0.5749999993296828
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.16300000000020567,
+          0.10999999999977476,
+          0.5220000000000098
+        ],
+        "max": [
+          -0.1170000000000098,
+          0.15000000000022526,
+          0.5680000000002057
+        ]
+      }
+    },
+    "left_upper_arm": {
+      "visual": {
+        "min": [
+          -0.15700000092437796,
+          0.12891154376052655,
+          0.4478173353490164
+        ],
+        "max": [
+          -0.12299999907624885,
+          0.21132531607011198,
+          0.5600621768199043
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.15800000000055,
+          0.12417949192421503,
+          0.43973720558414847
+        ],
+        "max": [
+          -0.12200000000007924,
+          0.2203205080763218,
+          0.5662583302494628
+        ]
+      }
+    },
+    "left_forearm": {
+      "visual": {
+        "min": [
+          -0.15700000092476565,
+          0.19150000038780565,
+          0.43606733337795717
+        ],
+        "max": [
+          -0.12299999907653689,
+          0.29050000357706546,
+          0.47206733182862815
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.15800000000091813,
+          0.18750000000029715,
+          0.43406733260303804
+        ],
+        "max": [
+          -0.1220000000003893,
+          0.2955000000008651,
+          0.47406733260409567
+        ]
+      }
+    },
+    "left_wrist": {
+      "visual": {
+        "min": [
+          -0.15700000092492883,
+          0.27141154376110765,
+          0.4088461877921153
+        ],
+        "max": [
+          -0.12299999907694663,
+          0.32382531860355845,
+          0.46912950942375525
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.1580000000011009,
+          0.2666794919247962,
+          0.4007660624148739
+        ],
+        "max": [
+          -0.12200000000077703,
+          0.3328205080765709,
+          0.47532566285331357
+        ]
+      }
+    },
+    "left_hand": {
+      "visual": {
+        "min": [
+          -0.1640000002097576,
+          0.2934115436793948,
+          0.3818474793799671
+        ],
+        "max": [
+          -0.11599999979232575,
+          0.3425884560988588,
+          0.43102439179933316
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.16400000000115783,
+          0.2915455173288137,
+          0.37961542732034836
+        ],
+        "max": [
+          -0.11600000000089877,
+          0.34445448267295736,
+          0.43325644347180836
+        ]
+      }
+    },
+    "left_gripper_left": {
+      "visual": {
+        "min": [
+          -0.13774019156519143,
+          0.31470577167636254,
+          0.3449652049215277
+        ],
+        "max": [
+          -0.11599999994885811,
+          0.35868629498721943,
+          0.40314170661354864
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.13788954920913674,
+          0.31897107626962046,
+          0.3458358565286754
+        ],
+        "max": [
+          -0.11811045079311575,
+          0.35702892373271083,
+          0.39775398196098194
+        ]
+      }
+    },
+    "left_gripper_right": {
+      "visual": {
+        "min": [
+          -0.1640000000533816,
+          0.314705771676234,
+          0.3449652049215277
+        ],
+        "max": [
+          -0.1422598084370483,
+          0.35868629498709087,
+          0.40314170661354864
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.16188954920901888,
+          0.31897107626948235,
+          0.3458358565286754
+        ],
+        "max": [
+          -0.1421104507932336,
+          0.357028923732614,
+          0.39775398196098194
+        ]
+      }
+    },
+    "right_arm_base": {
+      "visual": {
+        "min": [
+          -0.1699999993296828,
+          -0.15600000041752632,
+          0.5150000006705523
+        ],
+        "max": [
+          -0.11000000067055227,
+          -0.1079999999997062,
+          0.5749999993296828
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.16300000000020567,
+          -0.15000000000022526,
+          0.5220000000000098
+        ],
+        "max": [
+          -0.1170000000000098,
+          -0.10999999999977476,
+          0.5680000000002057
+        ]
+      }
+    },
+    "right_upper_arm": {
+      "visual": {
+        "min": [
+          -0.15700000092437796,
+          -0.21132531607011198,
+          0.4478173353490164
+        ],
+        "max": [
+          -0.12299999907624885,
+          -0.12891154376052655,
+          0.5600621768199043
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.15800000000055,
+          -0.2203205080763218,
+          0.43973720558414847
+        ],
+        "max": [
+          -0.12200000000007924,
+          -0.12417949192421503,
+          0.5662583302494628
+        ]
+      }
+    },
+    "right_forearm": {
+      "visual": {
+        "min": [
+          -0.15700000092476565,
+          -0.29050000357706546,
+          0.43606733337795717
+        ],
+        "max": [
+          -0.12299999907653689,
+          -0.19150000038780565,
+          0.47206733182862815
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.15800000000091813,
+          -0.2955000000008651,
+          0.43406733260303804
+        ],
+        "max": [
+          -0.1220000000003893,
+          -0.18750000000029715,
+          0.47406733260409567
+        ]
+      }
+    },
+    "right_wrist": {
+      "visual": {
+        "min": [
+          -0.15700000092492883,
+          -0.32382531860355845,
+          0.4088461877921153
+        ],
+        "max": [
+          -0.12299999907694663,
+          -0.27141154376110765,
+          0.46912950942375525
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.1580000000011009,
+          -0.3328205080765709,
+          0.4007660624148739
+        ],
+        "max": [
+          -0.12200000000077703,
+          -0.2666794919247962,
+          0.47532566285331357
+        ]
+      }
+    },
+    "right_hand": {
+      "visual": {
+        "min": [
+          -0.1640000002097576,
+          -0.3425884560988588,
+          0.3818474793799671
+        ],
+        "max": [
+          -0.11599999979232575,
+          -0.2934115436793948,
+          0.43102439179933316
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.16400000000115783,
+          -0.34445448267295736,
+          0.37961542732034836
+        ],
+        "max": [
+          -0.11600000000089877,
+          -0.2915455173288137,
+          0.43325644347180836
+        ]
+      }
+    },
+    "right_gripper_left": {
+      "visual": {
+        "min": [
+          -0.1640000000533816,
+          -0.35868629498709087,
+          0.3449652049215277
+        ],
+        "max": [
+          -0.1422598084370483,
+          -0.314705771676234,
+          0.40314170661354864
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.16188954920901888,
+          -0.357028923732614,
+          0.3458358565286754
+        ],
+        "max": [
+          -0.1421104507932336,
+          -0.31897107626948235,
+          0.39775398196098194
+        ]
+      }
+    },
+    "right_gripper_right": {
+      "visual": {
+        "min": [
+          -0.13774019156519143,
+          -0.35868629498721943,
+          0.3449652049215277
+        ],
+        "max": [
+          -0.11599999994885811,
+          -0.31470577167636254,
+          0.40314170661354864
+        ]
+      },
+      "collision": {
+        "min": [
+          -0.13788954920913674,
+          -0.35702892373271083,
+          0.3458358565286754
+        ],
+        "max": [
+          -0.11811045079311575,
+          -0.31897107626962046,
+          0.39775398196098194
+        ]
+      }
+    }
+  },
+  "stl_meshes": {
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link.stl": {
+      "triangles": 31172,
+      "bounds_min": [
+        -0.2789999842643738,
+        -0.19300000369548798,
+        0.049000002443790436
+      ],
+      "bounds_max": [
+        0.27399998903274536,
+        0.19300000369548798,
+        0.7329999804496765
+      ],
+      "signed_volume_m3": 0.020044336924602574,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 4,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": false
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link_worx_orange.stl": {
+      "triangles": 6196,
+      "bounds_min": [
+        -0.08400000631809235,
+        -0.20200000703334808,
+        0.05700000002980232
+      ],
+      "bounds_max": [
+        0.2789999842643738,
+        0.20200000703334808,
+        0.20249998569488525
+      ],
+      "signed_volume_m3": 0.01289451666988082,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link_servo_black.stl": {
+      "triangles": 8524,
+      "bounds_min": [
+        -0.2789999842643738,
+        -0.19749999046325684,
+        0.048500001430511475
+      ],
+      "bounds_max": [
+        0.27473050355911255,
+        0.19749999046325684,
+        0.6060000061988831
+      ],
+      "signed_volume_m3": 0.007924250496226429,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link_aluminium.stl": {
+      "triangles": 51284,
+      "bounds_min": [
+        -0.24800001084804535,
+        -0.20099999010562897,
+        0.15399999916553497
+      ],
+      "bounds_max": [
+        0.1184917762875557,
+        0.1080000028014183,
+        0.6754999756813049
+      ],
+      "signed_volume_m3": 1.7363370992601487e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link_control_red.stl": {
+      "triangles": 4464,
+      "bounds_min": [
+        -0.03750000149011612,
+        -0.1979999989271164,
+        0.14350000023841858
+      ],
+      "bounds_max": [
+        0.12200000137090683,
+        0.07899999618530273,
+        0.20000000298023224
+      ],
+      "signed_volume_m3": 0.00011959520546875743,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link_pcb_green.stl": {
+      "triangles": 6392,
+      "bounds_min": [
+        -0.1679999977350235,
+        -0.042500000447034836,
+        0.18604999780654907
+      ],
+      "bounds_max": [
+        0.06860000640153885,
+        0.0706000030040741,
+        0.5839999914169312
+      ],
+      "signed_volume_m3": 4.741234441958166e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\base_link_polycarbonate.stl": {
+      "triangles": 2476,
+      "bounds_min": [
+        -0.24000000953674316,
+        -0.10000000149011612,
+        0.22500000894069672
+      ],
+      "bounds_max": [
+        -0.03999999910593033,
+        0.10000000149011612,
+        0.7080000042915344
+      ],
+      "signed_volume_m3": 0.0004982182429634805,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_wheel.stl": {
+      "triangles": 11256,
+      "bounds_min": [
+        -0.10249999910593033,
+        -0.020000003278255463,
+        -0.10249999910593033
+      ],
+      "bounds_max": [
+        0.10249999910593033,
+        0.020000003278255463,
+        0.10249999910593033
+      ],
+      "signed_volume_m3": 0.00038976579597143024,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_wheel_servo_black.stl": {
+      "triangles": 10332,
+      "bounds_min": [
+        -0.08712500333786011,
+        -0.020000001415610313,
+        -0.08712500333786011
+      ],
+      "bounds_max": [
+        0.08712500333786011,
+        0.020000001415610313,
+        0.08712500333786011
+      ],
+      "signed_volume_m3": 0.0008527385494865408,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_wheel.stl": {
+      "triangles": 11256,
+      "bounds_min": [
+        -0.10249999910593033,
+        -0.020000003278255463,
+        -0.10249999910593033
+      ],
+      "bounds_max": [
+        0.10249999910593033,
+        0.020000003278255463,
+        0.10249999910593033
+      ],
+      "signed_volume_m3": 0.00038976579597143024,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_wheel_servo_black.stl": {
+      "triangles": 10332,
+      "bounds_min": [
+        -0.08712500333786011,
+        -0.020000001415610313,
+        -0.08712500333786011
+      ],
+      "bounds_max": [
+        0.08712500333786011,
+        0.020000001415610313,
+        0.08712500333786011
+      ],
+      "signed_volume_m3": 0.0008527385494865408,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\caster_swivel_link_aluminium.stl": {
+      "triangles": 4088,
+      "bounds_min": [
+        -0.023499999195337296,
+        -0.029999999329447746,
+        -0.07400000095367432
+      ],
+      "bounds_max": [
+        0.008999999612569809,
+        0.029999999329447746,
+        0.014999999664723873
+      ],
+      "signed_volume_m3": 9.935305495889045e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\caster_swivel_link.stl": {
+      "triangles": 376,
+      "bounds_min": [
+        -0.02499999850988388,
+        -0.035499997437000275,
+        -0.07600000500679016
+      ],
+      "bounds_max": [
+        0.004999999888241291,
+        0.035499997437000275,
+        -0.0020000003278255463
+      ],
+      "signed_volume_m3": 2.6589682995990126e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\caster_link.stl": {
+      "triangles": 3068,
+      "bounds_min": [
+        -0.039500001817941666,
+        -0.027500001713633537,
+        -0.039500001817941666
+      ],
+      "bounds_max": [
+        0.039500001817941666,
+        0.027500001713633537,
+        0.039500001817941666
+      ],
+      "signed_volume_m3": 0.0002695239210809519,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\caster_link_servo_black.stl": {
+      "triangles": 2044,
+      "bounds_min": [
+        -0.017000000923871994,
+        -0.02800000086426735,
+        -0.017000002786517143
+      ],
+      "bounds_max": [
+        0.017000000923871994,
+        0.02800000086426735,
+        0.017000002786517143
+      ],
+      "signed_volume_m3": 5.08146238000263e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\camera_mount_pcb_green.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.027499999850988388,
+        -0.07500000298023224,
+        -0.023499999195337296
+      ],
+      "bounds_max": [
+        0.017500001937150955,
+        0.07500000298023224,
+        -0.020500000566244125
+      ],
+      "signed_volume_m3": 2.0238611332925988e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\camera_mount_aluminium.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.027499999850988388,
+        -0.05000000074505806,
+        -0.020500000566244125
+      ],
+      "bounds_max": [
+        0.017500001937150955,
+        0.05000000074505806,
+        -0.0005000000819563866
+      ],
+      "signed_volume_m3": 8.993075989675013e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\camera_mount.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        0.0059999991208314896,
+        -0.07699999958276749,
+        -0.0005000000819563866
+      ],
+      "bounds_max": [
+        0.029999999329447746,
+        0.07699999958276749,
+        0.024500001221895218
+      ],
+      "signed_volume_m3": 9.23147035683342e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\camera_mount_servo_black.stl": {
+      "triangles": 4276,
+      "bounds_min": [
+        0.025999998673796654,
+        -0.07725000381469727,
+        -0.0015000003622844815
+      ],
+      "bounds_max": [
+        0.03400000184774399,
+        0.07725000381469727,
+        0.020000001415610313
+      ],
+      "signed_volume_m3": 3.660308459661283e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\lidar_mount_servo_black.stl": {
+      "triangles": 3068,
+      "bounds_min": [
+        -0.03500000014901161,
+        -0.03500000014901161,
+        0.0
+      ],
+      "bounds_max": [
+        0.03500000014901161,
+        0.03500000014901161,
+        0.04500000178813934
+      ],
+      "signed_volume_m3": 0.00017313185055711606,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\lidar_mount_worx_orange.stl": {
+      "triangles": 3068,
+      "bounds_min": [
+        -0.03519999980926514,
+        -0.03519999980926514,
+        0.003999999724328518
+      ],
+      "bounds_max": [
+        0.03519999980926514,
+        0.03519999980926514,
+        0.00800000037997961
+      ],
+      "signed_volume_m3": 1.5558805798908528e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_arm_base_servo_black.stl": {
+      "triangles": 3068,
+      "bounds_min": [
+        -0.020999999716877937,
+        -0.020999999716877937,
+        0.003999999724328518
+      ],
+      "bounds_max": [
+        0.020999999716877937,
+        0.020999999716877937,
+        0.03399999812245369
+      ],
+      "signed_volume_m3": 4.154534293667774e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_arm_base_aluminium.stl": {
+      "triangles": 376,
+      "bounds_min": [
+        -0.029999999329447746,
+        -0.029999999329447746,
+        0.0
+      ],
+      "bounds_max": [
+        0.029999999329447746,
+        0.029999999329447746,
+        0.04800000041723251
+      ],
+      "signed_volume_m3": 4.579298986177121e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_upper_arm_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.8759902888175768e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_upper_arm_aluminium.stl": {
+      "triangles": 9072,
+      "bounds_min": [
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
+      ],
+      "bounds_max": [
+        0.10499999672174454,
+        0.017000000923871994,
+        0.012500000186264515
+      ],
+      "signed_volume_m3": 1.158012479089451e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_forearm_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.8759902888175768e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_forearm_aluminium.stl": {
+      "triangles": 9072,
+      "bounds_min": [
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
+      ],
+      "bounds_max": [
+        0.09000000357627869,
+        0.017000000923871994,
+        0.012500000186264515
+      ],
+      "signed_volume_m3": 1.0080893139305349e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_wrist_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.8759902888175768e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_wrist_aluminium.stl": {
+      "triangles": 9072,
+      "bounds_min": [
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
+      ],
+      "bounds_max": [
+        0.04500000178813934,
+        0.017000000923871994,
+        0.012500000186264515
+      ],
+      "signed_volume_m3": 5.5831961419861476e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_hand_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.007999999448657036,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.0279999990016222,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.5881592554740974e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_hand_aluminium.stl": {
+      "triangles": 2232,
+      "bounds_min": [
+        -0.0010000007459893823,
+        -0.024000000208616257,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.02500000037252903,
+        0.024000000208616257,
+        0.014000000432133675
+      ],
+      "signed_volume_m3": 1.2099035081750907e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_gripper_left_aluminium.stl": {
+      "triangles": 2232,
+      "bounds_min": [
+        -0.006000000052154064,
+        -0.01574019156396389,
+        -0.008999999612569809
+      ],
+      "bounds_max": [
+        0.05078413337469101,
+        0.006000000052154064,
+        0.008999999612569809
+      ],
+      "signed_volume_m3": 7.763253371951737e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\left_gripper_right_aluminium.stl": {
+      "triangles": 2232,
+      "bounds_min": [
+        -0.006000000052154064,
+        -0.006000000052154064,
+        -0.008999999612569809
+      ],
+      "bounds_max": [
+        0.05078413337469101,
+        0.01574019156396389,
+        0.008999999612569809
+      ],
+      "signed_volume_m3": 7.76325337195174e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_arm_base_servo_black.stl": {
+      "triangles": 3068,
+      "bounds_min": [
+        -0.020999999716877937,
+        -0.020999999716877937,
+        0.003999999724328518
+      ],
+      "bounds_max": [
+        0.020999999716877937,
+        0.020999999716877937,
+        0.03399999812245369
+      ],
+      "signed_volume_m3": 4.154534293667774e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_arm_base_aluminium.stl": {
+      "triangles": 376,
+      "bounds_min": [
+        -0.029999999329447746,
+        -0.029999999329447746,
+        0.0
+      ],
+      "bounds_max": [
+        0.029999999329447746,
+        0.029999999329447746,
+        0.04800000041723251
+      ],
+      "signed_volume_m3": 4.579298986177121e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_upper_arm_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.8759902888175768e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_upper_arm_aluminium.stl": {
+      "triangles": 9072,
+      "bounds_min": [
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
+      ],
+      "bounds_max": [
+        0.10499999672174454,
+        0.017000000923871994,
+        0.012500000186264515
+      ],
+      "signed_volume_m3": 1.158012479089451e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_forearm_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.8759902888175768e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_forearm_aluminium.stl": {
+      "triangles": 9072,
+      "bounds_min": [
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
+      ],
+      "bounds_max": [
+        0.09000000357627869,
+        0.017000000923871994,
+        0.012500000186264515
+      ],
+      "signed_volume_m3": 1.0080893139305349e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_wrist_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.006999999284744263,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.032999999821186066,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.8759902888175768e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_wrist_aluminium.stl": {
+      "triangles": 9072,
+      "bounds_min": [
+        -0.008999999612569809,
+        -0.017000000923871994,
+        -0.012500000186264515
+      ],
+      "bounds_max": [
+        0.04500000178813934,
+        0.017000000923871994,
+        0.012500000186264515
+      ],
+      "signed_volume_m3": 5.5831961419861476e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_hand_servo_black.stl": {
+      "triangles": 188,
+      "bounds_min": [
+        -0.007999999448657036,
+        -0.009999999776482582,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.0279999990016222,
+        0.009999999776482582,
+        0.017999999225139618
+      ],
+      "signed_volume_m3": 2.5881592554740974e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_hand_aluminium.stl": {
+      "triangles": 2232,
+      "bounds_min": [
+        -0.0010000007459893823,
+        -0.024000000208616257,
+        -0.017999999225139618
+      ],
+      "bounds_max": [
+        0.02500000037252903,
+        0.024000000208616257,
+        0.014000000432133675
+      ],
+      "signed_volume_m3": 1.2099035081750907e-05,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_gripper_left_aluminium.stl": {
+      "triangles": 2232,
+      "bounds_min": [
+        -0.006000000052154064,
+        -0.01574019156396389,
+        -0.008999999612569809
+      ],
+      "bounds_max": [
+        0.05078413337469101,
+        0.006000000052154064,
+        0.008999999612569809
+      ],
+      "signed_volume_m3": 7.763253371951737e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    },
+    "C:\\Users\\gauta\\Documents\\Codex\\2026-10-10\\using-freecad-software-make-a-exportable\\outputs\\Underbot_Corrected_R10\\underbot_description\\meshes\\right_gripper_right_aluminium.stl": {
+      "triangles": 2232,
+      "bounds_min": [
+        -0.006000000052154064,
+        -0.006000000052154064,
+        -0.008999999612569809
+      ],
+      "bounds_max": [
+        0.05078413337469101,
+        0.01574019156396389,
+        0.008999999612569809
+      ],
+      "signed_volume_m3": 7.76325337195174e-06,
+      "degenerate_triangles": 0,
+      "open_or_nonmanifold_edges": 0,
+      "inconsistently_oriented_edges": 0,
+      "closed_oriented_multishell_surface": true,
+      "closed": true
+    }
+  },
+  "inertials": {
+    "total_mass_kg": 19.51724779999999,
+    "zero_pose_world_com_m": [
+      -0.08008573955810366,
+      4.1194332737810055e-05,
+      0.29114869723618597
+    ],
+    "zero_pose_total_inertia_at_com_kg_m2": [
+      [
+        1.1322458033511587,
+        4.817106539529325e-05,
+        0.18665964409337632
+      ],
+      [
+        4.817106539529325e-05,
+        1.1897519871326925,
+        -4.2848447421732646e-05
+      ],
+      [
+        0.18665964409337632,
+        -4.2848447421732646e-05,
+        0.6031717926764572
+      ]
+    ],
+    "bodies": [
+      {
+        "link": "base_link",
+        "mass_kg": 14.7872478,
+        "world_com_m": [
+          -0.0675738134449,
+          5.43711724368e-05,
+          0.264312407779
+        ],
+        "principal_inertias_kg_m2": [
+          0.33155855602553874,
+          0.7730129498588566,
+          0.8561204233996045
+        ]
+      },
+      {
+        "link": "left_wheel",
+        "mass_kg": 0.75,
+        "world_com_m": [
+          -0.17,
+          0.167,
+          0.1025
+        ],
+        "principal_inertias_kg_m2": [
+          0.00195504121094,
+          0.00195504121094,
+          0.00372118242188
+        ]
+      },
+      {
+        "link": "right_wheel",
+        "mass_kg": 0.75,
+        "world_com_m": [
+          -0.17,
+          -0.167,
+          0.1025
+        ],
+        "principal_inertias_kg_m2": [
+          0.00195504121094,
+          0.00195504121094,
+          0.00372118242188
+        ]
+      },
+      {
+        "link": "caster_swivel_link",
+        "mass_kg": 0.15,
+        "world_com_m": [
+          0.184,
+          0.0,
+          0.0866
+        ],
+        "principal_inertias_kg_m2": [
+          0.00010594463396798977,
+          0.00011189099999999998,
+          0.0001990413660320102
+        ]
+      },
+      {
+        "link": "caster_link",
+        "mass_kg": 0.1,
+        "world_com_m": [
+          0.17,
+          0.0,
+          0.03950000000000001
+        ],
+        "principal_inertias_kg_m2": [
+          5.80433333333e-05,
+          5.80433333333e-05,
+          6.53e-05
+        ]
+      },
+      {
+        "link": "camera_mount",
+        "mass_kg": 0.97,
+        "world_com_m": [
+          -0.07425,
+          0.0,
+          0.6284
+        ],
+        "principal_inertias_kg_m2": [
+          0.000390011133333,
+          0.0013223952247436049,
+          0.0015417625752563954
+        ]
+      },
+      {
+        "link": "lidar_mount",
+        "mass_kg": 0.15,
+        "world_com_m": [
+          -0.14,
+          0.0,
+          0.7555
+        ],
+        "principal_inertias_kg_m2": [
+          7.125e-05,
+          7.125e-05,
+          9.1875e-05
+        ]
+      },
+      {
+        "link": "left_arm_base",
+        "mass_kg": 0.2,
+        "world_com_m": [
+          -0.14000000000009868,
+          0.12815,
+          0.5450000000000987
+        ],
+        "principal_inertias_kg_m2": [
+          5.59041666667e-05,
+          5.79159166667e-05,
+          6.08859166667e-05
+        ]
+      },
+      {
+        "link": "left_upper_arm",
+        "mass_kg": 0.21,
+        "world_com_m": [
+          -0.14000000000028684,
+          0.16657738095260563,
+          0.5128230323191955
+        ],
+        "principal_inertias_kg_m2": [
+          4.684125e-05,
+          0.000236634553571,
+          0.000256723303571
+        ]
+      },
+      {
+        "link": "left_forearm",
+        "mass_kg": 0.18,
+        "world_com_m": [
+          -0.14000000000060095,
+          0.23072222222278113,
+          0.4540673326034613
+        ],
+        "principal_inertias_kg_m2": [
+          3.938875e-05,
+          0.000147938194444,
+          0.000163699444444
+        ]
+      },
+      {
+        "link": "left_wrist",
+        "mass_kg": 0.13,
+        "world_com_m": [
+          -0.14000000000093044,
+          0.29800961538526427,
+          0.44106029721266665
+        ],
+        "principal_inertias_kg_m2": [
+          2.69679166667e-05,
+          3.40428685897e-05,
+          4.25916185897e-05
+        ]
+      },
+      {
+        "link": "left_hand",
+        "mass_kg": 0.16,
+        "world_com_m": [
+          -0.14000000000104149,
+          0.320692607173077,
+          0.41020970296899384
+        ],
+        "principal_inertias_kg_m2": [
+          2.326429544403754e-05,
+          2.7526367187499997e-05,
+          3.1088738410062456e-05
+        ]
+      },
+      {
+        "link": "left_gripper_left",
+        "mass_kg": 0.025,
+        "world_com_m": [
+          -0.126800000001114,
+          0.3355000000011439,
+          0.3761250462637349
+        ],
+        "principal_inertias_kg_m2": [
+          6.133333333357185e-07,
+          7.24733333333e-06,
+          7.557333333330282e-06
+        ]
+      },
+      {
+        "link": "left_gripper_right",
+        "mass_kg": 0.025,
+        "world_com_m": [
+          -0.153200000001114,
+          0.3355000000010146,
+          0.3761250462637349
+        ],
+        "principal_inertias_kg_m2": [
+          6.133333333357185e-07,
+          7.24733333333e-06,
+          7.557333333330282e-06
+        ]
+      },
+      {
+        "link": "right_arm_base",
+        "mass_kg": 0.2,
+        "world_com_m": [
+          -0.14000000000009868,
+          -0.12815,
+          0.5450000000000987
+        ],
+        "principal_inertias_kg_m2": [
+          5.59041666667e-05,
+          5.79159166667e-05,
+          6.08859166667e-05
+        ]
+      },
+      {
+        "link": "right_upper_arm",
+        "mass_kg": 0.21,
+        "world_com_m": [
+          -0.14000000000028684,
+          -0.16657738095260563,
+          0.5128230323191955
+        ],
+        "principal_inertias_kg_m2": [
+          4.684125e-05,
+          0.000236634553571,
+          0.000256723303571
+        ]
+      },
+      {
+        "link": "right_forearm",
+        "mass_kg": 0.18,
+        "world_com_m": [
+          -0.14000000000060095,
+          -0.23072222222278113,
+          0.4540673326034613
+        ],
+        "principal_inertias_kg_m2": [
+          3.938875e-05,
+          0.000147938194444,
+          0.000163699444444
+        ]
+      },
+      {
+        "link": "right_wrist",
+        "mass_kg": 0.13,
+        "world_com_m": [
+          -0.14000000000093044,
+          -0.29800961538526427,
+          0.44106029721266665
+        ],
+        "principal_inertias_kg_m2": [
+          2.69679166667e-05,
+          3.40428685897e-05,
+          4.25916185897e-05
+        ]
+      },
+      {
+        "link": "right_hand",
+        "mass_kg": 0.16,
+        "world_com_m": [
+          -0.14000000000104149,
+          -0.320692607173077,
+          0.41020970296899384
+        ],
+        "principal_inertias_kg_m2": [
+          2.326429544403754e-05,
+          2.7526367187499997e-05,
+          3.1088738410062456e-05
+        ]
+      },
+      {
+        "link": "right_gripper_left",
+        "mass_kg": 0.025,
+        "world_com_m": [
+          -0.153200000001114,
+          -0.3355000000010146,
+          0.3761250462637349
+        ],
+        "principal_inertias_kg_m2": [
+          6.133333333357185e-07,
+          7.24733333333e-06,
+          7.557333333330282e-06
+        ]
+      },
+      {
+        "link": "right_gripper_right",
+        "mass_kg": 0.025,
+        "world_com_m": [
+          -0.126800000001114,
+          -0.3355000000011439,
+          0.3761250462637349
+        ],
+        "principal_inertias_kg_m2": [
+          6.133333333357185e-07,
+          7.24733333333e-06,
+          7.557333333330282e-06
+        ]
+      }
+    ],
+    "shape_free_fixed_zero_inertial_frames": [
+      "camera_optical_frame",
+      "lidar_scan_frame"
+    ]
+  },
+  "zero_pose_joints": {
+    "left_wheel_joint": {
+      "parent": "base_link",
+      "child": "left_wheel",
+      "type": "continuous",
+      "world_pivot_m": [
+        -0.17,
+        0.167,
+        0.1025
+      ],
+      "world_axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "right_wheel_joint": {
+      "parent": "base_link",
+      "child": "right_wheel",
+      "type": "continuous",
+      "world_pivot_m": [
+        -0.17,
+        -0.167,
+        0.1025
+      ],
+      "world_axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "caster_swivel_joint": {
+      "parent": "base_link",
+      "child": "caster_swivel_link",
+      "type": "continuous",
+      "world_pivot_m": [
+        0.19,
+        0.0,
+        0.11
+      ],
+      "world_axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "caster_wheel_joint": {
+      "parent": "caster_swivel_link",
+      "child": "caster_link",
+      "type": "continuous",
+      "world_pivot_m": [
+        0.17,
+        0.0,
+        0.03950000000000001
+      ],
+      "world_axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "camera_mount_joint": {
+      "parent": "base_link",
+      "child": "camera_mount",
+      "type": "fixed",
+      "world_pivot_m": [
+        -0.075,
+        0.0,
+        0.635
+      ],
+      "world_axis": null
+    },
+    "camera_optical_joint": {
+      "parent": "camera_mount",
+      "child": "camera_optical_frame",
+      "type": "fixed",
+      "world_pivot_m": [
+        -0.040999999999999995,
+        0.06925,
+        0.6415
+      ],
+      "world_axis": null
+    },
+    "lidar_mount_joint": {
+      "parent": "base_link",
+      "child": "lidar_mount",
+      "type": "fixed",
+      "world_pivot_m": [
+        -0.14,
+        0.0,
+        0.733
+      ],
+      "world_axis": null
+    },
+    "lidar_scan_joint": {
+      "parent": "lidar_mount",
+      "child": "lidar_scan_frame",
+      "type": "fixed",
+      "world_pivot_m": [
+        -0.14,
+        0.0,
+        0.7555
+      ],
+      "world_axis": null
+    },
+    "left_arm_base_joint": {
+      "parent": "base_link",
+      "child": "left_arm_base",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14,
+        0.108,
+        0.545
+      ],
+      "world_axis": [
+        -4.8965888601467475e-12,
+        1.0,
+        4.8965888601467475e-12
+      ]
+    },
+    "left_shoulder_joint": {
+      "parent": "left_arm_base",
+      "child": "left_upper_arm",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000019588,
+        0.148,
+        0.5450000000001959
+      ],
+      "world_axis": [
+        1.0,
+        4.8965888601467475e-12,
+        0.0
+      ]
+    },
+    "left_elbow_joint": {
+      "parent": "left_upper_arm",
+      "child": "left_forearm",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000045296,
+        0.20050000000058113,
+        0.45406733260316534
+      ],
+      "world_axis": [
+        1.0,
+        4.8965888601467475e-12,
+        0.0
+      ]
+    },
+    "left_wrist_pitch_joint": {
+      "parent": "left_forearm",
+      "child": "left_wrist",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000089366,
+        0.2905000000005811,
+        0.45406733260404675
+      ],
+      "world_axis": [
+        1.0,
+        4.8965888601467475e-12,
+        0.0
+      ]
+    },
+    "left_wrist_roll_joint": {
+      "parent": "left_wrist",
+      "child": "left_hand",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000100382,
+        0.31300000000083017,
+        0.4150961894338908
+      ],
+      "world_axis": [
+        -2.448294430100475e-12,
+        0.5000000000055347,
+        -0.8660254037812432
+      ]
+    },
+    "left_gripper_left_joint": {
+      "parent": "left_hand",
+      "child": "left_gripper_left",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.12200000000106503,
+        0.32550000000105667,
+        0.39344555433935974
+      ],
+      "world_axis": [
+        4.240570344759324e-12,
+        -0.8660254037812433,
+        -0.5000000000055347
+      ]
+    },
+    "left_gripper_right_joint": {
+      "parent": "left_hand",
+      "child": "left_gripper_right",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.15800000000106504,
+        0.3255000000008804,
+        0.39344555433935974
+      ],
+      "world_axis": [
+        -4.240570344759324e-12,
+        0.8660254037812433,
+        0.5000000000055347
+      ]
+    },
+    "right_arm_base_joint": {
+      "parent": "base_link",
+      "child": "right_arm_base",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14,
+        -0.108,
+        0.545
+      ],
+      "world_axis": [
+        4.8965888601467475e-12,
+        1.0,
+        -4.8965888601467475e-12
+      ]
+    },
+    "right_shoulder_joint": {
+      "parent": "right_arm_base",
+      "child": "right_upper_arm",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000019588,
+        -0.148,
+        0.5450000000001959
+      ],
+      "world_axis": [
+        -1.0,
+        4.8965888601467475e-12,
+        0.0
+      ]
+    },
+    "right_elbow_joint": {
+      "parent": "right_upper_arm",
+      "child": "right_forearm",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000045296,
+        -0.20050000000058113,
+        0.45406733260316534
+      ],
+      "world_axis": [
+        -1.0,
+        4.8965888601467475e-12,
+        0.0
+      ]
+    },
+    "right_wrist_pitch_joint": {
+      "parent": "right_forearm",
+      "child": "right_wrist",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000089366,
+        -0.2905000000005811,
+        0.45406733260404675
+      ],
+      "world_axis": [
+        -1.0,
+        4.8965888601467475e-12,
+        0.0
+      ]
+    },
+    "right_wrist_roll_joint": {
+      "parent": "right_wrist",
+      "child": "right_hand",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.14000000000100382,
+        -0.31300000000083017,
+        0.4150961894338908
+      ],
+      "world_axis": [
+        2.448294430100475e-12,
+        0.5000000000055347,
+        0.8660254037812432
+      ]
+    },
+    "right_gripper_left_joint": {
+      "parent": "right_hand",
+      "child": "right_gripper_left",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.15800000000106504,
+        -0.3255000000008804,
+        0.39344555433935974
+      ],
+      "world_axis": [
+        4.240570344759324e-12,
+        0.8660254037812433,
+        -0.5000000000055347
+      ]
+    },
+    "right_gripper_right_joint": {
+      "parent": "right_hand",
+      "child": "right_gripper_right",
+      "type": "revolute",
+      "world_pivot_m": [
+        -0.12200000000106503,
+        -0.32550000000105667,
+        0.39344555433935974
+      ],
+      "world_axis": [
+        -4.240570344759324e-12,
+        -0.8660254037812433,
+        0.5000000000055347
+      ]
+    }
+  },
+  "optical_frames": {
+    "camera_optical_frame": {
+      "local_x_in_root": [
+        4.8965888601467475e-12,
+        -1.0,
+        0.0
+      ],
+      "local_y_in_root": [
+        4.8965888601467475e-12,
+        2.3976582465313225e-23,
+        -1.0
+      ],
+      "local_z_in_root": [
+        1.0,
+        4.8965888601467475e-12,
+        4.8965888601467475e-12
+      ]
+    }
+  },
+  "zero_pose_support_polygon": {
+    "contact_centers_xy_m": [
+      [
+        -0.17,
+        -0.167
+      ],
+      [
+        0.17,
+        0.0
+      ],
+      [
+        -0.17,
+        0.167
+      ]
+    ],
+    "com_xy_m": [
+      -0.08008573955810366,
+      4.1194332737810055e-05
+    ],
+    "minimum_margin_m": 0.08991426044189635,
+    "method": "Static COM projection within polygon of contact centers, ignoring finite contact-patch size"
+  },
+  "r10_dimension_register_check": {
+    "source": "Independently transcribed R10 construction constants and explicit provisional simulation geometry; checked against source register and URDF transforms/colliders",
+    "expected_parameters_m": {
+      "base_length": 0.558,
+      "base_width": 0.404,
+      "base_height": 0.205,
+      "frame_width": 0.2,
+      "frame_depth": 0.2,
+      "post_size": 0.02,
+      "post_length": 0.5,
+      "post_bottom": 0.205,
+      "frame_center_x": -0.14,
+      "ring_bottoms": [
+        0.205,
+        0.48,
+        0.555,
+        0.685
+      ],
+      "width_rail_length": 0.16,
+      "depth_rail_length": 0.16,
+      "shelf_thickness": 0.003,
+      "arm_root_z": 0.545,
+      "arm_root_y": 0.108,
+      "camera_center": [
+        -0.075,
+        0,
+        0.635
+      ],
+      "camera_optical_offset": [
+        0.034,
+        0.06925,
+        0.0065
+      ],
+      "camera_aperture_half_width": 0.078,
+      "camera_aperture_bottom": 0.603,
+      "camera_aperture_top": 0.6625,
+      "kinect_mass": 0.97
+    },
+    "post_count": 4,
+    "rail_counts": {
+      "160_mm_width": 8,
+      "160_mm_depth": 8
+    },
+    "frame_clear_width_depth_m": [
+      0.16,
+      0.16
+    ],
+    "provisional_bare_camera_side_clearance_m": 0.002,
+    "frame_outside_width_depth_m": [
+      0.2,
+      0.2
+    ],
+    "covered_body_width_depth_m": [
+      0.204,
+      0.204
+    ],
+    "front_door_aperture_width_height_m": [
+      0.156,
+      0.0595
+    ],
+    "bare_camera_front_frame_setback_m": 0.001,
+    "provisional_bare_camera_reservation_depth_width_height_m": [
+      0.07,
+      0.156,
+      0.056
+    ],
+    "upright_GB70_body_depth_width_height_m": [
+      0.069,
+      0.099,
+      0.222
+    ],
+    "upright_GB70_installation_depth_width_height_m": [
+      0.07,
+      0.152,
+      0.222
+    ],
+    "nominal_uncalibrated_RGB_depth_spacing_m": 0.1385,
+    "notched_floor_outside_size_m": [
+      0.2,
+      0.2,
+      0.003
+    ],
+    "notched_floor_area_m2": 0.03840000000000001,
+    "independent_coordinates": 16,
+    "commanded_coordinates": 14,
+    "passive_caster_joints": [
+      "caster_swivel_joint",
+      "caster_wheel_joint"
+    ],
+    "source_categories": {
+      "manufacturer_envelope": "WR141E exterior 558x404x205mm only; not a measured body surface",
+      "online_supplier_dimensions": "Rear wheel diameter 205mm from OEM50024699 supplier and WR141E retailer; front diameter 79mm and approximate 55mm width from OEM50036897 supplier. These are not measured on this robot.",
+      "supplied_stock": "Four 20x20x500mm posts; sixteen 200mm rails cut to 160mm",
+      "approved_construction_change": "200x200mm frame and floors, 204x204mm externally covered body, 160x160mm clear opening, black aluminium frame and four opaque black plastic sides, internal casing-free camera reservation",
+      "provisional_unmeasured_simulation_inputs": "Bare-camera module fit, PCB/optics/heat-sink sizes, camera optical calibration, retained 970g camera mass budget, wheel widths, track/axle locations, chassis/frame mounting datum, arm pivots and all mass/actuator values"
+    },
+    "limitations": "Confirms internal consistency with nominal R10 construction and declared provisional inputs. Does not verify physical hardware, as-built tolerances, payload, mounting strength or real-world dynamics."
+  },
+  "paired_mirror_fk": {
+    "reflection_plane": "root XZ plane (Y sign changes)",
+    "method": "Matched left/right joints receive equal nonzero scalar commands; origins and conjugate reflected basis matrices must match",
+    "checks": [
+      {
+        "command_fraction_of_range": 0.0,
+        "commands": {
+          "left_arm_base_joint": 0.0,
+          "right_arm_base_joint": 0.0,
+          "left_shoulder_joint": 0.0,
+          "right_shoulder_joint": 0.0,
+          "left_elbow_joint": 0.0,
+          "right_elbow_joint": 0.0,
+          "left_wrist_pitch_joint": 0.0,
+          "right_wrist_pitch_joint": 0.0,
+          "left_wrist_roll_joint": 0.0,
+          "right_wrist_roll_joint": 0.0
+        },
+        "link_errors": [
+          {
+            "left": "left_arm_base",
+            "right": "right_arm_base",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_upper_arm",
+            "right": "right_upper_arm",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_forearm",
+            "right": "right_forearm",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_wrist",
+            "right": "right_wrist",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_hand",
+            "right": "right_hand",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_gripper_left",
+            "right": "right_gripper_right",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_gripper_right",
+            "right": "right_gripper_left",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          }
+        ]
+      },
+      {
+        "command_fraction_of_range": 0.17,
+        "commands": {
+          "left_arm_base_joint": 0.26703537555498,
+          "right_arm_base_joint": 0.26703537555498,
+          "left_shoulder_joint": 0.11868238913566001,
+          "right_shoulder_joint": 0.11868238913566001,
+          "left_elbow_joint": 0.11868238913566001,
+          "right_elbow_joint": 0.11868238913566001,
+          "left_wrist_pitch_joint": 0.17802358370332003,
+          "right_wrist_pitch_joint": 0.17802358370332003,
+          "left_wrist_roll_joint": 0.5340707511086,
+          "right_wrist_roll_joint": 0.5340707511086
+        },
+        "link_errors": [
+          {
+            "left": "left_arm_base",
+            "right": "right_arm_base",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_upper_arm",
+            "right": "right_upper_arm",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_forearm",
+            "right": "right_forearm",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_wrist",
+            "right": "right_wrist",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_hand",
+            "right": "right_hand",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_gripper_left",
+            "right": "right_gripper_right",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_gripper_right",
+            "right": "right_gripper_left",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          }
+        ]
+      },
+      {
+        "command_fraction_of_range": -0.13,
+        "commands": {
+          "left_arm_base_joint": -0.20420352248322,
+          "right_arm_base_joint": -0.20420352248322,
+          "left_shoulder_joint": -0.09075712110374001,
+          "right_shoulder_joint": -0.09075712110374001,
+          "left_elbow_joint": -0.09075712110374001,
+          "right_elbow_joint": -0.09075712110374001,
+          "left_wrist_pitch_joint": -0.13613568165548,
+          "right_wrist_pitch_joint": -0.13613568165548,
+          "left_wrist_roll_joint": -0.40840704496540003,
+          "right_wrist_roll_joint": -0.40840704496540003
+        },
+        "link_errors": [
+          {
+            "left": "left_arm_base",
+            "right": "right_arm_base",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_upper_arm",
+            "right": "right_upper_arm",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_forearm",
+            "right": "right_forearm",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_wrist",
+            "right": "right_wrist",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_hand",
+            "right": "right_hand",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_gripper_left",
+            "right": "right_gripper_right",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          },
+          {
+            "left": "left_gripper_right",
+            "right": "right_gripper_left",
+            "position_deviation_m": 0.0,
+            "reflected_basis_deviation_frobenius": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "collision_screening": {
+    "method": "Oriented bounding box SAT; adjacent links and explicit allowed pairs excluded",
+    "zero_pose_candidates": [],
+    "one_joint_sweeps": [
+      {
+        "joint": "left_arm_base_joint",
+        "samples": 9,
+        "limits": [
+          -0.785398163397,
+          0.785398163397
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "left_shoulder_joint",
+        "samples": 9,
+        "limits": [
+          -0.349065850399,
+          0.349065850399
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "left_elbow_joint",
+        "samples": 9,
+        "limits": [
+          -0.349065850399,
+          0.349065850399
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "left_wrist_pitch_joint",
+        "samples": 9,
+        "limits": [
+          -0.523598775598,
+          0.523598775598
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "left_wrist_roll_joint",
+        "samples": 9,
+        "limits": [
+          -1.57079632679,
+          1.57079632679
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "left_gripper_left_joint",
+        "samples": 9,
+        "limits": [
+          0.0,
+          0.6
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "right_arm_base_joint",
+        "samples": 9,
+        "limits": [
+          -0.785398163397,
+          0.785398163397
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "right_shoulder_joint",
+        "samples": 9,
+        "limits": [
+          -0.349065850399,
+          0.349065850399
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "right_elbow_joint",
+        "samples": 9,
+        "limits": [
+          -0.349065850399,
+          0.349065850399
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "right_wrist_pitch_joint",
+        "samples": 9,
+        "limits": [
+          -0.523598775598,
+          0.523598775598
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "right_wrist_roll_joint",
+        "samples": 9,
+        "limits": [
+          -1.57079632679,
+          1.57079632679
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "right_gripper_left_joint",
+        "samples": 9,
+        "limits": [
+          0.0,
+          0.6
+        ],
+        "range_kind": "declared bounded range",
+        "additional_candidates": []
+      },
+      {
+        "joint": "caster_swivel_joint",
+        "samples": 17,
+        "limits": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "range_kind": "one full continuous swivel revolution",
+        "additional_candidates": []
+      }
+    ],
+    "excluded_pairs": [
+      [
+        "base_link",
+        "camera_mount"
+      ],
+      [
+        "base_link",
+        "lidar_mount"
+      ]
+    ]
+  },
+  "estimated_static_gravity_loads": {
+    "gravity_m_s2": 9.80665,
+    "zero_pose": {
+      "left_wheel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 2.5,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m"
+      },
+      "right_wheel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 2.5,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m"
+      },
+      "caster_swivel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 0.05,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m"
+      },
+      "caster_wheel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 0.05,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m"
+      },
+      "left_arm_base_joint": {
+        "gravity_effort": -7.155734338404329e-17,
+        "absolute_gravity_effort": 7.155734338404329e-17,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 7.155734338404329e-17,
+        "unit": "N m"
+      },
+      "left_shoulder_joint": {
+        "gravity_effort": -0.7384242418592226,
+        "absolute_gravity_effort": 0.7384242418592226,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.7384242418592226,
+        "unit": "N m"
+      },
+      "left_elbow_joint": {
+        "gravity_effort": -0.4324445035432965,
+        "absolute_gravity_effort": 0.4324445035432965,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.4324445035432965,
+        "unit": "N m"
+      },
+      "left_wrist_pitch_joint": {
+        "gravity_effort": -0.07901283754333571,
+        "absolute_gravity_effort": 0.07901283754333571,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.07901283754333571,
+        "unit": "N m"
+      },
+      "left_wrist_roll_joint": {
+        "gravity_effort": 2.168404344971009e-18,
+        "absolute_gravity_effort": 2.168404344971009e-18,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 2.168404344971009e-18,
+        "unit": "N m"
+      },
+      "left_gripper_left_joint": {
+        "gravity_effort": 0.0010191369631189582,
+        "absolute_gravity_effort": 0.0010191369631189582,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.0033971232103965276,
+        "unit": "N m"
+      },
+      "left_gripper_right_joint": {
+        "gravity_effort": 0.0010191369631189601,
+        "absolute_gravity_effort": 0.0010191369631189601,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.003397123210396534,
+        "unit": "N m"
+      },
+      "right_arm_base_joint": {
+        "gravity_effort": -7.155734338404329e-17,
+        "absolute_gravity_effort": 7.155734338404329e-17,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 7.155734338404329e-17,
+        "unit": "N m"
+      },
+      "right_shoulder_joint": {
+        "gravity_effort": -0.7384242418592226,
+        "absolute_gravity_effort": 0.7384242418592226,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.7384242418592226,
+        "unit": "N m"
+      },
+      "right_elbow_joint": {
+        "gravity_effort": -0.4324445035432965,
+        "absolute_gravity_effort": 0.4324445035432965,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.4324445035432965,
+        "unit": "N m"
+      },
+      "right_wrist_pitch_joint": {
+        "gravity_effort": -0.07901283754333573,
+        "absolute_gravity_effort": 0.07901283754333573,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.07901283754333573,
+        "unit": "N m"
+      },
+      "right_wrist_roll_joint": {
+        "gravity_effort": 2.168404344971009e-18,
+        "absolute_gravity_effort": 2.168404344971009e-18,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 2.168404344971009e-18,
+        "unit": "N m"
+      },
+      "right_gripper_left_joint": {
+        "gravity_effort": 0.0010191369631189601,
+        "absolute_gravity_effort": 0.0010191369631189601,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.003397123210396534,
+        "unit": "N m"
+      },
+      "right_gripper_right_joint": {
+        "gravity_effort": 0.0010191369631189582,
+        "absolute_gravity_effort": 0.0010191369631189582,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.0033971232103965276,
+        "unit": "N m"
+      }
+    },
+    "maximum_in_checked_poses": {
+      "left_wheel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 2.5,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m",
+        "pose": "zero pose"
+      },
+      "right_wheel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 2.5,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m",
+        "pose": "zero pose"
+      },
+      "caster_swivel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 0.05,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m",
+        "pose": "zero pose"
+      },
+      "caster_wheel_joint": {
+        "gravity_effort": 0.0,
+        "absolute_gravity_effort": 0.0,
+        "declared_effort_limit": 0.05,
+        "fraction_of_declared_limit": 0.0,
+        "unit": "N m",
+        "pose": "zero pose"
+      },
+      "left_arm_base_joint": {
+        "gravity_effort": 0.4621563120342887,
+        "absolute_gravity_effort": 0.4621563120342887,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.4621563120342887,
+        "unit": "N m",
+        "pose": "left_arm_base_joint=-0.78539816"
+      },
+      "left_shoulder_joint": {
+        "gravity_effort": -0.9174319782638446,
+        "absolute_gravity_effort": 0.9174319782638446,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.9174319782638446,
+        "unit": "N m",
+        "pose": "left_shoulder_joint=0.34906585"
+      },
+      "left_elbow_joint": {
+        "gravity_effort": -0.48366642632424706,
+        "absolute_gravity_effort": 0.48366642632424706,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.48366642632424706,
+        "unit": "N m",
+        "pose": "left_wrist_pitch_joint=0.52359878"
+      },
+      "left_wrist_pitch_joint": {
+        "gravity_effort": -0.13023476032428632,
+        "absolute_gravity_effort": 0.13023476032428632,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.13023476032428632,
+        "unit": "N m",
+        "pose": "left_wrist_pitch_joint=0.52359878"
+      },
+      "left_wrist_roll_joint": {
+        "gravity_effort": 0.0046806853831109895,
+        "absolute_gravity_effort": 0.0046806853831109895,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.0046806853831109895,
+        "unit": "N m",
+        "pose": "left_arm_base_joint=0.78539816"
+      },
+      "left_gripper_left_joint": {
+        "gravity_effort": 0.0041878130154387305,
+        "absolute_gravity_effort": 0.0041878130154387305,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.013959376718129102,
+        "unit": "N m",
+        "pose": "left_arm_base_joint=0.78539816"
+      },
+      "left_gripper_right_joint": {
+        "gravity_effort": 0.004187813015438735,
+        "absolute_gravity_effort": 0.004187813015438735,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.013959376718129116,
+        "unit": "N m",
+        "pose": "left_arm_base_joint=-0.78539816"
+      },
+      "right_arm_base_joint": {
+        "gravity_effort": 0.4621563120342887,
+        "absolute_gravity_effort": 0.4621563120342887,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.4621563120342887,
+        "unit": "N m",
+        "pose": "right_arm_base_joint=-0.78539816"
+      },
+      "right_shoulder_joint": {
+        "gravity_effort": -0.9174319782638446,
+        "absolute_gravity_effort": 0.9174319782638446,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.9174319782638446,
+        "unit": "N m",
+        "pose": "right_shoulder_joint=0.34906585"
+      },
+      "right_elbow_joint": {
+        "gravity_effort": -0.48366642632424706,
+        "absolute_gravity_effort": 0.48366642632424706,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.48366642632424706,
+        "unit": "N m",
+        "pose": "right_wrist_pitch_joint=0.52359878"
+      },
+      "right_wrist_pitch_joint": {
+        "gravity_effort": -0.13023476032428632,
+        "absolute_gravity_effort": 0.13023476032428632,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.13023476032428632,
+        "unit": "N m",
+        "pose": "right_wrist_pitch_joint=0.52359878"
+      },
+      "right_wrist_roll_joint": {
+        "gravity_effort": 0.0046806853831109895,
+        "absolute_gravity_effort": 0.0046806853831109895,
+        "declared_effort_limit": 1.0,
+        "fraction_of_declared_limit": 0.0046806853831109895,
+        "unit": "N m",
+        "pose": "right_arm_base_joint=0.78539816"
+      },
+      "right_gripper_left_joint": {
+        "gravity_effort": 0.004187813015438735,
+        "absolute_gravity_effort": 0.004187813015438735,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.013959376718129116,
+        "unit": "N m",
+        "pose": "right_arm_base_joint=-0.78539816"
+      },
+      "right_gripper_right_joint": {
+        "gravity_effort": 0.0041878130154387305,
+        "absolute_gravity_effort": 0.0041878130154387305,
+        "declared_effort_limit": 0.3,
+        "fraction_of_declared_limit": 0.013959376718129102,
+        "unit": "N m",
+        "pose": "right_arm_base_joint=0.78539816"
+      }
+    },
+    "limitations": "Based on declared estimated masses; ignores payload, acceleration, friction, gear efficiency and multi-joint combinations."
+  },
+  "errors": [],
+  "warnings": [
+    "base_link.stl: closed oriented visual shells touch at 4 nonmanifold edges; not a unioned physics solid"
+  ],
+  "status": "PASS_WITH_REVIEW_NOTES"
+}

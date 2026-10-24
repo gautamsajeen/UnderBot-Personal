@@ -1,8 +1,8 @@
 {
   "scope": "URDF-only static, no-load, level-ground model audit; no simulator execution",
-  "urdf_sha256": "805ae58b87af3d3030c201def6d7126b09fd0e907e6bebbdabf9e0db6059e3c7",
+  "urdf_sha256": "c66f99720353890a69291c1be2767eeb88faa4f657e95f9a92061f0273e65ade",
   "gravity_m_s2": 9.80665,
-  "mass_kg": 19.601007799999998,
+  "mass_kg": 19.5172478,
   "samples": {
     "arm_pose_count": 2000,
     "caster_grid_angles": 720,
@@ -11,39 +11,39 @@
   },
   "zero_pose": {
     "com_m": [
-      -0.06396505523088457,
-      4.1018299069295336e-05,
-      0.29820547138487036
+      -0.08008573955810362,
+      4.1194332737810035e-05,
+      0.2911486972361858
     ],
     "independent_holding_Nm": {
       "left_wheel_joint": 0.0,
       "right_wheel_joint": 0.0,
       "caster_swivel_joint": 0.0,
       "caster_wheel_joint": 0.0,
-      "left_arm_base_joint": -4.2580082220645005e-17,
-      "left_shoulder_joint": 0.7384242418592226,
+      "left_arm_base_joint": 7.172970163826308e-17,
+      "left_shoulder_joint": 0.7384242418592227,
       "left_elbow_joint": 0.43244450354329644,
       "left_wrist_pitch_joint": 0.07901283754333571,
-      "left_wrist_roll_joint": -2.790746070788804e-18,
-      "left_gripper_left_joint": -0.00203827392623792,
-      "right_arm_base_joint": -1.8321792401264535e-17,
-      "right_shoulder_joint": 0.7384242418592226,
+      "left_wrist_roll_joint": -1.9233843327940894e-18,
+      "left_gripper_left_joint": -0.002038273926237918,
+      "right_arm_base_joint": 7.172970163826308e-17,
+      "right_shoulder_joint": 0.7384242418592227,
       "right_elbow_joint": 0.43244450354329644,
       "right_wrist_pitch_joint": 0.07901283754333571,
-      "right_wrist_roll_joint": -2.7755082597732746e-18,
-      "right_gripper_left_joint": -0.00203827392623792
+      "right_wrist_roll_joint": -1.90814652177856e-18,
+      "right_gripper_left_joint": -0.002038273926237918
     }
   },
   "com_range_at_zero_caster_m": {
     "min": [
-      -0.06950583168500549,
-      -0.002870265014887521,
-      0.2956336035283632
+      -0.08565029474581204,
+      -0.0028825830117747368,
+      0.28856579198066273
     ],
     "max": [
-      -0.05708236927288485,
-      0.0029071835278067257,
-      0.30392130908542675
+      -0.07317351594286094,
+      0.002919659963766546,
+      0.29688906496119566
     ]
   },
   "actuators": {
@@ -61,7 +61,7 @@
     },
     "left_arm_base_joint": {
       "urdf_effort_Nm": 1.0,
-      "maximum_absolute_holding_torque_Nm": 0.6614957153288293,
+      "maximum_absolute_holding_torque_Nm": 0.6614957153288292,
       "samples_exceeding_effort": 0,
       "worst_pose": {
         "label": "limit_probe_0",
@@ -149,7 +149,7 @@
     },
     "left_wrist_roll_joint": {
       "urdf_effort_Nm": 1.0,
-      "maximum_absolute_holding_torque_Nm": 0.006593647662171242,
+      "maximum_absolute_holding_torque_Nm": 0.00659364766217123,
       "samples_exceeding_effort": 0,
       "worst_pose": {
         "label": "halton_188",
@@ -171,7 +171,7 @@
     },
     "left_gripper_left_joint": {
       "urdf_effort_Nm": 0.3,
-      "maximum_absolute_holding_torque_Nm": 0.003405829972298904,
+      "maximum_absolute_holding_torque_Nm": 0.0034058299722989046,
       "samples_exceeding_effort": 0,
       "worst_pose": {
         "label": "halton_337",
@@ -281,7 +281,7 @@
     },
     "right_wrist_roll_joint": {
       "urdf_effort_Nm": 1.0,
-      "maximum_absolute_holding_torque_Nm": 0.006615829087804977,
+      "maximum_absolute_holding_torque_Nm": 0.0066158290878049735,
       "samples_exceeding_effort": 0,
       "worst_pose": {
         "label": "halton_985",
@@ -329,79 +329,79 @@
     "right_wheel_joint": 0.0,
     "caster_swivel_joint": 0.0,
     "caster_wheel_joint": 0.0,
-    "left_arm_base_joint": 0.6614957153288293,
+    "left_arm_base_joint": 0.6614957153288292,
     "left_shoulder_joint": 0.9426296559942181,
     "left_elbow_joint": 0.4865344646322637,
     "left_wrist_pitch_joint": 0.14670492108058744,
-    "left_wrist_roll_joint": 0.006593647662171242,
+    "left_wrist_roll_joint": 0.00659364766217123,
     "left_gripper_left_joint": 0.0050365785895638854,
     "left_gripper_right_joint": 0.005012809117532837,
     "right_arm_base_joint": 0.6614957153288293,
     "right_shoulder_joint": 0.9440585084953886,
     "right_elbow_joint": 0.48730942968275986,
     "right_wrist_pitch_joint": 0.14636837338996583,
-    "right_wrist_roll_joint": 0.006615829087804977,
+    "right_wrist_roll_joint": 0.0066158290878049735,
     "right_gripper_left_joint": 0.005026011869592607,
     "right_gripper_right_joint": 0.005011104959647028
   },
   "effort_status": "WITHIN_PROVISIONAL_LIMITS_IN_SAMPLES",
   "support": {
     "status": "POSITIVE_FOR_SAMPLED_ARM_POSES_AT_ALL_CASTER_ANGLES",
-    "minimum_sampled_margin_m": 0.10169386889953784,
-    "minimum_continuous_angle_lower_bound_m": 0.10164750846528418,
+    "minimum_sampled_margin_m": 0.08434970525418797,
+    "minimum_continuous_angle_lower_bound_m": 0.08430557829015395,
     "arm_poses_without_positive_continuous_angle_bound": 0,
     "worst_sampled_case": {
-      "sampled_margin_m": 0.10169386889953784,
-      "continuous_angle_lower_bound_m": 0.10164750846528418,
-      "angular_discretization_bound_m": 4.6360434253662695e-05,
-      "caster_angle_rad": 1.0995574287564276,
-      "edge": "caster_to_left_rear",
+      "sampled_margin_m": 0.08434970525418797,
+      "continuous_angle_lower_bound_m": 0.08430557829015395,
+      "angular_discretization_bound_m": 4.4126964034030614e-05,
+      "caster_angle_rad": 0.0,
+      "edge": "rear_axle",
       "com_at_sampled_minimum_m": [
-        -0.05960461709642391,
-        0.002304792083958143,
-        0.29955785616427516
+        -0.08565029474581204,
+        0.0005018890393977918,
+        0.2912657764818939
       ],
       "contacts_at_sampled_minimum_m": [
         [
-          -0.18,
-          -0.177,
+          -0.17,
+          -0.167,
           0.0
         ],
         [
-          0.20592019000520906,
-          -0.017820130483767346,
+          0.17,
+          0.0,
           0.0
         ],
         [
-          -0.18,
-          0.177,
+          -0.17,
+          0.167,
           0.0
         ]
       ],
       "arm_pose": {
-        "label": "halton_1292",
+        "label": "halton_951",
         "joint_positions_rad": {
-          "left_arm_base_joint": -0.48703890015341306,
-          "left_shoulder_joint": 0.2651112837278184,
-          "left_elbow_joint": 0.019994491910854728,
-          "left_wrist_pitch_joint": 0.13411630445346534,
-          "left_wrist_roll_joint": 0.06254861406451573,
-          "left_gripper_left_joint": 0.26108329540282205,
-          "right_arm_base_joint": -0.7406370223933036,
-          "right_shoulder_joint": -0.3274877893741894,
-          "right_elbow_joint": -0.21433968672071413,
-          "right_wrist_pitch_joint": 0.07288604875785021,
-          "right_wrist_roll_joint": 0.5901756666698152,
-          "right_gripper_left_joint": 0.5662527392257122
+          "left_arm_base_joint": 0.6734175658814121,
+          "left_shoulder_joint": -0.17062249386215408,
+          "left_elbow_joint": -0.19022692583343906,
+          "left_wrist_pitch_joint": 0.43287945421159113,
+          "left_wrist_roll_joint": 0.10739479018624354,
+          "left_gripper_left_joint": 0.12207555757851617,
+          "right_arm_base_joint": 0.7156986724055301,
+          "right_shoulder_joint": -0.2889119161270044,
+          "right_elbow_joint": -0.08242509971203482,
+          "right_wrist_pitch_joint": 0.3107156947488563,
+          "right_wrist_roll_joint": 0.6554519532183036,
+          "right_gripper_left_joint": 0.4325785244704164
         }
       }
     }
   },
   "validation": {
     "finite_difference_coordinates_checked": 72,
-    "maximum_gravity_gradient_error_Nm": 1.1733794713641998e-08,
+    "maximum_gravity_gradient_error_Nm": 1.1733794880175452e-08,
     "caster_circle_full_fk_checks": 113,
-    "maximum_caster_circle_COM_error_m": 1.4010586580432063e-17,
+    "maximum_caster_circle_COM_error_m": 2.782410069439008e-17,
     "maximum_caster_circle_contact_error_m": 2.964296775167217e-17
   },
   "limitations": [

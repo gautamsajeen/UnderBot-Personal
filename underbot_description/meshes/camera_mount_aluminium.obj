@@ -1,5 +1,5 @@
-# Underbot R09 SI metres; original URDF link-local coordinates
-mtllib Underbot_R09.mtl
+# Underbot R10 SI metres; original URDF link-local coordinates
+mtllib Underbot_R10.mtl
 o camera_mount__kinect_heatspreader_provisional
 usemtl brushed_aluminium
 v -0.02749999985 -0.04935000092 -0.01985000074

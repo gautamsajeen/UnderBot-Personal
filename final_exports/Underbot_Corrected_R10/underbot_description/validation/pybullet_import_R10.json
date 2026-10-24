@@ -1,0 +1,959 @@
+{
+  "revision": "R10",
+  "generated_at_utc": "2026-10-24T10:29:47.031720+00:00",
+  "camera_status": "External case removed; bare Kinect electronics and optical frame are uncalibrated reservations.",
+  "engine": "PyBullet",
+  "engine_version": "3.2.7",
+  "engine_api_version": 202010061,
+  "urdf": "urdf/underbot.portable.urdf",
+  "urdf_sha256": "0daab387d38a86e5e90bae42bb30a04153d4ae816c9dd1822a9f1908ed1a9588",
+  "flags": "URDF_USE_INERTIA_FROM_FILE",
+  "use_fixed_base": false,
+  "links": 23,
+  "joints": 22,
+  "actuated_independent_joints": 14,
+  "passive_independent_joints": [
+    "caster_swivel_joint",
+    "caster_wheel_joint"
+  ],
+  "mimic_followers": [
+    "left_gripper_right_joint",
+    "right_gripper_right_joint"
+  ],
+  "mimic_handling": "PyBullet does not enforce URDF mimic constraints here; follower positions were explicitly set from the URDF equations for the nonzero FK check.",
+  "nonzero_independent_pose_radians": {
+    "left_wheel_joint": -0.31,
+    "right_wheel_joint": 0.23,
+    "caster_swivel_joint": -0.31,
+    "caster_wheel_joint": 0.23,
+    "left_arm_base_joint": -0.20420352248322005,
+    "left_shoulder_joint": 0.07679448708777997,
+    "left_elbow_joint": -0.09075712110374001,
+    "left_wrist_pitch_joint": 0.11519173063155996,
+    "left_wrist_roll_joint": -0.40840704496540003,
+    "left_gripper_left_joint": 0.366,
+    "right_arm_base_joint": -0.20420352248322005,
+    "right_shoulder_joint": 0.07679448708777997,
+    "right_elbow_joint": -0.09075712110374001,
+    "right_wrist_pitch_joint": 0.11519173063155996,
+    "right_wrist_roll_joint": -0.40840704496540003,
+    "right_gripper_left_joint": 0.366
+  },
+  "nonzero_pose_world_link_frames": {
+    "base_link": [
+      [
+        1.0,
+        -1.102166219225491e-20,
+        -1.0099066010516169e-16,
+        2.7755575615628914e-17
+      ],
+      [
+        -8.354218811681081e-20,
+        0.9999999999999998,
+        5.801723655444516e-20,
+        -1.3552527156068805e-20
+      ],
+      [
+        5.207929952534105e-17,
+        4.0427962530731305e-20,
+        1.0000000000000002,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_wheel": [
+      [
+        0.9523335714460246,
+        -6.959132262103983e-20,
+        -0.3050586315724562,
+        -0.17000000178813934
+      ],
+      [
+        6.965956648015541e-20,
+        1.0,
+        -1.0660832223785806e-20,
+        0.16699999570846558
+      ],
+      [
+        0.3050586315724562,
+        -1.1097583600101953e-20,
+        0.9523335714460246,
+        0.10249999910593033
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_wheel": [
+      [
+        0.9736663947762899,
+        3.069068393521139e-21,
+        0.2279775245135844,
+        -0.17000000178813934
+      ],
+      [
+        -2.118181230958719e-21,
+        1.0,
+        -4.4156392742600186e-21,
+        -0.16699999570846558
+      ],
+      [
+        -0.2279775245135844,
+        3.81646185929624e-21,
+        0.9736663947762899,
+        0.10249999910593033
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "caster_swivel_link": [
+      [
+        0.952333553481097,
+        0.30505868765545174,
+        7.159536041874554e-09,
+        0.1899999976158142
+      ],
+      [
+        -0.30505868765545174,
+        0.952333553481097,
+        -3.026823447383047e-09,
+        -3.4924596548080444e-10
+      ],
+      [
+        -7.741625188657806e-09,
+        6.984668602500427e-10,
+        1.0,
+        0.10999999940395355
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "caster_link": [
+      [
+        0.9272551661817611,
+        0.30505868967430966,
+        0.21711069214441706,
+        0.17095333337783813
+      ],
+      [
+        -0.29702539277633094,
+        0.9523335528344012,
+        -0.06954653256542073,
+        0.006101172883063555
+      ],
+      [
+        -0.22797757090402757,
+        -6.998822091319745e-09,
+        0.9736663839142743,
+        0.039500001817941666
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "camera_mount": [
+      [
+        1.0,
+        -4.265097688453411e-20,
+        -5.9486917026057865e-40,
+        -0.07499999552965164
+      ],
+      [
+        4.265097688453411e-20,
+        1.0,
+        2.789475007201006e-20,
+        6.791475300252282e-20
+      ],
+      [
+        -5.9486917026057865e-40,
+        -2.789475007201006e-20,
+        1.0,
+        0.6350000500679016
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "camera_optical_frame": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        -0.04100000113248825
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0,
+        0.06925000250339508
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.6414999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "lidar_mount": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -0.14000000059604645
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        4.0657581468206416e-20
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.7330000400543213
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "lidar_scan_frame": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -0.14000000059604645
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        4.0657581468206416e-20
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.7555000185966492
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_arm_base": [
+      [
+        -0.20278733626680157,
+        0.9792228021496514,
+        0.0,
+        -0.14000000059604645
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.1080000028014183
+      ],
+      [
+        0.9792228021496514,
+        0.2027873362668015,
+        0.0,
+        0.5450000166893005
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_upper_arm": [
+      [
+        0.1673225340954435,
+        0.9792228112892146,
+        0.114568125736291,
+        -0.14000000059604645
+      ],
+      [
+        0.5649670366660201,
+        -1.2096876833567194e-08,
+        -0.8251134755176501,
+        0.14799998700618744
+      ],
+      [
+        -0.8079699357430914,
+        0.20278729213352426,
+        -0.5532286119539169,
+        0.5450000166893005
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_forearm": [
+      [
+        0.0028313613221238043,
+        0.9792228101812965,
+        0.202767530471987,
+        -0.12243113666772842
+      ],
+      [
+        0.9999025239416366,
+        -7.681798530612127e-09,
+        -0.013962185185172796,
+        0.20732153952121735
+      ],
+      [
+        -0.013672088655677261,
+        0.20278729748345814,
+        -0.9791273594232504,
+        0.4601631760597229
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_wrist": [
+      [
+        0.16447342635137663,
+        0.9792228122970461,
+        0.11862198742772029,
+        -0.12217631191015244
+      ],
+      [
+        0.5849576784702233,
+        8.366538017945402e-09,
+        -0.8110638164773021,
+        0.29731276631355286
+      ],
+      [
+        -0.7942121923157344,
+        0.20278728726688922,
+        -0.5728039016102902,
+        0.45893266797065735
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_hand": [
+      [
+        0.16447346934205598,
+        0.8515757808128673,
+        0.4977621594853742,
+        -0.11477500200271606
+      ],
+      [
+        0.5849576483573206,
+        0.322112292694291,
+        -0.7443575891488585,
+        0.32363587617874146
+      ],
+      [
+        -0.7942122055917178,
+        0.41359685737222757,
+        -0.44515683984519017,
+        0.423193097114563
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_gripper_left": [
+      [
+        0.4583446124357651,
+        0.736310392924399,
+        0.49776221383570834,
+        -0.09533481299877167
+      ],
+      [
+        0.6614923046222996,
+        0.09143109977396568,
+        -0.7443576324050166,
+        0.3440578281879425
+      ],
+      [
+        -0.5935892074293357,
+        0.6704381845223616,
+        -0.44515670674243735,
+        0.4107825756072998
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "left_gripper_right": [
+      [
+        -0.15118483564187235,
+        0.8540351129497096,
+        0.4977621634083057,
+        -0.12599153816699982
+      ],
+      [
+        0.43093516301165613,
+        0.5101241291804389,
+        -0.7443576143951347,
+        0.33246177434921265
+      ],
+      [
+        -0.8896280294325586,
+        0.10196763543828818,
+        -0.445156793243759,
+        0.39589306712150574
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_arm_base": [
+      [
+        -0.20278733626680157,
+        -0.9792228021496514,
+        0.0,
+        -0.14000000059604645
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.1080000028014183
+      ],
+      [
+        0.9792228021496514,
+        -0.2027873362668015,
+        0.0,
+        0.5450000166893005
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_upper_arm": [
+      [
+        0.1673225340954435,
+        -0.9792228112892146,
+        0.114568125736291,
+        -0.14000000059604645
+      ],
+      [
+        -0.5649670366660201,
+        -1.2096876833567194e-08,
+        0.8251134755176501,
+        -0.14799998700618744
+      ],
+      [
+        -0.8079699357430914,
+        -0.20278729213352426,
+        -0.5532286119539169,
+        0.5450000166893005
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_forearm": [
+      [
+        0.0028313613221238043,
+        -0.9792228101812965,
+        0.202767530471987,
+        -0.12243113666772842
+      ],
+      [
+        -0.9999025239416366,
+        -7.681798530612127e-09,
+        0.013962185185172796,
+        -0.20732153952121735
+      ],
+      [
+        -0.013672088655677261,
+        -0.20278729748345814,
+        -0.9791273594232504,
+        0.4601631760597229
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_wrist": [
+      [
+        0.16447342635137663,
+        -0.9792228122970461,
+        0.11862198742772029,
+        -0.12217631191015244
+      ],
+      [
+        -0.5849576784702233,
+        8.366538017945402e-09,
+        0.8110638164773021,
+        -0.29731276631355286
+      ],
+      [
+        -0.7942121923157344,
+        -0.20278728726688922,
+        -0.5728039016102902,
+        0.45893266797065735
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_hand": [
+      [
+        0.16447346934205598,
+        -0.8515757808128673,
+        0.4977621594853742,
+        -0.11477500200271606
+      ],
+      [
+        -0.5849576483573206,
+        0.322112292694291,
+        0.7443575891488585,
+        -0.32363587617874146
+      ],
+      [
+        -0.7942122055917178,
+        -0.41359685737222757,
+        -0.44515683984519017,
+        0.423193097114563
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_gripper_left": [
+      [
+        -0.15118483564187235,
+        -0.8540351129497096,
+        0.4977621634083057,
+        -0.12599153816699982
+      ],
+      [
+        -0.43093516301165613,
+        0.5101241291804389,
+        0.7443576143951347,
+        -0.33246177434921265
+      ],
+      [
+        -0.8896280294325586,
+        -0.10196763543828818,
+        -0.445156793243759,
+        0.39589306712150574
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right_gripper_right": [
+      [
+        0.4583446124357651,
+        -0.736310392924399,
+        0.49776221383570834,
+        -0.09533481299877167
+      ],
+      [
+        -0.6614923046222996,
+        0.09143109977396568,
+        0.7443576324050166,
+        -0.3440578281879425
+      ],
+      [
+        -0.5935892074293357,
+        -0.6704381845223616,
+        -0.44515670674243735,
+        0.4107825756072998
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "maximum_position_error_m": 5.026707445779603e-08,
+  "maximum_rotation_matrix_error": 1.7421053005728382e-07,
+  "fk_link_comparisons": [
+    {
+      "link": "left_wheel",
+      "position_error_m": 4.734350062337802e-09,
+      "rotation_matrix_max_error": 4.8709873912144985e-09
+    },
+    {
+      "link": "right_wheel",
+      "position_error_m": 4.734350062337802e-09,
+      "rotation_matrix_max_error": 9.78396114126312e-10
+    },
+    {
+      "link": "caster_swivel_link",
+      "position_error_m": 2.4822542526975666e-09,
+      "rotation_matrix_max_error": 5.121200830071615e-08
+    },
+    {
+      "link": "caster_link",
+      "position_error_m": 5.112199943701556e-09,
+      "rotation_matrix_max_error": 5.323086615938166e-08
+    },
+    {
+      "link": "camera_mount",
+      "position_error_m": 5.026707445779603e-08,
+      "rotation_matrix_max_error": 2.220446049250313e-16
+    },
+    {
+      "link": "camera_optical_frame",
+      "position_error_m": 4.701216043549727e-09,
+      "rotation_matrix_max_error": 4.896689850806853e-12
+    },
+    {
+      "link": "lidar_mount",
+      "position_error_m": 4.005875581603835e-08,
+      "rotation_matrix_max_error": 2.220446049250313e-16
+    },
+    {
+      "link": "lidar_scan_frame",
+      "position_error_m": 1.8606198681854612e-08,
+      "rotation_matrix_max_error": 2.220446049250313e-16
+    },
+    {
+      "link": "left_arm_base",
+      "position_error_m": 1.6933279758388418e-08,
+      "rotation_matrix_max_error": 4.091040306519744e-08
+    },
+    {
+      "link": "left_upper_arm",
+      "position_error_m": 2.1159404818191264e-08,
+      "rotation_matrix_max_error": 3.49463075144385e-08
+    },
+    {
+      "link": "left_forearm",
+      "position_error_m": 2.2312148783127748e-08,
+      "rotation_matrix_max_error": 8.539758136749676e-09
+    },
+    {
+      "link": "left_wrist",
+      "position_error_m": 4.028068618847346e-09,
+      "rotation_matrix_max_error": 1.1859867365959786e-08
+    },
+    {
+      "link": "left_hand",
+      "position_error_m": 2.8252195193899142e-08,
+      "rotation_matrix_max_error": 4.1107777237758825e-08
+    },
+    {
+      "link": "left_gripper_left",
+      "position_error_m": 2.1492492416136788e-08,
+      "rotation_matrix_max_error": 1.7421053005728382e-07
+    },
+    {
+      "link": "left_gripper_right",
+      "position_error_m": 5.7582796987703075e-09,
+      "rotation_matrix_max_error": 1.066923892290017e-07
+    },
+    {
+      "link": "right_arm_base",
+      "position_error_m": 1.6933279758388418e-08,
+      "rotation_matrix_max_error": 4.091040306519744e-08
+    },
+    {
+      "link": "right_upper_arm",
+      "position_error_m": 2.1159404818191264e-08,
+      "rotation_matrix_max_error": 3.49463075144385e-08
+    },
+    {
+      "link": "right_forearm",
+      "position_error_m": 2.2312148783127748e-08,
+      "rotation_matrix_max_error": 8.539758136749676e-09
+    },
+    {
+      "link": "right_wrist",
+      "position_error_m": 4.028068618847346e-09,
+      "rotation_matrix_max_error": 1.1859867365959786e-08
+    },
+    {
+      "link": "right_hand",
+      "position_error_m": 2.8252195193899142e-08,
+      "rotation_matrix_max_error": 4.1107777237758825e-08
+    },
+    {
+      "link": "right_gripper_left",
+      "position_error_m": 5.7582796987703075e-09,
+      "rotation_matrix_max_error": 1.066923892290017e-07
+    },
+    {
+      "link": "right_gripper_right",
+      "position_error_m": 2.1492492416136788e-08,
+      "rotation_matrix_max_error": 1.7421053005728382e-07
+    }
+  ],
+  "urdf_mass_kg": 19.5172478,
+  "imported_mass_kg": 19.5172478,
+  "inertial_link_comparisons": [
+    {
+      "link": "base_link",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 1.094383671141827e-12
+    },
+    {
+      "link": "left_wheel",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 1.2037062152420224e-35
+    },
+    {
+      "link": "right_wheel",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 1.2037062152420224e-35
+    },
+    {
+      "link": "caster_swivel_link",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 2.710505431213761e-20
+    },
+    {
+      "link": "caster_link",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 2.82118644197349e-37
+    },
+    {
+      "link": "camera_mount",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 2.168404344971009e-19
+    },
+    {
+      "link": "camera_optical_frame",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 0.0
+    },
+    {
+      "link": "lidar_mount",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 0.0
+    },
+    {
+      "link": "lidar_scan_frame",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 0.0
+    },
+    {
+      "link": "left_arm_base",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 0.0
+    },
+    {
+      "link": "left_upper_arm",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 2.4390882083e-23
+    },
+    {
+      "link": "left_forearm",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 5.877471754111438e-39
+    },
+    {
+      "link": "left_wrist",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 5.877471754111438e-39
+    },
+    {
+      "link": "left_hand",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 3.3881317890172014e-21
+    },
+    {
+      "link": "left_gripper_left",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 8.470329472543003e-22
+    },
+    {
+      "link": "left_gripper_right",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 8.470329472543003e-22
+    },
+    {
+      "link": "right_arm_base",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 0.0
+    },
+    {
+      "link": "right_upper_arm",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 2.4390882083e-23
+    },
+    {
+      "link": "right_forearm",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 5.877471754111438e-39
+    },
+    {
+      "link": "right_wrist",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 5.877471754111438e-39
+    },
+    {
+      "link": "right_hand",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 3.3881317890172014e-21
+    },
+    {
+      "link": "right_gripper_left",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 8.470329472543003e-22
+    },
+    {
+      "link": "right_gripper_right",
+      "mass_error_kg": 0.0,
+      "com_position_error_m": 0.0,
+      "inertia_matrix_max_error_kg_m2": 8.470329472543003e-22
+    }
+  ],
+  "zero_pose_visual_aabb_m": {
+    "minimum": [
+      -0.2789999842643738,
+      -0.3567244136676814,
+      -1.8179416513830482e-09
+    ],
+    "maximum": [
+      0.2789999842643738,
+      0.3567244136676814,
+      0.7780000017881394
+    ]
+  },
+  "mesh_sha256": {
+    "meshes/base_link.stl": "ad860155da0956465839b234d266fbf2b9b8d2120f5742a77d737c9b00dfdd1b",
+    "meshes/base_link_worx_orange.stl": "67709b1d96f7c7d62b0b986fcf3cd3563e88dbab5f47896bf6446494a8d1663e",
+    "meshes/base_link_servo_black.stl": "6f23233b7df678a238b44194f65d6aa7be599e6cd5d2a07df4047a1af49124f8",
+    "meshes/base_link_aluminium.stl": "01cd047a2858da97a2d0966082b4097e64f2f5b1c39d2ae2a7a016994186e543",
+    "meshes/base_link_control_red.stl": "a5d94fa6f5647ca291f9cc5a7adc926a81d045fc839f474a2282068453a78f60",
+    "meshes/base_link_pcb_green.stl": "febbf5683d03dd59b3a4d00bd61e68dfd08d8591f85eef4fafc6c70fe473768c",
+    "meshes/base_link_polycarbonate.stl": "fc0779d847489c260de7596005c9cbff401cc54be7325c309604db9ff8a94c54",
+    "meshes/left_wheel.stl": "5dc21cc0c291c1fa093aaae224d13f2cd60d862403049a7b96af1ac9ea7887db",
+    "meshes/left_wheel_servo_black.stl": "44494f5635b89f0c638e9108e653f4cfbb8fad33e5023cc5f8cd907d25c744b8",
+    "meshes/right_wheel.stl": "5dc21cc0c291c1fa093aaae224d13f2cd60d862403049a7b96af1ac9ea7887db",
+    "meshes/right_wheel_servo_black.stl": "44494f5635b89f0c638e9108e653f4cfbb8fad33e5023cc5f8cd907d25c744b8",
+    "meshes/caster_swivel_link_aluminium.stl": "2966ae3a4a4c010321a2483c2c81092650066df18888d60a0bf8dcd74f09904e",
+    "meshes/caster_swivel_link.stl": "fedca1a52faeb994d16dab80820607d85d38a57441c766503385e784f4d5148a",
+    "meshes/caster_link.stl": "68c5cfe190e8e42161fa9b09ace751484c64b0584f00506230b583b2ecd2ea87",
+    "meshes/caster_link_servo_black.stl": "336119bb1fbd34b0db83e50c26e414b1267103df8bc6c5d331265dbc84b56c2b",
+    "meshes/camera_mount_pcb_green.stl": "d260abb44584f089fa14f164f6c580e245756bffd0df289b9404e2af5ba6704a",
+    "meshes/camera_mount_aluminium.stl": "dc44473067a6af6136b8aa25f54a5dbccd25c8283d39de9ed0781310e54e4b44",
+    "meshes/camera_mount.stl": "fe6c489377c34f9ac4cd7d89693bd4da0064933e49c7a07a3a865956755f9413",
+    "meshes/camera_mount_servo_black.stl": "ac114433a81064708adbb3c63e0775db4f0a2d07a93adc171471a31b0fd22a60",
+    "meshes/lidar_mount_servo_black.stl": "57aa7655982ed79d07772329795f944775015bcc88b14b5078c396830706dad1",
+    "meshes/lidar_mount_worx_orange.stl": "bd8191ef9cec04180fbee208430587598dd44e951d1d682d0667f73524bd4708",
+    "meshes/left_arm_base_servo_black.stl": "4cae1ef6519b439ae6a7fbedc93dcce775f5b1e14b8192316dd2fd604429451e",
+    "meshes/left_arm_base_aluminium.stl": "946d65d4e57cbe9cabd9e4f4aec56aa850876cb75a87f5d17d8ef300756af2e5",
+    "meshes/left_upper_arm_servo_black.stl": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4",
+    "meshes/left_upper_arm_aluminium.stl": "a4e279f6632fec290bd54426b4c21b243d7471edf70812e976328b128cfab5a2",
+    "meshes/left_forearm_servo_black.stl": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4",
+    "meshes/left_forearm_aluminium.stl": "3f7289c9ea47c52aa1f432d522991e96c2e488b0ed9bca520c771b24eb17b5dd",
+    "meshes/left_wrist_servo_black.stl": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4",
+    "meshes/left_wrist_aluminium.stl": "8756e14cf848daeef0217c8bcce28041c08c5c4beca180c9f6c76c9e9225132a",
+    "meshes/left_hand_servo_black.stl": "8e200f4dd5dbd79d79eab4280faef12372c29d4a577f99a5bf576ca5c3aba0e1",
+    "meshes/left_hand_aluminium.stl": "05efc53e81cef60c741f1158ea65b41c776f96bed862a61b6e88718bd0a93463",
+    "meshes/left_gripper_left_aluminium.stl": "dfc3229b472fe4dcdbc835fa24761fa385c323c86fef742fe8d41a7f3d449626",
+    "meshes/left_gripper_right_aluminium.stl": "2bca7cf8cbd746c439eccdb70303d0b1e9a9034f84b767e4fa605221e2a59851",
+    "meshes/right_arm_base_servo_black.stl": "4cae1ef6519b439ae6a7fbedc93dcce775f5b1e14b8192316dd2fd604429451e",
+    "meshes/right_arm_base_aluminium.stl": "946d65d4e57cbe9cabd9e4f4aec56aa850876cb75a87f5d17d8ef300756af2e5",
+    "meshes/right_upper_arm_servo_black.stl": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4",
+    "meshes/right_upper_arm_aluminium.stl": "a4e279f6632fec290bd54426b4c21b243d7471edf70812e976328b128cfab5a2",
+    "meshes/right_forearm_servo_black.stl": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4",
+    "meshes/right_forearm_aluminium.stl": "3f7289c9ea47c52aa1f432d522991e96c2e488b0ed9bca520c771b24eb17b5dd",
+    "meshes/right_wrist_servo_black.stl": "4626c42683f9adf5af54db93c886b047144197627c8e77662d7919944b9a65a4",
+    "meshes/right_wrist_aluminium.stl": "8756e14cf848daeef0217c8bcce28041c08c5c4beca180c9f6c76c9e9225132a",
+    "meshes/right_hand_servo_black.stl": "8e200f4dd5dbd79d79eab4280faef12372c29d4a577f99a5bf576ca5c3aba0e1",
+    "meshes/right_hand_aluminium.stl": "05efc53e81cef60c741f1158ea65b41c776f96bed862a61b6e88718bd0a93463",
+    "meshes/right_gripper_left_aluminium.stl": "dfc3229b472fe4dcdbc835fa24761fa385c323c86fef742fe8d41a7f3d449626",
+    "meshes/right_gripper_right_aluminium.stl": "2bca7cf8cbd746c439eccdb70303d0b1e9a9034f84b767e4fa605221e2a59851"
+  },
+  "status": "PASS",
+  "scope": "Actual-file import, floating-root configuration, preserved masses, nonzero forward kinematics, zero-pose actual mesh bounds. This is not a dynamic stability or actuator validation, and does not execute ROS, Gazebo, Isaac Sim, or Isaac Lab."
+}

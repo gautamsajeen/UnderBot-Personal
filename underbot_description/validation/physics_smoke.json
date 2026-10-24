@@ -1,8 +1,8 @@
 {
   "engine": "MuJoCo 3.15.0",
   "urdf": "urdf/underbot.portable.urdf",
-  "generated_at_utc": "2026-10-17T21:04:42.147514+00:00",
-  "urdf_sha256": "589055d459d67174ca98c76689f6f99c45dc8ab15cf91992ec5ae4d87fbd9b97",
+  "generated_at_utc": "2026-10-18T18:43:42.953369+00:00",
+  "urdf_sha256": "0daab387d38a86e5e90bae42bb30a04153d4ae816c9dd1822a9f1908ed1a9588",
   "source_topology": {
     "link_count": 23,
     "joint_count": 22,
@@ -12,13 +12,13 @@
       "revolute": 14
     }
   },
-  "declared_mass_kg": 19.601007799999998,
+  "declared_mass_kg": 19.5172478,
   "rolling_geometry": {
     "wheel_radii_m": {
-      "left_wheel_joint": 0.0925,
-      "right_wheel_joint": 0.0925
+      "left_wheel_joint": 0.1025,
+      "right_wheel_joint": 0.1025
     },
-    "track_m": 0.354,
+    "track_m": 0.334,
     "expected_ground_bodies": [
       "caster_link",
       "left_wheel",
@@ -30,7 +30,7 @@
       0.0001
     ]
   },
-  "direct_import_mass_kg": 19.601007799999998,
+  "direct_import_mass_kg": 19.5172478,
   "mimic_adapter": {
     "verified_native_relations": [
       "left_gripper_right_joint",
@@ -42,7 +42,7 @@
     "equality_solref_damping_ratio": 1.0,
     "reason": "Approximate ideal URDF mimic with one explicit equality per jaw pair; generic native softness otherwise causes lag"
   },
-  "mass_kg": 19.601007799999998,
+  "mass_kg": 19.5172478,
   "mass_difference_kg": 0.0,
   "motor_count": 14,
   "actuated_joint_names": [
@@ -74,7 +74,8 @@
     "engine_velocity_coordinates": 24
   },
   "test_controller": {
-    "wheel_velocity_gain_Nm_per_rad_s": 3.0,
+    "wheel_velocity_gain_Nm_per_rad_s": 5.0,
+    "revision_reason": "R10 wider passive caster and revised COM caused excessive alignment lag at prior gain 3; gain 5 retains every original URDF torque cap, physical coefficient and test threshold.",
     "arm_kp_Nm_per_rad": 30.0,
     "arm_kd_Nm_per_rad_s": 1.0,
     "wrist_pitch_kp_Nm_per_rad": 30.0,
@@ -99,290 +100,294 @@
   ],
   "gravity_joint_torque_Nm": {
     "left_arm_base_joint": 0.0,
-    "left_shoulder_joint": 0.7386763754597501,
+    "left_shoulder_joint": 0.7386763754597503,
     "left_elbow_joint": 0.43259220682378796,
     "left_wrist_pitch_joint": 0.07903980682383627,
-    "left_wrist_roll_joint": 8.673617379884035e-19,
-    "left_gripper_left_joint": -0.001019485209547094,
+    "left_wrist_roll_joint": 0.0,
+    "left_gripper_left_joint": -0.0010194852095470972,
     "right_arm_base_joint": 0.0,
     "right_shoulder_joint": 0.7386763754597498,
     "right_elbow_joint": 0.43259220682378774,
     "right_wrist_pitch_joint": 0.07903980682383627,
-    "right_wrist_roll_joint": 8.673617379884035e-19,
-    "right_gripper_left_joint": -0.0010194852095470946
+    "right_wrist_roll_joint": 0.0,
+    "right_gripper_left_joint": -0.0010194852095470937
   },
   "rest": {
     "base_xyz": [
-      -2.6619506479458532e-05,
-      1.888628598993069e-09,
-      -0.0002829096898243939
+      -1.5590423621221e-05,
+      7.906793431156398e-10,
+      -0.00023149855469577993
     ],
     "roll_pitch_rad": [
-      -1.195845045188009e-07,
-      0.0009938739443320509
+      -1.1947056671481665e-07,
+      0.0008036109220309434
     ],
     "contacts": 6,
-    "base_linear_speed_m_s": 1.1657394027801548e-09,
-    "base_angular_speed_rad_s": 6.119452119536826e-09,
+    "base_linear_speed_m_s": 5.333868560908055e-10,
+    "base_angular_speed_rad_s": 2.897679457447222e-09,
     "support_geometry": {
       "center_of_mass_world_m": [
-        -0.06369535625410272,
-        4.1055072966551786e-05,
-        0.2977380629849531
+        -0.07986740834144347,
+        4.1229410701325394e-05,
+        0.29073247379972555
       ],
       "ground_support_polygon_xy_m": [
         [
-          -0.1799345995956725,
-          0.20199999984734077
+          -0.16993316652859317,
+          0.18699999979979876
         ],
         [
-          -0.17993459496635963,
-          -0.20200000015265634
+          -0.16993316431284963,
+          -0.18700000020019833
         ],
         [
-          0.19501304495008379,
-          -0.020000001474872554
+          0.17001610112004314,
+          -0.027500000865428163
         ],
         [
-          0.19501303332141742,
-          0.01999999852512547
+          0.17001609350448008,
+          0.027499999134570866
         ]
       ],
-      "geometric_margin_m": 0.11623924102738378,
+      "geometric_margin_m": 0.09006575707952219,
       "interpretation": "COM projection margin; dynamic inertial loads are not included"
     },
-    "max_joint_position_error_rad": 0.02401661409749833,
+    "max_joint_position_error_rad": 0.024016617914269327,
     "ground_contacts": [
       {
         "body": "left_wheel",
         "geom": "left_wheel_rolling_contact",
-        "distance_m": -0.00010408225043069541
+        "distance_m": -9.494015040925619e-05
       },
       {
         "body": "left_wheel",
         "geom": "left_wheel_rolling_contact",
-        "distance_m": -0.0001040762712086335
+        "distance_m": -9.49353715881951e-05
       },
       {
         "body": "right_wheel",
         "geom": "right_wheel_rolling_contact",
-        "distance_m": -0.00010403991753858699
+        "distance_m": -9.490024725347657e-05
       },
       {
         "body": "right_wheel",
         "geom": "right_wheel_rolling_contact",
-        "distance_m": -0.00010403393831655283
+        "distance_m": -9.489546843241548e-05
       },
       {
         "body": "caster_link",
         "geom": "caster_link_rolling_contact",
-        "distance_m": -0.00047673721889616993
+        "distance_m": -0.000368128433598576
       },
       {
         "body": "caster_link",
         "geom": "caster_link_rolling_contact",
-        "distance_m": -0.0004767324466204287
+        "distance_m": -0.0003681218685777296
       }
     ],
     "passive_caster": {
       "caster_swivel_joint": {
-        "angle_rad": 2.794089521466263e-07,
-        "rate_rad_s": 1.5085017884028568e-07,
+        "angle_rad": 1.3261137729247517e-07,
+        "rate_rad_s": 7.099949327435528e-08,
         "actuator_torque_Nm": 0.0
       },
       "caster_wheel_joint": {
-        "angle_rad": -0.0006218889491687318,
-        "rate_rad_s": 2.7371872778818764e-07,
+        "angle_rad": -0.0004025356505233523,
+        "rate_rad_s": 2.8688592890103627e-07,
         "actuator_torque_Nm": 0.0
       }
     }
   },
   "drive": {
     "translation_m": [
-      0.08783331866133572,
-      1.5346489257585806e-07,
-      -3.8026886869414744e-11
+      0.08895619095235079,
+      1.0952352180409297e-07,
+      -3.821478889083109e-11
     ],
     "roll_pitch_rad": [
-      -1.1963126050359792e-07,
-      0.0009938742396324168
+      -1.194942375796461e-07,
+      0.0008036112095527101
     ],
     "support_geometry": {
       "center_of_mass_world_m": [
-        0.024079055790807317,
-        4.116620278021508e-05,
-        0.2977380629746627
+        0.00902949342225777,
+        4.12994578573991e-05,
+        0.29073247379285316
       ],
       "ground_support_polygon_xy_m": [
         [
-          -0.09216031258277903,
-          0.20200003446644232
+          -0.08103634787328437,
+          0.18700002567545967
         ],
         [
-          -0.09216004126123474,
-          -0.20199996553346433
+          -0.08103616166841279,
+          -0.18699997432449178
         ],
         [
-          0.2827875104028814,
-          -0.019999751185190876
+          0.2589130517581533,
+          -0.027499826977884622
         ],
         [
-          0.28278740855537565,
-          0.02000024881467923
+          0.2589129641296926,
+          0.027500173022045233
         ]
       ],
-      "geometric_margin_m": 0.11623923274041156,
+      "geometric_margin_m": 0.09006574821364433,
       "interpretation": "COM projection margin; dynamic inertial loads are not included"
     },
     "command_wheel_speed_rad_s": {
-      "left_wheel_joint": 0.6486486486486487,
-      "right_wheel_joint": 0.6486486486486487
+      "left_wheel_joint": 0.5853658536585366,
+      "right_wheel_joint": 0.5853658536585366
     },
     "final_wheel_speed_rad_s": {
-      "left_wheel_joint": 0.6371216600575127,
-      "right_wheel_joint": 0.6371224247287779
+      "left_wheel_joint": 0.57863234335261,
+      "right_wheel_joint": 0.5786327430913114
     },
     "ground_contacts": [
       {
         "body": "left_wheel",
         "geom": "left_wheel_rolling_contact",
-        "distance_m": -0.00010408224477929939
+        "distance_m": -9.494014418985619e-05
       },
       {
         "body": "left_wheel",
         "geom": "left_wheel_rolling_contact",
-        "distance_m": -0.0001040762632186637
+        "distance_m": -9.493536442177486e-05
       },
       {
         "body": "right_wheel",
         "geom": "right_wheel_rolling_contact",
-        "distance_m": -0.00010403989533007418
+        "distance_m": -9.490023312626328e-05
       },
       {
         "body": "right_wheel",
         "geom": "right_wheel_rolling_contact",
-        "distance_m": -0.00010403391376946625
+        "distance_m": -9.489545335815419e-05
       },
       {
         "body": "caster_link",
         "geom": "caster_link_rolling_contact",
-        "distance_m": -0.00047673728374562213
+        "distance_m": -0.0003681285000912901
       },
       {
         "body": "caster_link",
         "geom": "caster_link_rolling_contact",
-        "distance_m": -0.0004767325730218111
+        "distance_m": -0.0003681219763240415
       }
     ],
     "passive_caster": {
       "caster_swivel_joint": {
-        "angle_rad": 1.8742298133877393e-06,
-        "rate_rad_s": -3.7077601943216166e-07,
+        "angle_rad": 1.0952361233818653e-06,
+        "rate_rad_s": -1.349823579717939e-07,
         "actuator_torque_Nm": 0.0
       },
       "caster_wheel_joint": {
-        "angle_rad": 2.2071630778321105,
-        "rate_rad_s": 1.4806790530323348,
+        "angle_rad": 2.261023312376478,
+        "rate_rad_s": 1.5072271402676605,
         "actuator_torque_Nm": 0.0
       }
     }
   },
   "turn": {
-    "yaw_change_rad": 0.2571228184914569,
+    "yaw_change_rad": 0.19351073018947385,
     "roll_pitch_rad": [
-      -1.2030152476748306e-05,
-      0.0009499203113167698
+      -1.0328525397580538e-05,
+      0.000782031215764177
     ],
     "support_geometry": {
       "center_of_mass_world_m": [
-        0.06790235162120135,
-        0.03164972564014859,
-        0.2977445687839782
+        0.04507009135831413,
+        0.01703530857584563,
+        0.29073486675430454
       ],
       "ground_support_polygon_xy_m": [
         [
-          -0.09595160982613732,
-          0.19753212002664625
+          -0.07930272621390011,
+          0.18327614618783672
         ],
         [
-          0.006742750785243142,
-          -0.19319779727558734
+          -0.007405071334787827,
+          -0.18374800452701603
         ],
         [
-          0.3516288510846053,
-          0.07815977513856044
+          0.31817842034338356,
+          0.036000996540483846
+        ],
+        [
+          0.2759391908727132,
+          0.0712266517070071
         ]
       ],
-      "geometric_margin_m": 0.11630559005236184,
+      "geometric_margin_m": 0.09009492345938894,
       "interpretation": "COM projection margin; dynamic inertial loads are not included"
     },
     "command_wheel_speed_rad_s": {
-      "left_wheel_joint": -0.4783783783783784,
-      "right_wheel_joint": 0.4783783783783784
+      "left_wheel_joint": -0.40731707317073174,
+      "right_wheel_joint": 0.40731707317073174
     },
     "command_yaw_rate_rad_s": 0.25,
     "ramp_duration_s": 0.5,
     "constant_command_duration_s": 4.0,
     "initial_1_5_s_transient": {
-      "yaw_change_rad": 0.044742975726234015,
+      "yaw_change_rad": 0.044607521768040434,
       "passive_caster": {
         "caster_swivel_joint": {
-          "angle_rad": 0.35030448325950364,
-          "rate_rad_s": 0.2770778617440411,
+          "angle_rad": 0.2107485603668101,
+          "rate_rad_s": 0.1673743774119677,
           "actuator_torque_Nm": 0.0
         },
         "caster_wheel_joint": {
-          "angle_rad": 2.7513309941159503,
-          "rate_rad_s": 0.25574671744399924,
+          "angle_rad": 2.7387271348762225,
+          "rate_rad_s": 0.1477552810019414,
           "actuator_torque_Nm": 0.0
         }
       }
     },
     "final_wheel_speed_rad_s": {
-      "left_wheel_joint": -0.10135899104813079,
-      "right_wheel_joint": 0.3401606277021122
+      "left_wheel_joint": -0.03092345919552594,
+      "right_wheel_joint": 0.21557924992978056
     },
     "ground_contacts": [
       {
         "body": "left_wheel",
         "geom": "left_wheel_rolling_contact",
-        "distance_m": -0.00010508022478339374
+        "distance_m": -9.639724333856958e-05
       },
       {
         "body": "left_wheel",
         "geom": "left_wheel_rolling_contact",
-        "distance_m": -0.00010447887400308331
+        "distance_m": -9.598405319669046e-05
       },
       {
         "body": "right_wheel",
         "geom": "right_wheel_rolling_contact",
-        "distance_m": -0.00010082266125885364
+        "distance_m": -9.294710565384279e-05
       },
       {
         "body": "right_wheel",
         "geom": "right_wheel_rolling_contact",
-        "distance_m": -0.00010022131047857097
+        "distance_m": -9.253391551196366e-05
       },
       {
         "body": "caster_link",
         "geom": "caster_link_rolling_contact",
-        "distance_m": -0.00048474012987337334
+        "distance_m": -0.0003770453810973892
       },
       {
         "body": "caster_link",
         "geom": "caster_link_rolling_contact",
-        "distance_m": -0.00045186731227372934
+        "distance_m": -0.00035036555270785
       }
     ],
     "passive_caster": {
       "caster_swivel_joint": {
-        "angle_rad": 1.0581135538777704,
-        "rate_rad_s": 0.16252706912640733,
+        "angle_rad": 0.6823875980160036,
+        "rate_rad_s": 0.1406327411296735,
         "actuator_torque_Nm": 0.0
       },
       "caster_wheel_joint": {
-        "angle_rad": 4.719027458868854,
-        "rate_rad_s": 1.0828837666665079,
+        "angle_rad": 3.7920669486193597,
+        "rate_rad_s": 0.575968572154962,
         "actuator_torque_Nm": 0.0
       }
     }
@@ -394,58 +399,62 @@
         "right_arm_base_joint": 0.1
       },
       "before_rad": {
-        "left_arm_base_joint": -1.3120903880688678e-06,
-        "right_arm_base_joint": -6.581256544311251e-05
+        "left_arm_base_joint": -8.176220902859115e-06,
+        "right_arm_base_joint": -4.806000302245987e-05
       },
       "after_rad": {
-        "left_arm_base_joint": 0.09773305917492087,
-        "right_arm_base_joint": 0.09773451380133952
+        "left_arm_base_joint": 0.09773433865454179,
+        "right_arm_base_joint": 0.09773562244770928
       },
       "change_rad": {
-        "left_arm_base_joint": 0.09773437126530894,
-        "right_arm_base_joint": 0.09780032636678263
+        "left_arm_base_joint": 0.09774251487544465,
+        "right_arm_base_joint": 0.09778368245073174
       },
       "tracking_error_rad": {
-        "left_arm_base_joint": 0.002266940825079139,
-        "right_arm_base_joint": 0.002265486198660488
+        "left_arm_base_joint": 0.0022656613454582197,
+        "right_arm_base_joint": 0.002264377552290725
       },
       "final_speed_rad_s": {
-        "left_arm_base_joint": 0.00019790096218152623,
-        "right_arm_base_joint": 0.00019100780763055963
+        "left_arm_base_joint": 0.0002047176353719584,
+        "right_arm_base_joint": 0.00019877398744718534
       },
       "support_geometry": {
         "center_of_mass_world_m": [
-          0.06935179877412102,
-          0.035450719433494156,
-          0.29777862940810473
+          0.046721097150256505,
+          0.01882989266679376,
+          0.29077005455375793
         ],
         "ground_support_polygon_xy_m": [
           [
-            -0.09852845685309565,
-            0.19676292232654666
+            -0.07985177759474438,
+            0.1830277863967714
           ],
           [
-            0.015317634743162079,
-            -0.19086456293367954
+            -0.0015785056967799757,
+            -0.18268972052671392
           ],
           [
-            0.3531323146999606,
-            0.09080964723242829
+            0.32123147168046046,
+            0.04300901849253483
+          ],
+          [
+            0.27724936350921175,
+            0.07603284963147956
           ]
         ],
-        "geometric_margin_m": 0.11561939975654562,
+        "geometric_margin_m": 0.08940537384810306,
         "interpretation": "COM projection margin; dynamic inertial loads are not included"
       },
       "robot_contacts": [],
       "passive_caster": {
         "caster_swivel_joint": {
-          "angle_rad": 1.0935204865827004,
-          "rate_rad_s": -0.0009242924987153158,
+          "angle_rad": 0.7159077042304388,
+          "rate_rad_s": -0.0002731947046055557,
           "actuator_torque_Nm": 0.0
         },
         "caster_wheel_joint": {
-          "angle_rad": 5.005025367242411,
-          "rate_rad_s": -0.00012726079902963185,
+          "angle_rad": 3.9441877177684432,
+          "rate_rad_s": -3.3923598430195155e-05,
           "actuator_torque_Nm": 0.0
         }
       }
@@ -456,58 +465,62 @@
         "right_shoulder_joint": 0.1
       },
       "before_rad": {
-        "left_shoulder_joint": -0.02403390486797451,
-        "right_shoulder_joint": -0.02403405807402478
+        "left_shoulder_joint": -0.02403438151572276,
+        "right_shoulder_joint": -0.024035101982400345
       },
       "after_rad": {
-        "left_shoulder_joint": 0.0739020980938901,
-        "right_shoulder_joint": 0.07390112391907801
+        "left_shoulder_joint": 0.07390188032585804,
+        "right_shoulder_joint": 0.07390124249302572
       },
       "change_rad": {
-        "left_shoulder_joint": 0.09793600296186461,
-        "right_shoulder_joint": 0.09793518199310279
+        "left_shoulder_joint": 0.0979362618415808,
+        "right_shoulder_joint": 0.09793634447542607
       },
       "tracking_error_rad": {
-        "left_shoulder_joint": 0.026097901906109902,
-        "right_shoulder_joint": 0.026098876080922
+        "left_shoulder_joint": 0.026098119674141967,
+        "right_shoulder_joint": 0.026098757506974282
       },
       "final_speed_rad_s": {
-        "left_shoulder_joint": -6.556048111609625e-05,
-        "right_shoulder_joint": -6.558741377701045e-05
+        "left_shoulder_joint": -6.531975706811777e-05,
+        "right_shoulder_joint": -6.532434236513566e-05
       },
       "support_geometry": {
         "center_of_mass_world_m": [
-          0.06999921447505257,
-          0.03562814172515605,
-          0.2985071477280817
+          0.04737596993063383,
+          0.018964202133789732,
+          0.29150179427811146
         ],
         "ground_support_polygon_xy_m": [
           [
-            -0.09852622297348265,
-            0.19676292517921629
+            -0.07986410612806548,
+            0.1830247851735946
           ],
           [
-            0.015280898893371354,
-            -0.19087600335102275
+            -0.0016129181618233452,
+            -0.18269744760041873
           ],
           [
-            0.353106806418728,
-            0.0907529850611416
+            0.3212034108521366,
+            0.04297975047658144
+          ],
+          [
+            0.27723013795765655,
+            0.07601534523026801
           ]
         ],
-        "geometric_margin_m": 0.11630874772161906,
+        "geometric_margin_m": 0.09009783207925072,
         "interpretation": "COM projection margin; dynamic inertial loads are not included"
       },
       "robot_contacts": [],
       "passive_caster": {
         "caster_swivel_joint": {
-          "angle_rad": 1.0928095179384234,
-          "rate_rad_s": -0.0009360454409352877,
+          "angle_rad": 0.7157005949393472,
+          "rate_rad_s": -0.0002779006391956404,
           "actuator_torque_Nm": 0.0
         },
         "caster_wheel_joint": {
-          "angle_rad": 5.003904332937274,
-          "rate_rad_s": -0.00012661580795348017,
+          "angle_rad": 3.94334025335565,
+          "rate_rad_s": -3.183851996432286e-05,
           "actuator_torque_Nm": 0.0
         }
       }
@@ -518,58 +531,62 @@
         "right_elbow_joint": 0.1
       },
       "before_rad": {
-        "left_elbow_joint": -0.014187632755686077,
-        "right_elbow_joint": -0.014187828723738038
+        "left_elbow_joint": -0.014187597840283908,
+        "right_elbow_joint": -0.014187713694526627
       },
       "after_rad": {
-        "left_elbow_joint": 0.08536698155591747,
-        "right_elbow_joint": 0.08536682531529291
+        "left_elbow_joint": 0.0853669524742168,
+        "right_elbow_joint": 0.08536685046714937
       },
       "change_rad": {
-        "left_elbow_joint": 0.09955461431160355,
-        "right_elbow_joint": 0.09955465403903095
+        "left_elbow_joint": 0.09955455031450071,
+        "right_elbow_joint": 0.09955456416167599
       },
       "tracking_error_rad": {
-        "left_elbow_joint": 0.014633018444082532,
-        "right_elbow_joint": 0.014633174684707095
+        "left_elbow_joint": 0.014633047525783205,
+        "right_elbow_joint": 0.014633149532850637
       },
       "final_speed_rad_s": {
-        "left_elbow_joint": 3.097922221325179e-06,
-        "right_elbow_joint": 3.0982515956318573e-06
+        "left_elbow_joint": 3.099655548871301e-06,
+        "right_elbow_joint": 3.0995856283566063e-06
       },
       "support_geometry": {
         "center_of_mass_world_m": [
-          0.07000929844903916,
-          0.03562742676636028,
-          0.2981887667673717
+          0.047377806577892145,
+          0.018963433786592307,
+          0.2911820535565434
         ],
         "ground_support_polygon_xy_m": [
           [
-            -0.09851128174045856,
-            0.19676695007371536
+            -0.07986021125469009,
+            0.18302546238394435
           ],
           [
-            0.015285034817611148,
-            -0.1908751506294883
+            -0.0016131321770994833,
+            -0.1826976495179257
           ],
           [
-            0.3530935956716949,
-            0.09072747953244499
+            0.3211953483781401,
+            0.04297273572658825
+          ],
+          [
+            0.2772330091831938,
+            0.07602287918794048
           ]
         ],
-        "geometric_margin_m": 0.11630838496659911,
+        "geometric_margin_m": 0.09009761848418103,
         "interpretation": "COM projection margin; dynamic inertial loads are not included"
       },
       "robot_contacts": [],
       "passive_caster": {
         "caster_swivel_joint": {
-          "angle_rad": 1.0917349060864403,
-          "rate_rad_s": -0.0009355482378101954,
+          "angle_rad": 0.7153809355799141,
+          "rate_rad_s": -0.0002777452937356093,
           "actuator_torque_Nm": 0.0
         },
         "caster_wheel_joint": {
-          "angle_rad": 5.003753129903203,
-          "rate_rad_s": -0.00012719193189651858,
+          "angle_rad": 3.9433031848850657,
+          "rate_rad_s": -3.220604564201412e-05,
           "actuator_torque_Nm": 0.0
         }
       }
@@ -580,58 +597,62 @@
         "right_wrist_pitch_joint": 0.1
       },
       "before_rad": {
-        "left_wrist_pitch_joint": -0.0024635941796855615,
-        "right_wrist_pitch_joint": -0.00246379798869238
+        "left_wrist_pitch_joint": -0.0024636280750015387,
+        "right_wrist_pitch_joint": -0.002463760745740509
       },
       "after_rad": {
-        "left_wrist_pitch_joint": 0.0971306185637647,
-        "right_wrist_pitch_joint": 0.09713042816604853
+        "left_wrist_pitch_joint": 0.09713058526707301,
+        "right_wrist_pitch_joint": 0.09713046090266085
       },
       "change_rad": {
-        "left_wrist_pitch_joint": 0.09959421274345026,
-        "right_wrist_pitch_joint": 0.09959422615474091
+        "left_wrist_pitch_joint": 0.09959421334207455,
+        "right_wrist_pitch_joint": 0.09959422164840136
       },
       "tracking_error_rad": {
-        "left_wrist_pitch_joint": 0.002869381436235302,
-        "right_wrist_pitch_joint": 0.0028695718339514786
+        "left_wrist_pitch_joint": 0.0028694147329269976,
+        "right_wrist_pitch_joint": 0.002869539097339155
       },
       "final_speed_rad_s": {
-        "left_wrist_pitch_joint": 1.3503871944653699e-07,
-        "right_wrist_pitch_joint": 1.3488884365531283e-07
+        "left_wrist_pitch_joint": 1.3932692957000565e-07,
+        "right_wrist_pitch_joint": 1.3945436058673274e-07
       },
       "support_geometry": {
         "center_of_mass_world_m": [
-          0.0700192705908906,
-          0.03562668924254402,
-          0.2978209964123088
+          0.047379468260222525,
+          0.018962627335936896,
+          0.29081271165521694
         ],
         "ground_support_polygon_xy_m": [
           [
-            -0.098496377636129,
-            0.19677096446596185
+            -0.07985640381460977,
+            0.18302611754033354
           ],
           [
-            0.015289166551904161,
-            -0.19087429841454864
+            -0.0016134293814628713,
+            -0.18269787253311304
           ],
           [
-            0.35308022164275027,
-            0.09070195295120023
+            0.32118651944753995,
+            0.04296549903356427
+          ],
+          [
+            0.27723580995480757,
+            0.07603110633107064
           ]
         ],
-        "geometric_margin_m": 0.11630793000438998,
+        "geometric_margin_m": 0.09009731377170246,
         "interpretation": "COM projection margin; dynamic inertial loads are not included"
       },
       "robot_contacts": [],
       "passive_caster": {
         "caster_swivel_joint": {
-          "angle_rad": 1.09065536155511,
-          "rate_rad_s": -0.0009352821510321165,
+          "angle_rad": 0.7150403606516238,
+          "rate_rad_s": -0.00027765929073657314,
           "actuator_torque_Nm": 0.0
         },
         "caster_wheel_joint": {
-          "angle_rad": 5.003609886900385,
-          "rate_rad_s": -0.00012740601744959298,
+          "angle_rad": 3.9432663216972452,
+          "rate_rad_s": -3.193511442997944e-05,
           "actuator_torque_Nm": 0.0
         }
       }
@@ -642,58 +663,62 @@
         "right_wrist_roll_joint": 0.1
       },
       "before_rad": {
-        "left_wrist_roll_joint": 4.970785481619458e-07,
-        "right_wrist_roll_joint": 5.181382509689928e-07
+        "left_wrist_roll_joint": 4.091656173456918e-07,
+        "right_wrist_roll_joint": 4.302015954602433e-07
       },
       "after_rad": {
-        "left_wrist_roll_joint": 0.10002609870442207,
-        "right_wrist_roll_joint": 0.10002612203456586
+        "left_wrist_roll_joint": 0.10002601202799594,
+        "right_wrist_roll_joint": 0.10002603455251328
       },
       "change_rad": {
-        "left_wrist_roll_joint": 0.10002560162587391,
-        "right_wrist_roll_joint": 0.10002560389631489
+        "left_wrist_roll_joint": 0.10002560286237859,
+        "right_wrist_roll_joint": 0.10002560435091783
       },
       "tracking_error_rad": {
-        "left_wrist_roll_joint": -2.6098704422064523e-05,
-        "right_wrist_roll_joint": -2.6122034565853602e-05
+        "left_wrist_roll_joint": -2.601202799593083e-05,
+        "right_wrist_roll_joint": -2.6034552513279352e-05
       },
       "final_speed_rad_s": {
-        "left_wrist_roll_joint": -2.3782623182943613e-08,
-        "right_wrist_roll_joint": -2.3916139708473467e-08
+        "left_wrist_roll_joint": -2.574469852751712e-08,
+        "right_wrist_roll_joint": -2.5926262212188388e-08
       },
       "support_geometry": {
         "center_of_mass_world_m": [
-          0.07003588180413577,
-          0.03562786266619098,
-          0.29774269076455634
+          0.047387891766517906,
+          0.018963258851925957,
+          0.29073407749306374
         ],
         "ground_support_polygon_xy_m": [
           [
-            -0.09848144278488187,
-            0.19677498429298587
+            -0.07985258919014952,
+            0.18302677497462716
           ],
           [
-            0.01529319303805176,
-            -0.19087348035417706
+            -0.001613772826456741,
+            -0.18269810465132302
           ],
           [
-            0.3530667088396374,
-            0.09067622950343125
+            0.3211779926789536,
+            0.04295830882482446
+          ],
+          [
+            0.27723859510346244,
+            0.07603894654517436
           ]
         ],
-        "geometric_margin_m": 0.11631442346727999,
+        "geometric_margin_m": 0.09010394191424431,
         "interpretation": "COM projection margin; dynamic inertial loads are not included"
       },
       "robot_contacts": [],
       "passive_caster": {
         "caster_swivel_joint": {
-          "angle_rad": 1.0895712018042074,
-          "rate_rad_s": -0.000935347978375187,
+          "angle_rad": 0.7147097024611361,
+          "rate_rad_s": -0.0002776872008781542,
           "actuator_torque_Nm": 0.0
         },
         "caster_wheel_joint": {
-          "angle_rad": 5.003456163474073,
-          "rate_rad_s": -0.00012715330589355294,
+          "angle_rad": 3.9432260239114645,
+          "rate_rad_s": -3.150480899518179e-05,
           "actuator_torque_Nm": 0.0
         }
       }
@@ -716,69 +741,73 @@
     },
     "support_geometry": {
       "center_of_mass_world_m": [
-        0.0700414986294277,
-        0.03562522572238699,
-        0.29774042368805476
+        0.04738370084625704,
+        0.018961014370266652,
+        0.29073180765582785
       ],
       "ground_support_polygon_xy_m": [
         [
-          -0.09846399513635866,
-          0.19677968447080832
+          -0.07984802351702906,
+          0.18302757136404496
         ],
         [
-          0.015298006085037999,
-          -0.1908724882022782
+          -0.0016140039867847868,
+          -0.18269833440636007
         ],
         [
-          0.35305092691613266,
-          0.09064634055382895
+          0.32116846170211955,
+          0.04295009629060974
+        ],
+        [
+          0.2772419870847148,
+          0.07604789198320758
         ]
       ],
-      "geometric_margin_m": 0.11630759170067459,
+      "geometric_margin_m": 0.09009719629889197,
       "interpretation": "COM projection margin; dynamic inertial loads are not included"
     },
     "position_rad": {
-      "left_arm_base_joint": -1.968131774162399e-05,
-      "left_shoulder_joint": -0.02401983932680325,
-      "left_elbow_joint": -0.014244945275548917,
-      "left_wrist_pitch_joint": -0.0024685049258338864,
-      "left_wrist_roll_joint": 5.115148665496674e-07,
-      "left_gripper_left_joint": 0.29992814845211413,
-      "right_arm_base_joint": -2.2532650539870634e-05,
-      "right_shoulder_joint": -0.024020931720487318,
-      "right_elbow_joint": -0.01424517006379175,
-      "right_wrist_pitch_joint": -0.0024687080042913785,
-      "right_wrist_roll_joint": 5.034795053134316e-07,
-      "right_gripper_left_joint": 0.2999281499634155
+      "left_arm_base_joint": -1.5977190813472668e-05,
+      "left_shoulder_joint": -0.024020032409451816,
+      "left_elbow_joint": -0.014244986095725377,
+      "left_wrist_pitch_joint": -0.0024685404298741,
+      "left_wrist_roll_joint": 4.236527359653815e-07,
+      "left_gripper_left_joint": 0.29992814872714646,
+      "right_arm_base_joint": -1.9124826128706526e-05,
+      "right_shoulder_joint": -0.02402074643438423,
+      "right_elbow_joint": -0.01424513297333252,
+      "right_wrist_pitch_joint": -0.00246867310279813,
+      "right_wrist_roll_joint": 4.154285298108865e-07,
+      "right_gripper_left_joint": 0.2999281496584751
     },
     "final_speed_rad_s": {
-      "left_arm_base_joint": -5.277744905126724e-06,
-      "left_shoulder_joint": -6.44135125001204e-07,
-      "left_elbow_joint": 3.566084074457165e-08,
-      "left_wrist_pitch_joint": 7.693716002340309e-09,
-      "left_wrist_roll_joint": -3.7740582022273574e-09,
-      "left_gripper_left_joint": -6.32857615986763e-10,
-      "right_arm_base_joint": 8.383679690309534e-06,
-      "right_shoulder_joint": -6.389507448792096e-07,
-      "right_elbow_joint": 3.6301125304410425e-08,
-      "right_wrist_pitch_joint": 7.1451331826230545e-09,
-      "right_wrist_roll_joint": 6.250277879139778e-09,
-      "right_gripper_left_joint": -8.720807784225365e-10
+      "left_arm_base_joint": -5.658550434373833e-06,
+      "left_shoulder_joint": -6.390120087120061e-07,
+      "left_elbow_joint": 3.547044523323833e-08,
+      "left_wrist_pitch_joint": 7.131917746313063e-09,
+      "left_wrist_roll_joint": -3.9864838540710385e-09,
+      "left_gripper_left_joint": 3.4607017881168857e-10,
+      "right_arm_base_joint": 9.105935702213859e-06,
+      "right_shoulder_joint": -6.33577427229697e-07,
+      "right_elbow_joint": 3.546839036352844e-08,
+      "right_wrist_pitch_joint": 7.15706215259635e-09,
+      "right_wrist_roll_joint": 6.4216755845119665e-09,
+      "right_gripper_left_joint": 5.422953424191991e-10
     },
     "mimic_error_rad": {
-      "left_gripper_right_joint": -1.560393438582164e-05,
-      "right_gripper_right_joint": -1.5109241742417012e-05
+      "left_gripper_right_joint": -1.5559506253037814e-05,
+      "right_gripper_right_joint": -1.5150661957286093e-05
     },
     "robot_contacts": [],
     "passive_caster": {
       "caster_swivel_joint": {
-        "angle_rad": 1.0883042288957165,
-        "rate_rad_s": -0.0009347246450794499,
+        "angle_rad": 0.714332269469664,
+        "rate_rad_s": -0.000277498230997909,
         "actuator_torque_Nm": 0.0
       },
       "caster_wheel_joint": {
-        "angle_rad": 5.003273299023719,
-        "rate_rad_s": -0.00012867605881074172,
+        "angle_rad": 3.943172494510275,
+        "rate_rad_s": -3.246605129586145e-05,
         "actuator_torque_Nm": 0.0
       }
     }
@@ -813,8 +842,8 @@
       "right_gripper_left_joint": 0.3
     },
     "observed_peak_abs_Nm": {
-      "left_wheel_joint": 1.3446862420922434,
-      "right_wheel_joint": 1.1826918537653133,
+      "left_wheel_joint": 1.8992971841657789,
+      "right_wheel_joint": 1.6706746089167752,
       "left_arm_base_joint": 1.0,
       "left_shoulder_joint": 1.0,
       "left_elbow_joint": 1.0,
@@ -853,7 +882,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.001501350968636593
+      "minimum_distance_m": -0.0014350060109447754
     },
     "forward_drive": {
       "bodies": [
@@ -861,7 +890,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.0004856224939086065
+      "minimum_distance_m": -0.000378931245829682
     },
     "positive_yaw_turn": {
       "bodies": [
@@ -869,7 +898,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.00048631572786247274
+      "minimum_distance_m": -0.00037918148808957497
     },
     "arm_motion_arm_base_joint": {
       "bodies": [
@@ -877,7 +906,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.0005096649957944469
+      "minimum_distance_m": -0.00040417309660943646
     },
     "arm_motion_shoulder_joint": {
       "bodies": [
@@ -885,7 +914,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.0004888220853860523
+      "minimum_distance_m": -0.0003783892246090881
     },
     "arm_motion_elbow_joint": {
       "bodies": [
@@ -893,7 +922,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.00048729142201446585
+      "minimum_distance_m": -0.0003780537987505342
     },
     "arm_motion_wrist_pitch_joint": {
       "bodies": [
@@ -901,7 +930,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.0004897518882440166
+      "minimum_distance_m": -0.0003823013155164687
     },
     "arm_motion_wrist_roll_joint": {
       "bodies": [
@@ -909,7 +938,7 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.0004848647570389192
+      "minimum_distance_m": -0.0003778176422115295
     },
     "gripper_motion": {
       "bodies": [
@@ -917,63 +946,63 @@
         "left_wheel",
         "right_wheel"
       ],
-      "minimum_distance_m": -0.00048417376060755357
+      "minimum_distance_m": -0.00037713950034549276
     }
   },
   "robot_contact_history_minimum_distance_m": {},
   "stability_history": {
     "gravity_rest": {
       "samples": 100,
-      "max_abs_roll_pitch_rad": 0.000994126529670032,
-      "minimum_geometric_support_margin_m": 0.1161239597148605,
+      "max_abs_roll_pitch_rad": 0.0008043998511614162,
+      "minimum_geometric_support_margin_m": 0.08997210575007113,
       "samples_without_support_polygon": 1
     },
     "forward_drive": {
       "samples": 140,
-      "max_abs_roll_pitch_rad": 0.0010214035116726423,
-      "minimum_geometric_support_margin_m": 0.11623517721910502,
+      "max_abs_roll_pitch_rad": 0.0008392794560512818,
+      "minimum_geometric_support_margin_m": 0.0900611250531844,
       "samples_without_support_polygon": 0
     },
     "positive_yaw_turn": {
       "samples": 265,
-      "max_abs_roll_pitch_rad": 0.000993873966191633,
-      "minimum_geometric_support_margin_m": 0.11623926719689966,
+      "max_abs_roll_pitch_rad": 0.0008036115896254913,
+      "minimum_geometric_support_margin_m": 0.09006571323760382,
       "samples_without_support_polygon": 0
     },
     "arm_motion_arm_base_joint": {
       "samples": 57,
-      "max_abs_roll_pitch_rad": 0.0010011131060316484,
-      "minimum_geometric_support_margin_m": 0.11561939975654562,
+      "max_abs_roll_pitch_rad": 0.0008530338387864861,
+      "minimum_geometric_support_margin_m": 0.08940537384810306,
       "samples_without_support_polygon": 0
     },
     "arm_motion_shoulder_joint": {
       "samples": 58,
-      "max_abs_roll_pitch_rad": 0.000949055041652006,
-      "minimum_geometric_support_margin_m": 0.11630529970232227,
+      "max_abs_roll_pitch_rad": 0.0007784793598587346,
+      "minimum_geometric_support_margin_m": 0.09009495677401616,
       "samples_without_support_polygon": 0
     },
     "arm_motion_elbow_joint": {
       "samples": 57,
-      "max_abs_roll_pitch_rad": 0.0009466442733780026,
-      "minimum_geometric_support_margin_m": 0.1163065953081099,
+      "max_abs_roll_pitch_rad": 0.0007789458729541471,
+      "minimum_geometric_support_margin_m": 0.09009724504963337,
       "samples_without_support_polygon": 0
     },
     "arm_motion_wrist_pitch_joint": {
       "samples": 58,
-      "max_abs_roll_pitch_rad": 0.000944360655518918,
-      "minimum_geometric_support_margin_m": 0.11630705844326283,
+      "max_abs_roll_pitch_rad": 0.0007853419918563699,
+      "minimum_geometric_support_margin_m": 0.09009614904421587,
       "samples_without_support_polygon": 0
     },
     "arm_motion_wrist_roll_joint": {
       "samples": 57,
-      "max_abs_roll_pitch_rad": 0.0009424272158873117,
-      "minimum_geometric_support_margin_m": 0.11630813730616926,
+      "max_abs_roll_pitch_rad": 0.0007797635593780986,
+      "minimum_geometric_support_margin_m": 0.09009767322747957,
       "samples_without_support_polygon": 0
     },
     "gripper_motion": {
       "samples": 50,
-      "max_abs_roll_pitch_rad": 0.000940572220080553,
-      "minimum_geometric_support_margin_m": 0.11630759287821815,
+      "max_abs_roll_pitch_rad": 0.0007777211712521974,
+      "minimum_geometric_support_margin_m": 0.09009719665932504,
       "samples_without_support_polygon": 0
     }
   },

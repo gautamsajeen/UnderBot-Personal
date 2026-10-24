@@ -1,5 +1,5 @@
-# Underbot R09 SI metres; original URDF link-local coordinates
-mtllib Underbot_R09.mtl
+# Underbot R10 SI metres; original URDF link-local coordinates
+mtllib Underbot_R10.mtl
 o camera_mount__kinect_optical_carrier_provisional
 usemtl black_abs
 v 0.005999999121 -0.07634999603 0.0001499997452

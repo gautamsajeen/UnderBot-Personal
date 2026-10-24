@@ -31,7 +31,7 @@
           <mesh filename="package://underbot_description/meshes/camera_mount.stl" scale="1 1 1" />
         </geometry>
         <material name="matte_black">
-          <color rgba="0.045 0.05 0.055 1" />
+          <color rgba="0.008 0.009 0.011 1" />
         </material>
       </visual>
       <visual name="camera_mount_visual_3">
@@ -98,7 +98,7 @@
     <joint name="camera_mount_joint" type="fixed">
       <parent link="base_link" />
       <child link="camera_mount" />
-      <origin xyz="-0.005 0 0.635" rpy="0 0 0" />
+      <origin xyz="-0.075 0 0.635" rpy="0 0 0" />
     </joint>
     <joint name="camera_optical_joint" type="fixed">
       <parent link="camera_mount" />
@@ -108,7 +108,7 @@
     <joint name="lidar_mount_joint" type="fixed">
       <parent link="base_link" />
       <child link="lidar_mount" />
-      <origin xyz="-0.07 0 0.733" rpy="0 0 0" />
+      <origin xyz="-0.14 0 0.733" rpy="0 0 0" />
     </joint>
     <joint name="lidar_scan_joint" type="fixed">
       <parent link="lidar_mount" />

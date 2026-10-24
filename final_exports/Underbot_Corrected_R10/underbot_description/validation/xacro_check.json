@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "urdf_sha256": "c66f99720353890a69291c1be2767eeb88faa4f657e95f9a92061f0273e65ade",
+  "checks": [
+    "Python and FreeCAD macro syntax only",
+    "Xacro semantic round-trip",
+    "ROS/portable/Gazebo link and joint equivalence",
+    "Mesh resolution and metric scale in all 3 STL URDF profiles",
+    "Textured URDF physical equivalence and OBJ/MTL/texture resource resolution",
+    "14 commands / 2 passive / 2 mimic actuation map",
+    "Package XML parsing"
+  ],
+  "textured_mtl_count": 1,
+  "textured_texture_count": 18,
+  "mtl_nonmetal_checks": [
+    {
+      "material": "matte_black_vinyl",
+      "metallic": 0.0
+    },
+    {
+      "material": "tire_rubber",
+      "metallic": 0.0
+    },
+    {
+      "material": "polycarbonate",
+      "metallic": 0.0
+    }
+  ],
+  "syntax_files": 11,
+  "links": 23,
+  "joints": 22,
+  "native_applications_executed": false
+}

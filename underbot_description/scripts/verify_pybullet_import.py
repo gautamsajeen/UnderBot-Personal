@@ -1,5 +1,6 @@
 """Import the delivered URDF, independently compare FK, and inspect real mesh bounds."""
 from pathlib import Path
+from datetime import datetime, timezone
 import hashlib
 import importlib.metadata
 import json
@@ -118,6 +119,35 @@ def main():
     imported_mass = sum(d[0] for d in dynamics)
     assert abs(urdf_mass-imported_mass) < 1e-8
 
+    # Check every inertia in its link frame, not only the sum of masses.
+    # Bullet diagonalizes the declared tensor and rotates its inertial frame.
+    # Reconstructing that tensor also detects inertial-origin orientation errors.
+    inertial_comparisons = []
+    link_indices = {"base_link": -1, **{joint_xml[name].find("child").get("link"): i for name, i in indices.items()}}
+    for name, element in link_xml.items():
+        declared = element.find("inertial")
+        actual = p.getDynamicsInfo(robot, link_indices[name])
+        if declared is None:
+            expected_mass, expected_com, expected_tensor = 0., np.zeros(3), np.zeros((3, 3))
+        else:
+            expected_mass = float(declared.find("mass").get("value"))
+            frame = transform(declared.find("origin"))
+            expected_com = frame[:3, 3]
+            values_tensor = declared.find("inertia").attrib
+            tensor = np.asarray([[float(values_tensor["ixx"]), float(values_tensor["ixy"]), float(values_tensor["ixz"])],
+                                 [float(values_tensor["ixy"]), float(values_tensor["iyy"]), float(values_tensor["iyz"])],
+                                 [float(values_tensor["ixz"]), float(values_tensor["iyz"]), float(values_tensor["izz"])]] )
+            expected_tensor = frame[:3, :3] @ tensor @ frame[:3, :3].T
+        actual_rotation = np.asarray(p.getMatrixFromQuaternion(actual[4])).reshape(3, 3)
+        actual_tensor = actual_rotation @ np.diag(actual[2]) @ actual_rotation.T
+        comparison = {"link": name, "mass_error_kg": abs(actual[0]-expected_mass),
+                      "com_position_error_m": float(np.linalg.norm(np.asarray(actual[3])-expected_com)),
+                      "inertia_matrix_max_error_kg_m2": float(np.max(np.abs(actual_tensor-expected_tensor)))}
+        inertial_comparisons.append(comparison)
+        assert comparison["mass_error_kg"] < 1e-8, "Imported link mass differs: " + name
+        assert comparison["com_position_error_m"] < 1e-8, "Imported link COM differs: " + name
+        assert comparison["inertia_matrix_max_error_kg_m2"] < 1e-8, "Imported full link tensor differs: " + name
+
     # Inspect the delivered zero pose, without advancing physics or fixing the root.
     values.clear()
     for name, joint in joint_xml.items():
@@ -140,7 +170,7 @@ def main():
             vertices = vertices @ world[:3, :3].T + world[:3, 3]
             bounds.extend([vertices.min(axis=0), vertices.max(axis=0)])
     lower, upper = np.asarray(bounds).min(axis=0), np.asarray(bounds).max(axis=0)
-    report = {"revision": "R09", "camera_status": "External case removed; bare Kinect electronics and optical frame are uncalibrated reservations.", "engine": "PyBullet", "engine_version": importlib.metadata.version("pybullet"), "engine_api_version": p.getAPIVersion(),
+    report = {"revision": "R10", "generated_at_utc": datetime.now(timezone.utc).isoformat(), "camera_status": "External case removed; bare Kinect electronics and optical frame are uncalibrated reservations.", "engine": "PyBullet", "engine_version": importlib.metadata.version("pybullet"), "engine_api_version": p.getAPIVersion(),
               "urdf": "urdf/underbot.portable.urdf", "urdf_sha256": hashlib.sha256(URDF.read_bytes()).hexdigest(),
               "flags": "URDF_USE_INERTIA_FROM_FILE", "use_fixed_base": False,
               "links": len(link_xml), "joints": len(joint_xml), "actuated_independent_joints": 14,
@@ -150,13 +180,14 @@ def main():
               "nonzero_pose_world_link_frames": imported_frames,
               "maximum_position_error_m": maximum_position, "maximum_rotation_matrix_error": maximum_rotation,
               "fk_link_comparisons": comparisons, "urdf_mass_kg": urdf_mass, "imported_mass_kg": imported_mass,
+              "inertial_link_comparisons": inertial_comparisons,
               "zero_pose_visual_aabb_m": {"minimum": lower.tolist(), "maximum": upper.tolist()},
               "mesh_sha256": mesh_hashes,
               "status": "PASS", "scope": "Actual-file import, floating-root configuration, preserved masses, nonzero forward kinematics, zero-pose actual mesh bounds. This is not a dynamic stability or actuator validation, and does not execute ROS, Gazebo, Isaac Sim, or Isaac Lab."}
     VALIDATION.mkdir(exist_ok=True)
-    (VALIDATION / "pybullet_import_R09.json").write_text(json.dumps(report, indent=2)+"\n", encoding="utf-8")
-    (VALIDATION / "pybullet_import_R09.md").write_text(
-        f"# R09 actual-URDF PyBullet inspection\n\nPASS: imported `underbot.portable.urdf` with `URDF_USE_INERTIA_FROM_FILE` and a floating base. "
+    (VALIDATION / "pybullet_import_R10.json").write_text(json.dumps(report, indent=2)+"\n", encoding="utf-8")
+    (VALIDATION / "pybullet_import_R10.md").write_text(
+        f"# R10 actual-URDF PyBullet inspection\n\nPASS: imported `underbot.portable.urdf` with `URDF_USE_INERTIA_FROM_FILE` and a floating base. "
         f"The import contains {len(link_xml)} links and {len(joint_xml)} joints, with 14 actuated and two passive independent coordinates. "
         f"Imported mass {imported_mass:.9f} kg matches the URDF sum.\n\n"
         f"At an independently selected nonzero pose, all 22 child link frames agree with separate URDF forward kinematics: "
@@ -170,4 +201,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as error:
+        VALIDATION.mkdir(exist_ok=True)
+        report = {"revision": "R10", "status": "FAIL", "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+                  "urdf_sha256": hashlib.sha256(URDF.read_bytes()).hexdigest(),
+                  "error": type(error).__name__ + ": " + str(error)}
+        (VALIDATION / "pybullet_import_R10.json").write_text(json.dumps(report, indent=2)+"\n", encoding="utf-8")
+        (VALIDATION / "pybullet_import_R10.md").write_text("# R10 actual-URDF PyBullet inspection\n\nFAIL: " + report["error"] + "\n", encoding="utf-8")
+        raise

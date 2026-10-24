@@ -1,0 +1,36 @@
+# Underbot independent authoring validation
+
+Status: **PASS**
+
+Independent Python authoring validation; no simulator import or dynamics run.
+
+Input: `underbot.urdf`
+
+Tree: 23 links, 22 joints, root `base_link`, 16 independent coordinates.
+
+Estimated total mass: 19.573408 kg. Zero-pose centre of mass in root frame: [-0.08008549355421225, 4.1076138003926704e-05, 0.29210510142337504] m.
+Each massive-link inertia was checked for finite positive mass, positive principal moments and the principal-moment triangle inequalities. Shape-free fixed reference frames may explicitly declare zero mass and a zero tensor; these contribute no mass and may have no moving descendants.
+
+R10 nominal construction was checked independently: WR141E 558 × 404 × 205 mm published envelope; 200 ×200 mm frame and floors; 204 ×204 mm covered body with external 2 mm sheets; four 500 mm posts; sixteen 160 mm rails; 160 ×160 mm clear opening; black aluminium frame and four opaque black plastic sides; upright GB70 body and installation reservation; casing-free camera reservation with 2 mm lateral gaps; wheel contacts, two passive caster joints and arm root datums. Online sources support 205mm rear and 79mm front wheel diameters; 55mm front width is approximate. The stripped camera module, optics, retained camera mass, rear tyre width, track, axle locations and mounting positions remain provisional simulation inputs. These checks establish consistency and fit of declared reservations, not verified hardware fit. Fixed cover/shelf interfaces are checked for penetration independently of inter-link screening. The source register, URDF transforms/colliders and all referenced meshes were checked separately.
+
+## Errors
+
+None.
+
+## Review notes
+
+None.
+
+## Scope limits
+
+- Hardware dimensions, masses, motor limits and contact coefficients are not measured by this validator.
+- Collision screening uses primitive oriented bounds; cylinder and mesh candidates may be false positives.
+- One-joint sweeps do not prove collision freedom for simultaneous multi-joint motion.
+
+## Collision screening
+
+Oriented bounding box SAT; adjacent links and explicit allowed pairs excluded.
+
+No nonadjacent candidates in the checked poses. This does not prove complete collision freedom.
+
+The JSON report includes link world bounds, pivot/axis directions, optical-frame basis vectors, STL topology, COM and inertia results.

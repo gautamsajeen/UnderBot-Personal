@@ -15,6 +15,11 @@ def signature(element):
     return (element.tag,tuple(sorted(element.attrib.items())),(element.text or '').strip(),tuple(signature(c) for c in element if isinstance(c.tag,str)))
 def entities(root):
     return {(e.tag,e.get('name')):signature(e) for e in root if e.tag in ('link','joint')}
+def physical_entities(root):
+    copy=ET.fromstring(ET.tostring(root))
+    for link in copy.findall('link'):
+        for visual in link.findall('visual'):link.remove(visual)
+    return entities(copy)
 syntax_files=list((ROOT/'scripts').glob('*.py'))+list((ROOT/'launch').glob('*.py'))+list((ROOT/'cad').glob('*.FCMacro'))
 for p in syntax_files:
     try:ast.parse(p.read_text(encoding='utf-8-sig'),filename=str(p))
@@ -41,6 +46,34 @@ for mesh in gazebo.findall('.//mesh'):
     asset=(ROOT/'urdf'/mesh.get('filename')).resolve()
     mesh.set('filename','package://underbot_description/'+asset.relative_to(ROOT).as_posix())
 check(entities(core)==entities(gazebo),'Gazebo wrapper changed the core physical model')
+textured=ET.parse(ROOT/'urdf/underbot.textured.urdf').getroot()
+check(physical_entities(core)==physical_entities(textured),'Textured URDF changed the core physical model')
+mtl_paths=set()
+for mesh in textured.findall('.//visual/geometry/mesh'):
+    asset=(ROOT/'urdf'/mesh.get('filename')).resolve()
+    check(asset.is_file(),f'Missing textured mesh: {asset.name}')
+    check(mesh.get('scale','1 1 1')=='1 1 1',f'Unexpected textured mesh scale: {asset.name}')
+    if asset.is_file():
+        for line in asset.read_text(encoding='utf-8').splitlines():
+            if line.startswith('mtllib '):mtl_paths.add((asset.parent/line[7:].strip()).resolve())
+check(bool(mtl_paths),'Textured OBJ meshes contain no MTL reference')
+texture_paths=set()
+mtl_nonmetal_checks=[]
+for mtl in mtl_paths:
+    check(mtl.is_file(),f'Missing MTL: {mtl.name}')
+    if not mtl.is_file():continue
+    active_material=None
+    for line in mtl.read_text(encoding='utf-8').splitlines():
+        fields=line.split(maxsplit=1)
+        if len(fields)==2 and fields[0]=='newmtl':active_material=fields[1]
+        if len(fields)==2 and fields[0]=='Pm' and active_material in ('matte_black_vinyl','tire_rubber','polycarbonate'):
+            value=float(fields[1])
+            check(abs(value)<=.01,f'Nonmetal MTL material has metallic response: {active_material}')
+            mtl_nonmetal_checks.append({'material':active_material,'metallic':value})
+        if len(fields)==2 and (fields[0].startswith('map_') or fields[0] in ('norm','bump')):
+            asset=(mtl.parent/fields[1]).resolve()
+            texture_paths.add(asset)
+            check(asset.is_file(),f'Missing MTL texture: {asset.name}')
 actuation=json.loads((ROOT/'config/actuation.json').read_text())
 joints={j.get('name'):j for j in core.findall('joint')}
 commanded={v['name'] for v in actuation['commanded_joints']}
@@ -56,7 +89,8 @@ ET.parse(ROOT/'package.xml')
 report={'status':'FAIL' if errors else 'PASS','errors':errors,
     'urdf_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
     'checks':['Python and FreeCAD macro syntax only','Xacro semantic round-trip','ROS/portable/Gazebo link and joint equivalence',
-              'Mesh resolution and metric scale in all3URDF profiles','14commands/2passive/2mimic actuation map','Package XML parsing'],
+              'Mesh resolution and metric scale in all 3 STL URDF profiles','Textured URDF physical equivalence and OBJ/MTL/texture resource resolution','14 commands / 2 passive / 2 mimic actuation map','Package XML parsing'],
+    'textured_mtl_count':len(mtl_paths),'textured_texture_count':len(texture_paths),'mtl_nonmetal_checks':mtl_nonmetal_checks,
     'syntax_files':len(syntax_files),'links':len(core.findall('link')),'joints':len(joints),
     'native_applications_executed':False}
 (OUT/'xacro_check.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

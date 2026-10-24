@@ -1,5 +1,5 @@
-# Underbot R09 SI metres; original URDF link-local coordinates
-mtllib Underbot_R09.mtl
+# Underbot R10 SI metres; original URDF link-local coordinates
+mtllib Underbot_R10.mtl
 o right_gripper_right__finger
 usemtl brushed_aluminium
 v 0.0007841331535 -0.003267221618 -0.006359999999

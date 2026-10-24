@@ -1,0 +1,449 @@
+{
+  "engine": "MuJoCo 3.15.0",
+  "urdf": "urdf/underbot.portable.urdf",
+  "generated_at_utc": "2026-10-18T18:38:56.789731+00:00",
+  "urdf_sha256": "9c9778d2cec9b495357ff32488881f035d5e2816cc5ec58e5647715154993715",
+  "source_topology": {
+    "link_count": 23,
+    "joint_count": 22,
+    "joint_types": {
+      "fixed": 4,
+      "continuous": 4,
+      "revolute": 14
+    }
+  },
+  "declared_mass_kg": 19.5734078,
+  "rolling_geometry": {
+    "wheel_radii_m": {
+      "left_wheel_joint": 0.1025,
+      "right_wheel_joint": 0.1025
+    },
+    "track_m": 0.334,
+    "expected_ground_bodies": [
+      "caster_link",
+      "left_wheel",
+      "right_wheel"
+    ],
+    "friction_sliding_torsional_rolling": [
+      0.8,
+      0.001,
+      0.0001
+    ]
+  },
+  "direct_import_mass_kg": 19.5734078,
+  "mimic_adapter": {
+    "verified_native_relations": [
+      "left_gripper_right_joint",
+      "right_gripper_right_joint"
+    ],
+    "added_relations": [],
+    "total_constraint_count": 2,
+    "equality_solref_time_constant_s": 0.002,
+    "equality_solref_damping_ratio": 1.0,
+    "reason": "Approximate ideal URDF mimic with one explicit equality per jaw pair; generic native softness otherwise causes lag"
+  },
+  "mass_kg": 19.5734078,
+  "mass_difference_kg": 0.0,
+  "motor_count": 14,
+  "actuated_joint_names": [
+    "left_wheel_joint",
+    "right_wheel_joint",
+    "left_arm_base_joint",
+    "left_shoulder_joint",
+    "left_elbow_joint",
+    "left_wrist_pitch_joint",
+    "left_wrist_roll_joint",
+    "left_gripper_left_joint",
+    "right_arm_base_joint",
+    "right_shoulder_joint",
+    "right_elbow_joint",
+    "right_wrist_pitch_joint",
+    "right_wrist_roll_joint",
+    "right_gripper_left_joint"
+  ],
+  "passive_joint_names": [
+    "caster_swivel_joint",
+    "caster_wheel_joint"
+  ],
+  "degrees_of_freedom": {
+    "floating_root": 6,
+    "actuated": 14,
+    "passive_caster": 2,
+    "dependent_jaw_coordinates": 2,
+    "joint_coupling_equalities": 2,
+    "engine_velocity_coordinates": 24
+  },
+  "test_controller": {
+    "wheel_velocity_gain_Nm_per_rad_s": 3.0,
+    "arm_kp_Nm_per_rad": 30.0,
+    "arm_kd_Nm_per_rad_s": 1.0,
+    "wrist_pitch_kp_Nm_per_rad": 30.0,
+    "wrist_pitch_kd_Nm_per_rad_s": 0.05,
+    "wrist_roll_kp_Nm_per_rad": 12.0,
+    "wrist_roll_kd_Nm_per_rad_s": 0.0,
+    "gripper_kp_Nm_per_rad": 8.0,
+    "gripper_kd_Nm_per_rad_s": 0.03
+  },
+  "result": "FAIL",
+  "error": "AssertionError: Opposite wheel commands did not produce a useful turn with expected sign",
+  "limitations": [
+    "Not a Gazebo/Isaac or hardware test"
+  ],
+  "rest": {
+    "base_xyz": [
+      -2.7390972877577927e-05,
+      7.468472362813017e-10,
+      -0.0002319492406581282
+    ],
+    "roll_pitch_rad": [
+      -1.1935498184199398e-07,
+      0.0008052746257006608
+    ],
+    "contacts": 6,
+    "base_linear_speed_m_s": 5.53976284456281e-10,
+    "base_angular_speed_rad_s": 3.0420865062043003e-09,
+    "support_geometry": {
+      "center_of_mass_world_m": [
+        -0.07987770815989169,
+        4.111127500205407e-05,
+        0.29168927404014305
+      ],
+      "ground_support_polygon_xy_m": [
+        [
+          -0.16994479626893996,
+          0.18699999980305532
+        ],
+        [
+          -0.16994479415684763,
+          -0.1870000001969418
+        ],
+        [
+          0.17000436602451424,
+          -0.027500000936519928
+        ],
+        [
+          0.17000435847898915,
+          0.02749999906347913
+        ]
+      ],
+      "geometric_margin_m": 0.09006708705323427,
+      "interpretation": "COM projection margin; dynamic inertial loads are not included"
+    },
+    "max_joint_position_error_rad": 0.024016617882125727,
+    "ground_contacts": [
+      {
+        "body": "left_wheel",
+        "geom": "left_wheel_rolling_contact",
+        "distance_m": -9.510812240660915e-05
+      },
+      {
+        "body": "left_wheel",
+        "geom": "left_wheel_rolling_contact",
+        "distance_m": -9.510334820896083e-05
+      },
+      {
+        "body": "right_wheel",
+        "geom": "right_wheel_rolling_contact",
+        "distance_m": -9.506825785622619e-05
+      },
+      {
+        "body": "right_wheel",
+        "geom": "right_wheel_rolling_contact",
+        "distance_m": -9.506348365857786e-05
+      },
+      {
+        "body": "caster_link",
+        "geom": "caster_link_rolling_contact",
+        "distance_m": -0.0003688619987951419
+      },
+      {
+        "body": "caster_link",
+        "geom": "caster_link_rolling_contact",
+        "distance_m": -0.000368855440099472
+      }
+    ],
+    "passive_caster": {
+      "caster_swivel_joint": {
+        "angle_rad": 1.3161582325841538e-07,
+        "rate_rad_s": 7.17208890605888e-08,
+        "actuator_torque_Nm": 0.0
+      },
+      "caster_wheel_joint": {
+        "angle_rad": -0.0006771531179412378,
+        "rate_rad_s": 3.023405958887382e-07,
+        "actuator_torque_Nm": 0.0
+      }
+    }
+  },
+  "drive": {
+    "translation_m": [
+      0.08731089462841582,
+      1.1618812958923654e-07,
+      -3.8735274400991324e-11
+    ],
+    "roll_pitch_rad": [
+      -1.1938088333742415e-07,
+      0.0008052749171449422
+    ],
+    "support_geometry": {
+      "center_of_mass_world_m": [
+        0.007374352978601375,
+        4.1185191113327013e-05,
+        0.29168927403360323
+      ],
+      "ground_support_polygon_xy_m": [
+        [
+          -0.08269282407623021,
+          0.18700002642480001
+        ],
+        [
+          -0.08269262495842683,
+          -0.18699997357514442
+        ],
+        [
+          0.25725648017455244,
+          -0.027499816293491578
+        ],
+        [
+          0.2572563856831523,
+          0.027500183706426855
+        ]
+      ],
+      "geometric_margin_m": 0.0900670775178301,
+      "interpretation": "COM projection margin; dynamic inertial loads are not included"
+    },
+    "command_wheel_speed_rad_s": {
+      "left_wheel_joint": 0.5853658536585366,
+      "right_wheel_joint": 0.5853658536585366
+    },
+    "final_wheel_speed_rad_s": {
+      "left_wheel_joint": 0.5741781694357369,
+      "right_wheel_joint": 0.5741786370300613
+    },
+    "ground_contacts": [
+      {
+        "body": "left_wheel",
+        "geom": "left_wheel_rolling_contact",
+        "distance_m": -9.510811645607742e-05
+      },
+      {
+        "body": "left_wheel",
+        "geom": "left_wheel_rolling_contact",
+        "distance_m": -9.510334122217468e-05
+      },
+      {
+        "body": "right_wheel",
+        "geom": "right_wheel_rolling_contact",
+        "distance_m": -9.506824325292151e-05
+      },
+      {
+        "body": "right_wheel",
+        "geom": "right_wheel_rolling_contact",
+        "distance_m": -9.506346801901877e-05
+      },
+      {
+        "body": "caster_link",
+        "geom": "caster_link_rolling_contact",
+        "distance_m": -0.00036886206448322884
+      },
+      {
+        "body": "caster_link",
+        "geom": "caster_link_rolling_contact",
+        "distance_m": -0.0003688555510480765
+      }
+    ],
+    "passive_caster": {
+      "caster_swivel_joint": {
+        "angle_rad": 1.1855018094809938e-06,
+        "rate_rad_s": -1.2348924701457754e-07,
+        "actuator_torque_Nm": 0.0
+      },
+      "caster_wheel_joint": {
+        "angle_rad": 2.218939388060702,
+        "rate_rad_s": 1.4956378767649088,
+        "actuator_torque_Nm": 0.0
+      }
+    }
+  },
+  "turn": {
+    "yaw_change_rad": 0.11168133118609737,
+    "roll_pitch_rad": [
+      -1.0887678987209023e-05,
+      0.0007942394427167396
+    ],
+    "support_geometry": {
+      "center_of_mass_world_m": [
+        0.037917800069735344,
+        0.009187266473088861,
+        0.29169002414242884
+      ],
+      "ground_support_polygon_xy_m": [
+        [
+          -0.07243787808202881,
+          0.18500647848292381
+        ],
+        [
+          -0.030768423875128088,
+          -0.1866649578281337
+        ],
+        [
+          0.3037396323671475,
+          0.005364660756628812
+        ],
+        [
+          0.27455387179041146,
+          0.05198215792293362
+        ]
+      ],
+      "geometric_margin_m": 0.09007957968504228,
+      "interpretation": "COM projection margin; dynamic inertial loads are not included"
+    },
+    "command_wheel_speed_rad_s": {
+      "left_wheel_joint": -0.40731707317073174,
+      "right_wheel_joint": 0.40731707317073174
+    },
+    "command_yaw_rate_rad_s": 0.25,
+    "ramp_duration_s": 0.5,
+    "constant_command_duration_s": 4.0,
+    "initial_1_5_s_transient": {
+      "yaw_change_rad": 0.028270944723569322,
+      "passive_caster": {
+        "caster_swivel_joint": {
+          "angle_rad": 0.1351375511174865,
+          "rate_rad_s": 0.10779409342048239,
+          "actuator_torque_Nm": 0.0
+        },
+        "caster_wheel_joint": {
+          "angle_rad": 2.671055560883322,
+          "rate_rad_s": 0.08083842546291502,
+          "actuator_torque_Nm": 0.0
+        }
+      }
+    },
+    "final_wheel_speed_rad_s": {
+      "left_wheel_joint": -0.0005252803286342234,
+      "right_wheel_joint": 0.13020666679881931
+    },
+    "ground_contacts": [
+      {
+        "body": "left_wheel",
+        "geom": "left_wheel_rolling_contact",
+        "distance_m": -9.735953172883283e-05
+      },
+      {
+        "body": "left_wheel",
+        "geom": "left_wheel_rolling_contact",
+        "distance_m": -9.69241112900171e-05
+      },
+      {
+        "body": "right_wheel",
+        "geom": "right_wheel_rolling_contact",
+        "distance_m": -9.372377106479923e-05
+      },
+      {
+        "body": "right_wheel",
+        "geom": "right_wheel_rolling_contact",
+        "distance_m": -9.328835062601126e-05
+      },
+      {
+        "body": "caster_link",
+        "geom": "caster_link_rolling_contact",
+        "distance_m": -0.00037600191933346433
+      },
+      {
+        "body": "caster_link",
+        "geom": "caster_link_rolling_contact",
+        "distance_m": -0.0003576305557136464
+      }
+    ],
+    "passive_caster": {
+      "caster_swivel_joint": {
+        "angle_rad": 0.4478198876507025,
+        "rate_rad_s": 0.09969940446611299,
+        "actuator_torque_Nm": 0.0
+      },
+      "caster_wheel_joint": {
+        "angle_rad": 3.222818466761082,
+        "rate_rad_s": 0.28819882249405926,
+        "actuator_torque_Nm": 0.0
+      }
+    }
+  },
+  "failure_state": {
+    "stage": "positive_yaw_turn",
+    "qpos": [
+      0.11726365559421711,
+      0.018108459122914432,
+      -0.0002303123997778211,
+      0.9984412276959389,
+      -2.7599320859681944e-05,
+      0.00039619689255309266,
+      0.05581180075329858,
+      0.9259743853075146,
+      1.3744676451081228,
+      0.4478198876507025,
+      3.222818466761082,
+      -1.7868713916373578e-05,
+      -0.024016573775320852,
+      -0.01424110139619922,
+      -0.002464650232906613,
+      4.5846642586589897e-07,
+      0.00026034057387231904,
+      0.0003155673183324247,
+      -1.1273431186036812e-05,
+      -0.024015259309011813,
+      -0.014240826802701079,
+      -0.002464394874752073,
+      2.5311271419509235e-07,
+      0.000260348698726016,
+      0.0003159114652644954
+    ],
+    "qvel": [
+      0.0062008643834305256,
+      0.00611557462816198,
+      6.85146282137303e-07,
+      -2.9317765330889785e-05,
+      -4.974471896931916e-06,
+      0.034187545974482564,
+      -0.0005252803286342234,
+      0.13020666679881931,
+      0.09969940446611299,
+      0.28819882249405926,
+      -7.300600397658715e-07,
+      -5.845240987582017e-09,
+      6.157629920441032e-09,
+      6.046028708881972e-09,
+      2.415541360980523e-08,
+      7.549059737343393e-10,
+      -9.229022878282699e-09,
+      8.517446466642627e-07,
+      4.5342594281008267e-07,
+      1.0167535682557391e-07,
+      9.401265325283427e-08,
+      -2.7438480552239013e-08,
+      3.5610760119753554e-09,
+      -7.359343937148594e-09
+    ]
+  },
+  "stability_history": {
+    "gravity_rest": {
+      "samples": 100,
+      "max_abs_roll_pitch_rad": 0.0008061935481010587,
+      "minimum_geometric_support_margin_m": 0.0899733915512317,
+      "samples_without_support_polygon": 1
+    },
+    "forward_drive": {
+      "samples": 140,
+      "max_abs_roll_pitch_rad": 0.000840553368907582,
+      "minimum_geometric_support_margin_m": 0.09006255507991244,
+      "samples_without_support_polygon": 0
+    },
+    "positive_yaw_turn": {
+      "samples": 225,
+      "max_abs_roll_pitch_rad": 0.0008052758538070312,
+      "minimum_geometric_support_margin_m": 0.0900670490247162,
+      "samples_without_support_polygon": 0
+    }
+  },
+  "robot_contact_history_minimum_distance_m": {}
+}

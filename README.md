@@ -1,32 +1,34 @@
-# Underbot R09
+# Underbot R10
 
-Detailed model of the WR141E-based Underbot: **200 × 200 mm floors and frame**, **204 × 204 mm covered tower**, and **500 mm posts**. Two budget arms mount directly to the metal frame; matte-black front/side sheets surround clear polycarbonate floors and a rear service panel.
+Corrected WR141E-based dual-arm rover: **200 × 200 mm transparent polycarbonate floors**, **black aluminium frame**, **four matte-black plastic covers**, **204 × 204 mm covered tower**, and **500 mm posts**. The stripped Kinect reservation is inside the frame. Two budget arms, each with five arm axes plus a gripper, mount directly to frame brackets.
 
-![Underbot R09 — actual model render](final_exports/Underbot_Final_R09/renders/Underbot_R09_hero.png)
+![Actual R10 model](final_exports/Underbot_Corrected_R10/renders/Underbot_R10_hero.png)
 
-## Open the final model
+## Current files
 
-- [Complete R09 export folder and instructions](final_exports/Underbot_Final_R09/README.md).
-- [Assembled STL](final_exports/Underbot_Final_R09/stl/Underbot_R09_assembled_mm.stl) — millimetres; 250 separate closed components.
-- [Textured GLB](final_exports/Underbot_Final_R09/models/Underbot_R09_textured.glb) — metres, with embedded 2K PBR textures.
-- [Editable Blender scene](final_exports/Underbot_Final_R09/models/Underbot_R09_studio.blend) — packed textures and studio lighting.
-- [Portable URDF](underbot_description/urdf/underbot.portable.urdf), [ROS URDF](underbot_description/urdf/underbot.urdf), [modular Xacro](underbot_description/urdf/underbot.urdf.xacro) and [optional textured OBJ URDF](underbot_description/urdf/underbot.textured.urdf).
-- [Offline joint viewer](underbot_description/viewer.html) — clone/download the repository, then open locally.
-- [Dimensioned floor/frame plan](final_exports/Underbot_Final_R09/docs/floor_plan_R09.svg).
+- [Complete R10 export and instructions](final_exports/Underbot_Corrected_R10/README.md).
+- [Assembled STL](final_exports/Underbot_Corrected_R10/stl/Underbot_R10_assembled_mm.stl): millimetres, 293 separate closed components.
+- [Textured GLB](final_exports/Underbot_Corrected_R10/models/Underbot_R10_textured.glb): metres, embedded 2048 px PBR maps.
+- [Editable Blender scene](final_exports/Underbot_Corrected_R10/models/Underbot_R10_studio.blend): packed textures and studio lights.
+- [Portable URDF](underbot_description/urdf/underbot.portable.urdf), [ROS URDF](underbot_description/urdf/underbot.urdf), [Xacro](underbot_description/urdf/underbot.urdf.xacro) and [textured OBJ URDF](underbot_description/urdf/underbot.textured.urdf).
+- [Offline joint viewer](underbot_description/viewer.html): download or clone first, then open locally.
+- [Cutaway](final_exports/Underbot_Corrected_R10/renders/Underbot_R10_cutaway.png), [rear](final_exports/Underbot_Corrected_R10/renders/Underbot_R10_rear.png) and [mower only](final_exports/Underbot_Corrected_R10/renders/Underbot_R10_base.png).
 
-[Download the repository ZIP](https://github.com/gautamsajeen/UnderBot-Personal/archive/refs/heads/main.zip), or clone the repository. Keep each URDF with its package meshes. STL stores geometry only; GLB and Blender carry the full textured appearance. The complete export bundle repeats the ROS package so it can be copied independently. The top-level package is the same current model for convenient ROS workspace use. Older downloads remain historical versions.
+[Download repository ZIP](https://github.com/gautamsajeen/UnderBot-Personal/archive/refs/heads/main.zip). Keep each URDF with its meshes. STL has no textures; GLB/Blender carry the full appearance. The top-level ROS package matches the self-contained R10 bundle. R10 supersedes earlier exports, which remain as historical versions.
 
-## Verification
+## Dimensions and validation
 
-An independent agent checked the actual exported triangles: **4,730 checks passed**, including the 200/204 mm dimensions, part transforms, unit conversions and closed component surfaces. The model has **250 components, 223,360 triangles, 11 materials and 18 embedded 2048 × 2048 GLB texture images**. The authoring texture library contains 24 maps.
+The WR141E uses its published 558 × 404 × 205 mm envelope. Supplier data supports rear/front wheel diameters of 205/79 mm. Reconstructed rear tyre width 40 mm, track 334 mm, wheelbase 340 mm, body contours and mounting position are estimates. [Source register](final_exports/Underbot_Corrected_R10/docs/WR141E_reference_register.md).
 
-The physical model retains 23 links and 22 joints: four fixed joints, 14 commanded coordinates, two passive caster coordinates and two gripper mimic followers. Four fixed-link merges leave 19 bodies. Joint origins, axes, limits, collision shapes and estimated mass/inertia match the tested physical configuration. Independent PyBullet imports and joint transforms, MuJoCo motion checks, Xacro checks and offline-viewer checks pass. [Independent dimensions](final_exports/Underbot_Final_R09/validation/dimensional_audit.md), [texture audit](final_exports/Underbot_Final_R09/validation/textured_export_audit.md), [final delivery report](final_exports/Underbot_Final_R09/validation/final_delivery.json).
+**6,098 independent checks passed**, covering 293 components and 250,452 triangles: exported bounds, units, transforms, closed component surfaces, four opaque black covers, clear floors and black profiles. [Independent audit](final_exports/Underbot_Corrected_R10/validation/independent_geometry.md).
 
-The bare Kinect layout, arm dimensions, actuator ratings and installed mass budget remain unmeasured assumptions. WR141E/GB70 surface contours approximate published envelopes. Estimated total mass is 19.601 kg. This is not factory CAD, fabrication certification or a payload rating. Native Gazebo, Isaac Sim/Lab, RViz2 and FreeCAD execution has not been performed. The STL assembly is a collection of closed parts with intentional interfaces, not a Boolean-unioned printing solid.
+The URDF has 23 links and 22 joints: four fixed, fourteen commanded coordinates, two passive caster coordinates and two gripper mimic followers. Four fixed-link merges leave 19 bodies. Estimated mass is 19.5172478 kg. Actual-file PyBullet import, Xacro consistency, MuJoCo motion, static balance and offline-viewer transform checks pass. [Delivery report](final_exports/Underbot_Corrected_R10/validation/final_delivery.json).
+
+Bare Kinect geometry, arm dimensions, actuator ratings, installed masses and mounting details remain unmeasured. This is a documented simulation model, not factory CAD or a measured hardware twin. Native Gazebo, Isaac Sim/Lab, RViz2 and FreeCAD have not been executed. Aggregate visual shells have intentional interfaces; use separate collision primitives for physics. [Accuracy register](underbot_description/docs/accuracy_and_physics.md).
 
 ## Simulation
 
-Place the top-level `underbot_description` directory in a ROS 2 workspace's `src` folder:
+Place `underbot_description` in a ROS 2 workspace's `src` folder:
 
 ```sh
 colcon build --packages-select underbot_description --symlink-install
@@ -34,4 +36,4 @@ source install/setup.bash
 ros2 launch underbot_description display.launch.py
 ```
 
-Follow the [simulator import guide](underbot_description/docs/simulation_import.md) and [accuracy register](underbot_description/docs/accuracy_and_physics.md). The historical root URDF files point to this same physical model and current visual meshes. Rebuild instructions for R09 detail and materials are in the [complete export README](final_exports/Underbot_Final_R09/README.md#validation-and-reproduction).
+Follow the [import guide](underbot_description/docs/simulation_import.md) and [reproduction instructions](final_exports/Underbot_Corrected_R10/README.md#validation-and-reproduction). The root compatibility URDFs reference the current package geometry and physical model. The legacy basic mesh generator replaces detailed visuals; follow the full R10 rebuild to preserve detail and textures.

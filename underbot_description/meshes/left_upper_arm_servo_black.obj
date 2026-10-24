@@ -1,5 +1,5 @@
-# Underbot R09 SI metres; original URDF link-local coordinates
-mtllib Underbot_R09.mtl
+# Underbot R10 SI metres; original URDF link-local coordinates
+mtllib Underbot_R10.mtl
 o left_upper_arm__servo_body
 usemtl black_abs
 v -0.006999999285 -0.009349999949 -0.0173499994

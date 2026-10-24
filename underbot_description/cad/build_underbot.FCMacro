@@ -1,4 +1,4 @@
-"""Rebuild native FreeCAD solids from the delivered R08_WR141E geometry manifest.
+"""Rebuild native FreeCAD solids from the delivered R10_WR141E geometry manifest.
 
 Run in FreeCAD through Macro > Macros, or FreeCAD's Python console. No URDF
 workbench is needed. This macro source was syntax-checked but not executed here:
@@ -69,6 +69,13 @@ def primitive(part):
         return Part.makeCylinder(radius, length, App.Vector(0, 0, -length/2))
     if kind == "sphere":
         return Part.makeSphere(size[0])
+    if kind == "loft":
+        vertices = [App.Vector(*(float(v)*MM_PER_M for v in point)) for point in part["vertices"]]
+        faces = []
+        for indices in part["faces"]:
+            points = [vertices[index] for index in indices]
+            faces.append(Part.Face(Part.makePolygon(points + [points[0]])))
+        return Part.makeSolid(Part.makeShell(faces))
     if kind == "prism":
         height = size[2]
         points = [App.Vector(x*MM_PER_M, y*MM_PER_M, -height/2) for x,y in part["polygon"]]
@@ -122,8 +129,8 @@ def main():
     source = package / "config" / "geometry_manifest.json"
     manifest = json.loads(source.read_text(encoding="utf-8"))
     worlds = zero_placements(manifest)
-    document = App.newDocument("Underbot_R08_WR141E")
-    document.Label = "Underbot R08_WR141E — native CAD, proposed hardware dimensions"
+    document = App.newDocument("Underbot_R10_WR141E")
+    document.Label = "Underbot R10_WR141E — faceted reference geometry, proposed hardware dimensions"
     world_shapes = []
     feature_count = 0
     for link_name, link in manifest["links"].items():
@@ -172,13 +179,13 @@ def main():
     document.recompute()
     destination = package / "cad"
     destination.mkdir(parents=True, exist_ok=True)
-    native_path = destination / "underbot_R08_WR141E.FCStd"
+    native_path = destination / "underbot_R10_WR141E.FCStd"
     document.saveAs(str(native_path))
     App.Console.PrintMessage(f"Saved {native_path}; {len(manifest['links'])} link containers, {feature_count} visual solids.\n")
     if os.environ.get("UNDERBOT_EXPORT_STEP", "0") == "1":
         # STEP is an assembled-world CAD export in mm. It is deliberately not
         # substituted for the link-local metric STL assets referenced by URDF.
-        step_path = destination / "underbot_R08_WR141E.step"
+        step_path = destination / "underbot_R10_WR141E.step"
         Part.makeCompound(world_shapes).exportStep(str(step_path))
         App.Console.PrintMessage(f"Saved assembled STEP: {step_path}\n")
     if App.GuiUp:
