@@ -6,6 +6,8 @@ Corrected WR141E-based dual-arm rover: **200 × 200 mm transparent polycarbonate
 
 ## Current files
 
+- [Print STLs for the Kinect v2 and D500 mount, SO-101 Follower and SO-101 Leader](print_stls/README.md).
+
 - [Complete R10 export and instructions](final_exports/Underbot_Corrected_R10/README.md).
 - [Assembled STL](final_exports/Underbot_Corrected_R10/stl/Underbot_R10_assembled_mm.stl): millimetres, 293 separate closed components.
 - [Textured GLB](final_exports/Underbot_Corrected_R10/models/Underbot_R10_textured.glb): metres, embedded 2048 px PBR maps.
